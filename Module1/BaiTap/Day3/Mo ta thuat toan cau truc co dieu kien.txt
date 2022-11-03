@@ -1,0 +1,16 @@
+
+Begin
+	Input x
+	If x=>75 then output "Loai A"
+	else
+		If x=>60 then output "Loai B"
+		Else
+			If x=>45 then output "Loai C"
+			Else	
+				If x=>35 then output "Loai D"
+				Else output "Loai E"
+				End if
+			End if
+		End if
+	End if
+End	

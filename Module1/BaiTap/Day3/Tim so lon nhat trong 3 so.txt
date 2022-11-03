@@ -1,0 +1,12 @@
+
+Begin
+	Input a
+	Input b
+	Input c
+	If a>b and a>c then output a
+	Else
+		If b>c then output b
+		Else output c
+		End if
+	End if
+End

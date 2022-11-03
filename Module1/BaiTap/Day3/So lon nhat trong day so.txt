@@ -1,0 +1,16 @@
+
+Begin
+	i=1
+	Input N
+	Input a(i)
+	Max=a(i);
+	i=i+1
+	While (i<=N){
+		Input a(i)
+		If a(i) > Max then Max=a(i)
+		End if
+		i=i+1}
+	Output Max
+End
+		
+	

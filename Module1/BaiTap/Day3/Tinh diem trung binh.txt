@@ -1,0 +1,8 @@
+
+Begin
+	Input a
+	Input b
+	Input c
+	X=(a+b+c)/3
+	Display X
+End

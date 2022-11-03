@@ -1,0 +1,6 @@
+
+Begin
+	Input A
+	B=A*23000
+	Display B
+End
