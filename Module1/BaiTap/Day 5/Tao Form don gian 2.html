@@ -5,6 +5,7 @@
     <title>Form đăng ký học viên</title>
 </head>
 <body style="background: greenyellow">
+<table style="background:white;width: 400px">
 <h1 style="background:darkolivegreen; width: 400px">Đăng ký học viên</h1>
 <br>
 <tr>
@@ -19,13 +20,14 @@
 <br>
 <tr>
     <th style="color: blue">Giới tính</th>
-    <input type="radio" id="nam" name="gioitinh"/> <label for="nam">Nam</label>
-    <input type="radio" id="nu" name="gioitinh" /> <label for="nu">Nữ</label>
+    <td>
+        <input type="radio" id="nam" name="gioitinh"/> <label for="nam">Nam</label><input type="radio" id="nu" name="gioitinh" /> <label for="nu">Nữ</label>
+    </td>
 </tr>
 <br>
 <tr>
-    <th colspan=2 style="color: blue">Địa chỉ</th>
-    <td colspan=2 width="350px"><input type="text" name="birthday"></td>
+    <th style="color: blue">Địa chỉ</th>
+    <td style="width: 400px" ><input type="text" name="birthday"></td>
 </tr>
 <br>
 <tr>
@@ -46,5 +48,6 @@
     <td width="400px"><input type="text" name="Phone"></td>
 </tr>
 </tr>
+</table>
 </body>
 </html>
