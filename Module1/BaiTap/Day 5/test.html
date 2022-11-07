@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<th lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form lấy Survey</title>
+</head>
+
+</body>
+    <form method="get" action="google.com">
+    <h2>Market Research Survey</h2>
+    <h5 style="color: gray">Please take a few moments to complete this satisfaction survey.</h5>
+    <p id="age">What is your age range?</p>
+    <select name="age">
+        <option value="age1">18-24</option>
+        <option value="age2">25-34</option>
+        <option value="age3">35-50</option>
+        <option value="age4">50+</option>
+    </select>
+    <br>
+    <p id="money">What is your yearly income range?</p>
+    <select name="money">
+        <option value="money1">0-50k</option>
+        <option value="money2">50-100k</option>
+        <option value="money3">100-150k</option>
+        <option value="money4">150-200k</option>
+    </select>
+    <p id="gender">Gender Identity</p>
+        <input type="radio" name="gender" id="male"><label for="male">Male</label>
+        <input type="radio" name="gender" id="female"><label for="female">Female</label>
+        <input type="radio" name="gender" id="other"><label for="other">Other</label>
+    <p id="product">Which of the following products have your purchased in the last 2 months. Please check all that apply.</p>
+        <input type="checkbox" id="product1" name="product"><label for="product1">Product 1</label> <br>
+        <input type="checkbox" id="product2" name="product"><label for="product2">Product 2</label> <br>
+        <input type="checkbox" id="product3" name="product"><label for="product3">Product 3</label> <br>
+    <p id="pay">What would you pay for the new product?</p>
+    <table>
+        <tr>
+            <td><input type="text" style="width: 100" name="pay" id="dollar">.</td>
+            <td><input style="width: 50px" type="text" name="pay" id="dollar"> </td>
+        </tr>
+    <br>
+        <tr>
+            <td style="text-align: left">Dollars</td>
+            <td style="text-align: left">Cents</td>
+        </tr>
+    </table>
+    <p>What features would you like to see in the new product:</p> <br>
+    <textarea cols="100px" rows="10px"></textarea>
+        <br>
+    <input type="submit" value="Submit">
+
+
+
+
+</form>
+</body>
+</html>
