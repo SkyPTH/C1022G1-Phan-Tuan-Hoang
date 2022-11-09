@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+<form method="get" action="Chuyen%20doi%20tien%20te.html">
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th></th>
+            <th>From Currency</th>
+            <th></th>
+            <th>To Currency</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th><input type="text" id="amount"></th>
+            <th></th>
+            <th><select id="from">
+                <option value="1">VND</option>
+                <option value="2">USD</option>
+            </select>
+            </th>
+            <th></th>
+            <th><select id="to">
+                <option value="1">VND</option>
+                <option value="2">USD</option>
+            </select>
+            </th>
+            <th></th>
+            <th>
+                <button type="button" onclick="chuyenTien()">nut</button>
+            </th>
+        </tr>
+    </table>
+</form>
+<script>
+    function
+    chuyenTien() {
+        let amount = +document.getElementById("amount").value;
+        let from = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+        if (from == 1) {
+            if (to == 1) {
+                alert("Kết quả là:" + amount + " VND")
+            } else {
+                let x = amount / 23000;
+                alert("Kết quả là:" + x + " USD")
+            }
+        } else {
+            if (to == 1) {
+                let x = amount * 23000;
+                alert("Kết quả là:" + x +" VND")
+            } else {
+                alert("Kết quả là:" + amount +" USD")
+            }
+        }
+    }
+</script>
+</body>
+</html>

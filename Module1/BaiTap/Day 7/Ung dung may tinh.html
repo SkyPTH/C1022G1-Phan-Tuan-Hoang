@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<form method="get" action="Ung%20dung%20may%20tinh.html">
+    <input type="number" id="so1">
+    <input type="number" id="so2">
+    <br> <br>
+    <button type="button" onclick="tinh('cong')" id="1" >Cộng</button>
+    <button type="button" onclick="tinh('tru')" id="2">Trừ</button>
+    <button type="button" onclick="tinh('nhan')" id="3">Nhân</button>
+    <button type="button" onclick="tinh('chia')" id="4">Chia</button>
+</form>
+<script>
+
+    function tinh(dau)
+    {
+        let a= +document.getElementById("so1").value;
+        let b= +document.getElementById("so2").value;
+        if (dau=='cong')
+        {let x= a + b; alert("Đáp án là"+ x);}
+        else if (dau=='tru')
+            {let x= a - b; alert("Đáp án là"+ x);}
+            else if (dau=='nhan')
+                {let x= a*b;alert("Đáp án là"+ x); }
+                else if (dau=='chia') { let x= a/b; alert("Đáp án là"+ x);}
+    }
+
+</script>
+</body>
+</html>
