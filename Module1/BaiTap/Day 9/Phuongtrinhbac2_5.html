@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phương trình bậc 2</title>
+</head>
+<body>
+<script>
+    a=+prompt("Xét phương trình a^2+bx+c=0, nhập số a");
+    b=+prompt("Xét phương trình a^2+bx+c=0, nhập số b");
+    c=+prompt("Xét phương trình a^2+bx+c=0, nhập số c");
+    d=(b*b)-(4*a*c);
+    if(d<0){alert("Phương trình vô nghiệm")}
+    else{if(d==0){x=(-b)/(2*a);alert("Phương trình có nghiệm kép x1 = x2 = "+x)}
+        else{x1=((-b)+Math.sqrt(d))/(2*a);
+            x2=((-b)-Math.sqrt(d))/(2*a);
+            alert("Phương trình có nghiệm x1 = "+x1+"và x2 = "+x2)}
+        }
+</script>
+</body>
+</html>

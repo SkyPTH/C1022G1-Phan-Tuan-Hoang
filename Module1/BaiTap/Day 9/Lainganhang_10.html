@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lãi ngân hàng</title>
+</head>
+<body>
+<script>
+    a=+prompt("Số tiền ban đầu: ");
+    b=+prompt("Số tháng cho vay: ");
+    c=+prompt("Lãi suất hàng tháng(%): ");
+    if (b>6){x=(a*c/100)*b*1.1;alert("Tổng số tiền lãi là: "+x+"triệu đồng")}
+    else {
+        if (b > 0) {
+            x = (a * c / 100) * b;
+            alert("Tổng số tiền lãi là: " + x + "triệu đồng")
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình giá điện</title>
+</head>
+<body>
+<script>
+    x=+prompt("Nhập cấp điện áp(kV): ");
+    z=+prompt("Nhập phân loại khách hàng( 1.Ngành sản xuất. 2.Ngành hành chính sự nghiệp");
+    a=+prompt("Số kWh giờ bình thường");
+    b=+prompt("Số kWh giờ bình thường");
+    c=+prompt("số kWh giờ cao điểm");
+    if(z=1) {if (x > 120){y = 1.536*a + 0.97*b + 2.759*c;alert("Tiền điện là: " + y + "nghìn đồng")}
+            else{if (x > 22) {y = 1.555*a + 1.007*b + 2.871*c;alert("Tiền điện là: " + y + "nghìn đồng")}
+                else{if (x >= 0) {y = 1.685*a + 1.1*b + 3.076*c;alert("Tiền điện là " + y + "nghìn đồng")}
+                    else {alert("Dữ liệu không đúng")}
+                    }
+                }
+            }
+    else
+    {if(z=2){if (x > 120){y = 2.442*a + 1.361*b + 2.759*c;alert("Tiền điện là: " + y + "nghìn đồng")}
+            else{if (x > 22) {y = 1.555*a + 1.007*b + 2.871*c;alert("Tiền điện là: " + y + "nghìn đồng")}
+                else{if (x >= 0) {y = 1.685*a + 1.1*b+ 3.076*c;alert("Tiền điện là " + y + "nghìn đồng")}
+                    else {alert("Dữ liệu không đúng")}
+                    }
+                }
+             }
+    else {alert("Phân loại không đúng")}
+    }
+
+</script>
+</body>
+</html>
