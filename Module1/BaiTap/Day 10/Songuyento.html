@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HIển thị số nguyên tố</title>
+</head>
+<body>
+<script>
+   let number = +prompt("Số lượng số nguyên tố cần hiển thị");
+  let  count = 0;
+  let  chiahet = 0;
+
+    for (let n = 2; count < number; n++) {
+        for (let m = 2; m <= Math.sqrt(n); m++) {
+            if (n % m == 0) {
+                chiahet++
+
+            }
+        }
+        if (chiahet == 0) {
+            alert(n + " là số nguyên tố")
+            count++;
+        }
+        ;
+        chiahet = 0;
+    }
+</script>
+</body>
+</html>
