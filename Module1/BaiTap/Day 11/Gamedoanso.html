@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game đoán số</title>
+</head>
+<body>
+<button onclick="doanso()">Chơi</button>
+
+<script>
+    function doanso() {
+        min = +prompt("Nhập giá trị min: ");
+        max = +prompt("Nhập giá trị max");
+        for (a = 1; a <= 3; a++) {
+            y = +prompt("đoán số: ");
+            x = Math.floor(Math.random() * max) + min;
+            if (x == y) {
+                alert("Chúc mừng");
+                break;
+            } else {
+                if (y > x) {
+                    alert("Lớn hơn")
+                } else {
+                    alert("Nhỏ hơn")
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

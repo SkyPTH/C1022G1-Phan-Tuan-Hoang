@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng 30 số chia hết cho 7</title>
+</head>
+<body>
+<script>
+    tong = 0
+    count = 0;
+    let i = 1;
+    while (count < 30) {
+        if (i % 7 == 0) {
+            count++;
+            tong = tong + i;
+            document.write(i + " ");
+        }
+        i++;
+    }
+    alert("Tổng là: " + tong);
+</script>
+</body>
+</html>
