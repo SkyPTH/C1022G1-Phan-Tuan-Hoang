@@ -6,21 +6,43 @@
 </head>
 <body>
 <script>
-    a=+prompt("Thu nhập tháng (triệu đồng): ");
-    if(a>80){x=a*0.35-9.85;alert("Thuế thu nhập là: "+x+"triệu đồng")}
-    else{if(a>52){x=a*0.3-5.85;alert("Thuế thu nhập là: "+x+"triệu đồng")}
-        else{if(a>32){x=a*0.25-3.25;alert("Thuế thu nhập là: "+x+"triệu đồng")}
-             else{if(a>18){x=a*0.2-1.65;alert("Thuế thu nhập là: "+x+"triệu đồng")}
-                else{if(a>10){x=a*0.15-0.75;alert("Thuế thu nhập là: "+x+"triệu đồng")}
-                    else{if(a>5){x=a*0.1-0.25;alert("Thuế thu nhập là: "+x+"triệu đồng")}
-                        else{if(a>=0){x=a*0.05;alert("Thuế thu nhập là: "+x+"triệu đồng")}
-                            else{alert("Số không hợp lệ")}
+    a = +prompt("Thu nhập tháng (triệu đồng): ");
+    if (a > 80) {
+        x = a * 0.35 - 9.85;
+        alert("Thuế thu nhập là: " + x + "triệu đồng")
+    } else {
+        if (a > 52) {
+            x = a * 0.3 - 5.85;
+            alert("Thuế thu nhập là: " + x + "triệu đồng")
+        } else {
+            if (a > 32) {
+                x = a * 0.25 - 3.25;
+                alert("Thuế thu nhập là: " + x + "triệu đồng")
+            } else {
+                if (a > 18) {
+                    x = a * 0.2 - 1.65;
+                    alert("Thuế thu nhập là: " + x + "triệu đồng")
+                } else {
+                    if (a > 10) {
+                        x = a * 0.15 - 0.75;
+                        alert("Thuế thu nhập là: " + x + "triệu đồng")
+                    } else {
+                        if (a > 5) {
+                            x = a * 0.1 - 0.25;
+                            alert("Thuế thu nhập là: " + x + "triệu đồng")
+                        } else {
+                            if (a >= 0) {
+                                x = a * 0.05;
+                                alert("Thuế thu nhập là: " + x + "triệu đồng")
+                            } else {
+                                alert("Số không hợp lệ")
                             }
                         }
                     }
                 }
             }
         }
+    }
 </script>
 </body>
 </html>
