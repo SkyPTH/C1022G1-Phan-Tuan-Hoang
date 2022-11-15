@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xóa V</title>
+</head>
+<body>
+<script>
+    let a = [];
+    for (let i = 1; i <= 10; i++) {
+        let giatri = +prompt("Nhập giá trị thứ " + i + ": ");
+        a.push(giatri);
+    }
+    v=+prompt("Nhập số nguyên V");
+    if(a.indexOf(v)!=-1){ for(let x=a.indexOf(v);x<9;x++){a[x]=a[x+1]};a[10]=0}
+    document.write("Mảng a mới có giá trị là: "+a)
+</script>
+</body>
+</html>

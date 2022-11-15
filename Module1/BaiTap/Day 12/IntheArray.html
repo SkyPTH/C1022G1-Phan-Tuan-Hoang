@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In the Array</title>
+</head>
+<body>
+<script>
+    let a = [];
+    for (let i = 1; i <= 10; i++) {
+        let giatri = +prompt("Nhập giá trị thứ " + i + ": ");
+        a.push(giatri);
+    }
+    v = +prompt("Nhập số nguyên V");
+    if (a.indexOf(v) == -1) {
+        document.write(v + " is not in the array")
+    } else {
+        document.write(v + " is in the array")
+    }
+</script>
+</body>
+</html>
