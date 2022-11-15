@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chèn ký tự vào số</title>
+</head>
+<body>
+<script>
+
+    let a = prompt("Nhập vào 1 số");
+    let b = [];
+    for (let i = 1; i <= a.length; i++) {
+        if (a[i - 1] % 2 == 0 && a[i] % 2 == 0) {
+            b.push(a[i - 1] + "-")
+        } else {
+            b.push(a[i - 1])
+        }
+    }
+    alert(b);
+
+
+</script>
+</body>
+</html>

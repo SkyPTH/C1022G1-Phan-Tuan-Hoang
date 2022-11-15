@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhập số lượng số cần nhập");
+    let x = [];
+    for (let b = 1; b <= a; b++) {
+        c = +prompt("Nhập số thứ: " + b);
+        x.push(c)
+    }
+    ;
+    let first = 0;
+    let last = x.length - 1;
+    while (first < last) {
+        let y = x[first];
+        x[first] = x[last];
+        x[last] = y;
+        first++;
+        last--;
+    }
+    document.write(x);
+    alert(x);
+</script>
+</body>
+</html>

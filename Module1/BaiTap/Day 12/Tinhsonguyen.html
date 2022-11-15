@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính số nguyên</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let count = 0;
+    for (let i = 1; i <= 10; i++) {
+        let giatri = +prompt("Nhập giá trị thứ " + i + ": ");
+        a.push(giatri);
+        if (giatri >= 10) {
+            count++
+        }
+    }
+    ;
+    alert("Có " + count + " số lớn hơn hoặc bằng 10");
+
+</script>
+</body>
+</html>
