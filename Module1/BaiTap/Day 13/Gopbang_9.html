@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gộp bảng</title>
+</head>
+<body>
+<script>
+    let a = [];
+    for (let i = 1; i <= 10; i++) {
+        let giatri = +prompt("Nhập giá trị thứ " + i + " của mảng a: ");
+        a.push(giatri);
+    }
+    let b = [];
+    for (let j = 1; j <= 10; j++) {
+        let giatri = +prompt("Nhập giá trị thứ " + j + " của mảng b: ");
+        b.push(giatri);
+    }
+    let c = [];
+    for (let k = 0; k < 20; k++) {
+        if (k < 10) {
+            c[k] = a[k]
+        } else {
+            c[k] = b[k - 10]
+        }
+    }
+    document.write("Mảng C có giá trị là " + c)
+
+</script>
+</body>
+</html>
