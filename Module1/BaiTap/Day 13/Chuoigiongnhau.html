@@ -8,9 +8,10 @@
 <script>
     a = prompt("Nhập chuỗi 1: ");
     b = prompt("Nhập chuỗi 2: ");
-    a.split(" ");
-    b.split(" ");
+    a.split("");
+    b.split("");
     let flag = true;
+    if(a.length!=b.length){flag=false}
     for (i = 0; i < a.length; i++) {
         if (a[i] === b[i]){}else
         {
@@ -18,7 +19,7 @@
             break;
         }
     }
-    if(flag=true){alert("2 chuỗi giống nhau")} else {alert("2 chuỗi khác nhau");}
+    if(flag==true){alert("2 chuỗi giống nhau")} else {alert("2 chuỗi khác nhau");}
 
 </script>
 </body>
