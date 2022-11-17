@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi chỗ</title>
+</head>
+<body>
+<script>
+    let x=+prompt("Nhập số a");
+    let y=+prompt("Nhập số b")
+    function doicho(a,b) {
+        let c = a;
+        a = b;
+        b = c;
+        alert("Số a và b hiện tại lần lượt là: "+a+" và "+b)
+
+    }
+    doicho(x,y);
+</script>
+</body>
+</html>
