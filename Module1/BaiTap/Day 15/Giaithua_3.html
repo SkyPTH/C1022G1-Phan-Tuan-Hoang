@@ -6,17 +6,25 @@
 </head>
 <body>
 <script>
-    function giaithua(a) { a = +prompt("Nhập số nguyên dương a: ");
-    if(a>0 && a%1==0) {
-        b = 1;
-        tich = 1;
-        while (b < a) {
-            b++;
-            tich = tich * b;
+    function giaithua(a) {
+        a = +prompt("Nhập số nguyên dương a: ");
+        if (a > 0 && a % 1 == 0) {
+            b = 1;
+            tich = 1;
+            while (b < a) {
+                b++;
+                tich = tich * b;
+            }
+            document.write("a giai thừa là :" + tich);
+        } else {
+            if (a % 1 != 0) {
+                document.write("Không phải số nguyên")
+            } else {
+                document.write("Số âm không có giai thừa")
+            }
         }
-        document.write("a giai thừa là :" + tich);
-    } else{if(a%1!=0){document.write("Không phải số nguyên")} else {document.write("Số âm không có giai thừa")}}
     }
+
     giaithua();
 </script>
 </body>
