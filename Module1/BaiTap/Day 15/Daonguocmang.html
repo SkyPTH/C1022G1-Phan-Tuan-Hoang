@@ -6,12 +6,28 @@
 </head>
 <body>
 <script>
-    let a=[];
-    function daonguocmang(b) {x=+prompt("Nhập số phần tử trong mảng")
-        for(let i=0;i<x;i++)(b[i]=prompt("Nhập phần tử thứ "+(i+1)+" trong mảng: "));
-        document.write("Mảng a đảo ngược là: " + b.reverse())
+    let a = [];
+
+    function daonguocmang(b) {
+        x = +prompt("Nhập số phần tử trong mảng")
+        for (let i = 0; i < x; i++) {
+            b[i] = prompt("Nhập phần tử thứ " + (i + 1) + " trong mảng: ")
+        }
+        ;
+        let first = 0;
+        let last = b.length - 1;
+        while (first < last) {
+            let y = b[first];
+            b[first] = b[last];
+            b[last] = y;
+            first++;
+            last--;
+        }
+
+        return document.write("Mảng a đảo ngược là: " + b)
 
     }
+
     daonguocmang(a);
 
 </script>

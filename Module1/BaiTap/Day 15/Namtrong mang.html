@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nằm trong mảng</title>
+</head>
+<body>
+<script>
+    let a = [];
+
+    function namtrongmang(b) {
+        let x = +prompt("Nhập số phần tử trong mảng")
+        for (let i = 0; i < x; i++) {
+            b[i] = +prompt("Nhập phần tử thứ " + (i + 1) + " trong mảng: ")
+        }
+        ;
+        let y = +prompt("Nhập số cần tìm: ");
+        let count = 0;
+        for (j = 0; j < x; j++) {
+            if (b[j] == y) {
+                count = count + 1
+            }
+        }
+        return count;
+    }
+
+    let count2 = namtrongmang(a);
+
+    if (count2 == 0) {
+        alert("Không có số cần tìm")
+    } else {
+        alert("Số lượng của số cần tìm là: " + count2)
+    }
+
+</script>
+</body>
+</html>
