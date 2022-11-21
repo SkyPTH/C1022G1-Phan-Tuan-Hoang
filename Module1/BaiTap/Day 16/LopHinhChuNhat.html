@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp hình chữ nhật</title>
+</head>
+<body>
+<p id="dienTich"></p>
+<p id="chuVi"></p>
+    <canvas id="myCanvas" >
+<script>
+    class Rectangle {
+        constructor(length, width) {
+            this.length = length;
+            this.width = width;
+        }
+        area() {
+            return this.length * this.width;
+        }
+
+        perimeter() {
+            return (this.length + this.width) * 2;
+        }
+    }
+    let rectangleObj = new Rectangle(length = +prompt("Nhập chiều dài hình chữ nhật: "), width = +prompt("Nhập chiều rộng hình chữ nhật: "));
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.moveTo(0, 0);
+    ctx.lineTo(rectangleObj.length, 0);
+    ctx.lineTo(rectangleObj.length, rectangleObj.width);
+    ctx.lineTo(0, rectangleObj.width);
+    ctx.lineTo(0, 0);
+    ctx.stroke();
+
+    document.getElementById("dienTich").innerHTML = "Diện tích hình chữ nhật là: " + rectangleObj.area() + "cm2"+ "<br>";
+    document.getElementById("chuVi").innerHTML= "Chu vi hình chữ nhật là: " + rectangleObj.perimeter() + " cm"+ "<br>";
+
+</script>
+</body>
+</html>
