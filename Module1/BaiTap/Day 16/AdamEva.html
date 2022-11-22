@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam và Eva</title>
+</head>
+<body>
+<script>
+    class apple {
+        constructor(weight) {
+            this.weight = weight
+        };
+
+
+        isEmpty() {
+            if (this.weight == 0) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        decrease() {
+            return this.weight -= 1
+        }
+    }
+
+    let appleObj = new apple(10);
+
+    class huMan {
+        constructor(name, weight, gender) {
+            this.name = name;
+            this.weight = weight;
+            this.gender = gender;
+        }
+
+        checkApple(appleObj) {
+            if (appleObj.isEmpty() == true) {
+                return "het";
+            }
+
+        }
+
+        speak() {
+            if(this.gender == "male") { document.write(this.name + " nói: Đến lượt anh ăn" +"<br>")} else {document.write(this.name + " nói: Đến lượt em ăn"+"<br>")}
+        }
+
+        eat() {
+            document.write(this.name + " ăn 1 miếng" + "<br>")
+        }
+
+
+        getWeight() {
+            this.weight += 1;
+            return this.weight;
+        }
+    }
+    let aDam = new huMan("Adam", 65, "male");
+    let eVa = new huMan("Eva", 50, "female");
+
+    while (appleObj.isEmpty() == false) {
+
+        aDam.speak();
+        aDam.eat();
+        document.writeln("Khối lượng của quả táo là: " + appleObj.decrease()+" đơn vị"+"<br>");
+        document.writeln("Khối lượng của Adam là: " + aDam.getWeight()+" đơn vị"+"<br>");
+        if (eVa.checkApple(appleObj) == "het") {
+            break;
+        }
+        eVa.speak();
+        eVa.eat();
+        document.writeln("Khối lượng của quả táo là: " + appleObj.decrease()+" đơn vị"+"<br>")
+        document.writeln("Khối lượng của Eva là: " + eVa.getWeight()+" đơn vị"+"<br>")
+        if (aDam.checkApple(appleObj) == "het") {  document.write(aDam.name + " thấy táo đã hết ");
+            break;
+        }
+    }
+
+
+</script>
+</body>
+</html>
