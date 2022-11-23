@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Công tắc đèn</title>
+</head>
+<body>
+<script>
+    class Lamp {
+        constructor(status) {
+            this.status = status;
+        }
+
+        turnOn() {
+            this.status = "on"
+        }
+
+        turnOff() {
+            this.status = "off"
+        }
+    }
+
+    let lampObj = new Lamp("off");
+
+    class SwitchButton {
+        constructor(status) {
+            this.status = status;
+            this.lamp = null;
+        }
+
+        switchOn() {
+            this.status = "on";
+            this.lamp.turnOn();
+        };
+
+        switchOff() {
+            this.status = "off";
+            this.lamp.turnOff();
+        };
+
+        connect(lamp) {
+            this.lamp = lamp;
+        }
+    }
+
+    let buttonObj = new SwitchButton("off");
+    buttonObj.connect(lampObj);
+    for (let i = 1; i <= 10; i++) {
+        buttonObj.switchOn();
+        document.write("Trạng thái nút bật là: " + buttonObj.status + "<br>");
+        document.write("Đèn đang ở chế độ: " + lampObj.status + "<br>");
+        buttonObj.switchOff();
+        document.write("Trạng thái nút bật là: " + buttonObj.status + "<br>");
+        document.write("Đèn đang ở chế độ: " + lampObj.status + "<br>");
+    }
+
+</script>
+</body>
+</html>
