@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng số nguyên</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let b = [];
+    let sum = 0;
+    n = +prompt("Nhập số phần tử trong mảng a: ");
+    for (let i = 0; i < n ; i++) {
+        a[i] = +prompt("Nhập phần tử thứ " + (i + 1) + " của mảng a: ");
+        sum=sum+a[i];
+        b[i] = sum ;
+    }
+    alert("Mảng b là: ["+b+"]");
+
+</script>
+</body>
+</html>

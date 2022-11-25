@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập số phần tử trong mảng a: ");
+    let m = +prompt("Nhập số phần tử trong mảng b: ");
+    let missingValue = [];
+    let a = [];
+    let b = [];
+    for (let i = 0; i < n; i++) {
+        a[i] = +prompt("Nhập phần tử thứ " + (i + 1) + " của mảng a: ");
+    }
+    for (let i = 0; i < m; i++) {
+        b[i] = +prompt("Nhập phần tử thứ " + (i + 1) + " của mảng b: ");
+        if (a.indexOf(b[i]) == -1) {
+            missingValue.push(b[i])
+        }
+        ;
+    }
+    alert("Mảng chứa các phần tử trong mảng b nhưng không xuất hiện trong mảng a là: missingValue(a,b)=[" + missingValue + "]")
+
+</script>
+
+</body>
+</html>

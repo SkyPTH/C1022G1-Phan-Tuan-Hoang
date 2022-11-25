@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lương</title>
+</head>
+<body>
+<script>
+    let x;
+    do{x = +prompt("Nhập tiền lương nhân viên (triệu đồng): ")} while (x<0)
+    let y;
+    if (x > 15) {
+         y = x * 0.2
+    } else {
+        if (x >= 7) {
+            y = 0.1 * x
+        } else {
+            y = 0.05 * x
+    } }
+    ;
+    alert("Thuế thu nhập của nhân viên là: " + y + " triệu đồng và lương ròng là: " + (x - y) + " triệu đồng");
+
+</script>
+</body>
+</html>
