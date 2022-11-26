@@ -6,12 +6,34 @@
 </head>
 <body>
 <script>
-    let x=prompt("Nhập chuỗi");
-    x.split(" ");
-    document.write(x);
-    x[0].toUpperCase();
-    // for(let i=0;i<x.length;i++){if(x[i]=" "){x[i+1].toUpperCase()} else {x[i+1].toLowerCase()}}
-    document.write(x)
+    let x = prompt("Nhập chuỗi");
+    let arrStr = x.toLowerCase().split(" ");
+    let arr2 = [];
+    let lengthMax = 0;
+    for (let i = 0; i < arrStr.length - 1; i++) {
+        if (arrStr[i] == "" && arrStr[i + 1] == "") {
+
+            arrStr.splice(i, 1);
+            i--;
+        }
+    }
+
+    for (let j = 0; j < arrStr.length; j++) {
+
+        if (arrStr[j] != "") {
+            arr2 = arrStr[j].split("");
+            alert(arr2);
+            if (lengthMax < arr2.length) {
+                lengthMax = arr2.length
+            }
+            arr2[0] = arr2[0].toUpperCase();
+            arrStr[j] = arr2.join("");
+        }
+    }
+
+    arrStr = arrStr.join(" ");
+    document.write("Chuỗi ký tự sau khi chuẩn hóa là: " + arrStr + " và từ có độ dài lớn nhất là: " + lengthMax);
+
 </script>
 </body>
 </html>

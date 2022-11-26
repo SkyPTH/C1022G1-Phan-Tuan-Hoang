@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function lonnho() {
+        let arr = [];
+        let x = +prompt("Nhập số cột trong mảng");
+        let y = +prompt("Nhập số hàng trong mảng");
+        let max;
+        let min;
+        for (let i = 0; i < x; i++) {
+            let b = [];
+            arr.push(b);
+            for (let j = 0; j < y; j++) {
+                b[j] = +prompt("Nhập số ở hàng " + (i + 1) + "và cột " + (j + 1));
+                if (i == 0 && j == 0) {
+                    max = b[j];
+                    min = b[j];
+                }
+
+                if (b[j] > max) {
+                    max = b[j];
+                }
+                if (b[j] < min) {
+                    min = b[j];
+                }
+            }
+        }
+        document.write("Số lớn nhất trong mảng là: " + max + " và số nhỏ nhất là: " + min);
+    }
+
+    lonnho();
+
+
+</script>
+</body>
+</html>

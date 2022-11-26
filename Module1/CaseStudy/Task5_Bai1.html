@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+function tongsochan() {
+    let arr = [];
+    let x = +prompt("Nhập số cột trong mảng");
+    let y = +prompt("Nhập số hàng trong mảng");
+    let sum = 0;
+    for (let i = 0; i < x; i++) {
+        let b = [];
+        arr.push(b);
+        for (let j = 0; j < y; j++) {
+            b[j] = +prompt("Nhập số ở hàng " + (i + 1) + "và cột " + (j + 1));
+            if (b[j] % 2 == 0) {
+                sum = sum + b[j]
+            }
+        }
+    }
+    document.write("Tổng các số chẵn trong mảng 2 chiều là: " + sum);
+}
+tongsochan();
+
+
+</script>
+</body>
+</html>

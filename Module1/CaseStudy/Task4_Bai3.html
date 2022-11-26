@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x = prompt("Nhập chuỗi kí tự thứ nhất");
+    let y = prompt("Nhập chuỗi kí tự thứ hai");
+    let Arr1 = x.split("");
+    let Arr2 = y.split("");
+    let count = 0;
+    for (let i = 0; i < Arr1.length; i++) {
+        for (let j = 0; j < Arr2.length; j++) {
+            if (Arr1[i] == Arr2[j]) {
+                count = count + 1;
+                Arr1.splice(i, 1);
+                Arr2.splice(j, 1);
+                i--; j--;
+            }
+
+        }
+    }
+    document.write("Số lượng kí tự chung của 2 chuỗi: "+count)
+</script>
+</body>
+</html>

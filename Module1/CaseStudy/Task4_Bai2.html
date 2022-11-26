@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x = prompt("Nhập xâu kí tự");
+    let Arr = x.split("");
+
+    for (let i = 0; i < Arr.length; i++) {
+        for (let j = 1; j < Arr.length; j++) {
+            if (Arr[i] == Arr[j] && i!=j ) {
+                Arr.splice(j , 1);
+            }
+        }
+    }
+
+    document.write("Số lượng kí tự khác nhau trong xâu kí tự là: "+ Arr.length);
+</script>
+</body>
+</html>

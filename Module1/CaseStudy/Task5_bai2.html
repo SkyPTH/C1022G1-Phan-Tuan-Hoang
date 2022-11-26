@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function songuyento() {
+        let arr = [];
+        let arrSNT = [];
+        let x = +prompt("Nhập số cột trong mảng");
+        let y = +prompt("Nhập số hàng trong mảng");
+        let sum = 0;
+
+        for (let i = 0; i < x; i++) {
+            let b = [];
+            arr.push(b);
+            for (let j = 0; j < y; j++) {
+                b[j] = +prompt("Nhập số ở hàng " + (i + 1) + "và cột " + (j + 1));
+                let count = 0;
+                for (let k = 1; k < b[j]; k++) {
+
+                    if (b[j] % k == 0) {
+                        count = count + 1;
+                    }
+                }
+                if (count == 1) {
+                    arrSNT.push(b[j])
+
+                }
+            }
+        }
+        document.write("Số lượng số nguyên tố trong mảng là "+arrSNT.length);
+    }
+
+    songuyento();
+</script>
+</body>
+</html>
