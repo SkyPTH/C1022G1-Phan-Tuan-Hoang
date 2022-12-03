@@ -12,13 +12,15 @@
     let max = h;
     for (let i = 1; i <= h; i++) {
         for (let j = 1; j <= x; j++) {
-            if (j >= min && j <= max) {
-                document.write("*")
+            if (j >= min && j <= h) {
+                document.write(i + j - h+"&nbsp"+"&nbsp");
+            } else if (j <= max && j > h) {
+                document.write(i - j + h+"&nbsp"+"&nbsp");
             } else {
-                document.write("&nbsp" + "&nbsp")
+                document.write("&nbsp" + "&nbsp"+"&nbsp"+"&nbsp")
             }
         }
-        document.write( "<br>");
+        document.write("<br>");
         min--;
         max++;
     }

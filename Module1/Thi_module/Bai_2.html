@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function SoHoanHao(x) {
+        if (x % 1 == 0 && x > 0) {
+            let flag = false;
+            let sum = 0;
+            for (i = 1; i < x; i++) {
+                if (x % i == 0) {
+                    sum = sum + i;
+                }
+            }
+            if (sum == x) {
+                flag = true;
+            }
+            return flag;
+        } else {
+            document.write("Không phải là số nguyên dương");
+        }
+    }
+    y = +prompt("Nhập vào 1 số nguyên dương");
+    document.write(SoHoanHao(y));
+</script>
+</body>
+</html>

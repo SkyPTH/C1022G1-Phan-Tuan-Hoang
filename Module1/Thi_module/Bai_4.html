@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 align="center">Quản lý công nhân</h2>
+
+<script>
+    class congNhan {
+        constructor(name, birth, add, salary, position) {
+            this.name = name;
+            this.birth = birth;
+            this.add = add;
+            this.salary = salary;
+            this.position = position;
+        }
+    }
+
+    let congNhan1 = new congNhan("Trương Tấn A", "11-11-1997", "Quảng Nam", 2000, "Abc");
+    let congNhan2 = new congNhan("Trương Tấn B", "11-11-1998", "Đà Nẵng", 2000, "Abc");
+    let congNhan3 = new congNhan("Trương Tấn C", "11-11-1999", "Huế", 2000, "Abc");
+
+    let bang;
+    bang = "<table border='2' width='700' align='center' >"
+    bang = bang + "<tr>";
+    bang = bang + "<td>" + "STT" + "</td>";
+    bang = bang + "<td>" + "Họ và tên" + "</td>";
+    bang = bang + "<td>" + "Ngày sinh" + "</td>";
+    bang = bang + "<td>" + "Địa chỉ" + "</td>";
+    bang = bang + "<td>" + "Lương" + "</td>";
+    bang = bang + "<td>" + "Chức vụ" + "</td>";
+    bang = bang + "</tr>";
+    bang = bang + "<tr>";
+    bang = bang + "<td>" + 1 + "</td>";
+    bang = bang + "<td>" + congNhan1.name + "</td>";
+    bang = bang + "<td>" + congNhan1.birth + "</td>";
+    bang = bang + "<td>" + congNhan1.add + "</td>";
+    bang = bang + "<td>" + congNhan1.salary + "</td>";
+    bang = bang + "<td>" + congNhan1.position + "</td>";
+    bang = bang + "</tr>";
+    bang = bang + "<tr>";
+    bang = bang + "<td>" + 2 + "</td>";
+    bang = bang + "<td>" + congNhan2.name + "</td>";
+    bang = bang + "<td>" + congNhan2.birth + "</td>";
+    bang = bang + "<td>" + congNhan2.add + "</td>";
+    bang = bang + "<td>" + congNhan2.salary + "</td>";
+    bang = bang + "<td>" + congNhan2.position + "</td>";
+    bang = bang + "</tr>";
+    bang = bang + "<tr>";
+    bang = bang + "<td>" + 3 + "</td>";
+    bang = bang + "<td>" + congNhan3.name + "</td>";
+    bang = bang + "<td>" + congNhan3.birth + "</td>";
+    bang = bang + "<td>" + congNhan3.add + "</td>";
+    bang = bang + "<td>" + congNhan3.salary + "</td>";
+    bang = bang + "<td>" + congNhan3.position + "</td>";
+    bang = bang + "</tr>";
+    bang = bang + "<tr>";
+    bang = bang + "</tr>";
+    document.write(bang);
+</script>
+</body>
+</html>

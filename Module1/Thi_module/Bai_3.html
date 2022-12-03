@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function ngayThangNam(x, y) {
+        switch (x) {
+            case "01":
+            case "03":
+            case "05":
+            case "07":
+            case "08":
+            case "10":
+            case "12":
+                return 31;
+                break;
+            case "04":
+            case "06":
+            case "09":
+            case "11":
+                return 30;
+                break;
+            case "02":
+                if (y % 4 == 0) {
+                    return 29;
+                } else {
+                    return 28;
+                }
+            default:
+                return "Không tồn tại";
+        }
+
+    }
+
+    let a = prompt("Nhập tháng (MM)");
+    let b = prompt("Nhập năm (YYYY)");
+    let x = a.split("");
+    let y = b.split("");
+    if (x.length == 2 && y.length == 4) {
+
+        document.write("Số ngày trong tháng " + a + "/" + b + " là: " + ngayThangNam(a, b));
+    } else {
+        alert("Sai định dạng ngày tháng (MM/YYYY)");
+    }
+</script>
+</body>
+</html>

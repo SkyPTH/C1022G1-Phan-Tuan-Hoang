@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let avg;
+    let sum = 0;
+    let count = 0;
+    for (let i = 0; i < 2; i++) {
+        let x = +prompt("Nhập phần tử số nguyên vào mảng");
+        if (x % 1 != 0) {
+            alert("Không phải số nguyên");
+            break;
+        }
+        a.push(x);
+        if (x % 3 == 0) {
+            sum = sum + x;
+            count = count + 1;
+        }
+    }
+    avg = sum / count;
+    document.write("Mảng là: " + a);
+    document.write("Trung bình cộng các số trong mảng chia hết cho 3 là: " + avg);
+</script>
+</body>
+</html>

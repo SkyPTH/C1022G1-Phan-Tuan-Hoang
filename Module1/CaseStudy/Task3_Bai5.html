@@ -6,11 +6,11 @@
 </head>
 <body>
 <script>
-    let bill=0;
-    let b =1;
+    let bill = 0;
+
     let c;
     let a = ["Cafe", "Cam vắt", "Nước ép cà rốt", "Nước ép cà chua", "Nước lọc", "Nước dừa"];
-    while (b > 0 && b < 7) {
+    do {
         b = +prompt("Nhập lựa chọn của bạn(1 (cafe), 2 (cam vắt), 3(nước ép cà rốt), 4(nước ép cà chua), 5(nước lọc), 6(nước dừa), 7(thoát gọi món)): ");
         switch (b) {
             case 1:
@@ -39,10 +39,13 @@
                 break;
             case 7:
                 break;
-            default: {alert("Lựa chọn không đúng");}
+            default: {
+                alert("Lựa chọn không đúng");
+            }
         }
     }
-    alert("Giá tiền thanh toán: "+ bill+ " đồng")
+    while (b > 0 && b < 7)
+    alert("Giá tiền thanh toán: " + bill + " đồng")
 </script>
 </body>
 </html>
