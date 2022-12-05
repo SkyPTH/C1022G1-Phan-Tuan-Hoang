@@ -1,4 +1,4 @@
-package BaiTap.day_2;
+package BaiTap.day_2.VeHinh;
 
 import java.util.Scanner;
 
