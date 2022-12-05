@@ -1,3 +1,5 @@
+package BaiTap.day_1;
+
 import java.util.Scanner;
 
 public class Docso_2 {

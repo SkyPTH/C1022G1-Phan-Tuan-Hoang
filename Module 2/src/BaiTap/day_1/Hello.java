@@ -1,3 +1,5 @@
+package BaiTap.day_1;
+
 import java.util.Scanner;
 
 public class Hello
@@ -7,6 +9,6 @@ public class Hello
         System.out.println("Enter your name: ");
         String name = scanner.nextLine();
 
-        System.out.println("Hello: " + name);
+        System.out.println("BaiTap.day_1.Hello: " + name);
     }
 }
