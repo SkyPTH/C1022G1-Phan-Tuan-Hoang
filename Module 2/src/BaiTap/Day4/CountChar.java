@@ -1,6 +1,5 @@
 package BaiTap.Day4;
 
-import javax.swing.text.AttributeSet;
 import java.util.Scanner;
 
 public class CountChar {
@@ -17,5 +16,26 @@ public class CountChar {
             }
         }
         System.out.println(count);
+    }
+
+    public static class Fan {
+        final int slow = 1;
+        final int medium = 2;
+        final int fast = 3;
+        private int speed;
+        private boolean on;
+        private double radius;
+        private String color;
+
+        public Fan() {
+            this(1, false, 5, "blue");
+        }
+
+        public Fan(int speed, boolean on, double radius, String color) {
+            this.speed = speed;
+            this.on = on;
+            this.radius = radius;
+            this.color = color;
+        }
     }
 }
