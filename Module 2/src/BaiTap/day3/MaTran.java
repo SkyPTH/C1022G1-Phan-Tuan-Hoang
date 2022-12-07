@@ -13,7 +13,7 @@ public class MaTran {
         float[][] Array = new float[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                System.out.println("Nhập phần tử ma trận tại hàng " + (i + 1) + " cột " + (j + 1) + ": ");
+                System.out.println("Nhập phần tử ma trận tại hàng " + i + " cột " + j  + ": ");
                 Array[i][j] = scanner.nextFloat();
             }
         }
