@@ -1,9 +1,9 @@
 package BaiTap.Day5;
 
  public class Fan {
-    final int slow = 1;
-    final int medium = 2;
-    final int fast = 3;
+    final int SLOW = 1;
+    final int MEDIUM = 2;
+    final int FAST = 3;
     private int speed;
     private boolean on;
     private double radius;
@@ -19,13 +19,13 @@ package BaiTap.Day5;
     }
 
      public int getSlow() {
-         return slow;
+         return SLOW;
      }
      public int getMedium() {
-         return medium;
+         return MEDIUM;
      }
      public int getFast() {
-         return fast;
+         return FAST;
      }
      public int getSpeed() {
          return speed;

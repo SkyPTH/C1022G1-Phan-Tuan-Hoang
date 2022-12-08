@@ -36,19 +36,8 @@ public class test {
         for (int a = 0; a < arr.length; a++) {
             for (int b = 0; b < arr2.length; b++) {
                 if (arr[a] == arr2[b] && arr[a] != 0) {
-                    System.out.println(arr[a]);
+                    System.out.println(Arrays.toString(arr));
                 }
-
             }
         }
-    }
-}
-
-
-
-
-
-
-
-
-
+    }}
