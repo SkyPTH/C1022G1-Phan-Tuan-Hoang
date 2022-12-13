@@ -1,6 +1,6 @@
 package BaiTap.Day8.Resiable;
 
-public class Square extends Shape implements Resiable {
+public class Square extends Shape  {
     private double x;
 
     public Square() {
@@ -20,8 +20,8 @@ public class Square extends Shape implements Resiable {
 
     public double resize(double percent) {
         super.resize(percent);
-        double area = Math.pow(this.getX(), 2) + Math.pow(this.getX(), 2) * percent / 100;
-        return area;
+        public void getArea(){
+            System.out.println(Math.pow(this.getX(), 2) + Math.pow(this.getX(), 2) * percent / 100);}
     }
 
     @Override

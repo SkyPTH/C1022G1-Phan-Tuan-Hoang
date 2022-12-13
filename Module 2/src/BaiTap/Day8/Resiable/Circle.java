@@ -1,6 +1,6 @@
 package BaiTap.Day8.Resiable;
 
-public class Circle extends Shape implements Resiable {
+public class Circle extends Shape  {
     private double r;
 
     public Circle() {

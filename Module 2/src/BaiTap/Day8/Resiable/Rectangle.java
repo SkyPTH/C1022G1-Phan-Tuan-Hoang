@@ -1,6 +1,6 @@
 package BaiTap.Day8.Resiable;
 
-public class Rectangle extends Shape implements Resiable {
+public class Rectangle extends Shape {
     private double a;
     private double b;
     double area = this.getA() * this.getB();
