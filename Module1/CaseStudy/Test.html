@@ -6,37 +6,52 @@
 </head>
 <body>
 <script>
-    // let x = prompt("Nhập tham số");
+    // // let x = prompt("Nhập tham số");
+    // //
+    // //     let y = x.split("");
+    // //     // console.log(y.splice(1,2))
+    // // console.log(y.slice(1,2))
+    // //     // if (y.length == 4) {
+    // //     //     let max;
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
     //
-    //     let y = x.split("");
-    //     // console.log(y.splice(1,2))
-    // console.log(y.slice(1,2))
-    //     // if (y.length == 4) {
-    //     //     let max;
-    const fruits = ["Banana", "Orange", "Apple", "Mango"];
-
-    // At position 2, add 2 elements:
-    console.log(fruits.splice(1,2));
-    console.log(fruits)
-
-
-    //             if (y.splice(i, 1) > max) {
-    //                 console.log(y.splice(i,1))
-    //                 max = y.splice(i, 1)
-    //             }
+    // // At position 2, add 2 elements:
+    // console.log(fruits.splice(1,2));
+    // console.log(fruits)
     //
-    //         }
-    //         document.write(max);
-    //         document.write(y)
     //
-    //     } else {
-    //         y = -1;
-    //         document.write(y)
-    //     }
-    // } else {
-    //     alert(" khong là số")
-    // }
+    // //             if (y.splice(i, 1) > max) {
+    // //                 console.log(y.splice(i,1))
+    // //                 max = y.splice(i, 1)
+    // //             }
+    // //
+    // //         }
+    // //         document.write(max);
+    // //         document.write(y)
+    // //
+    // //     } else {
+    // //         y = -1;
+    // //         document.write(y)
+    // //     }
+    // // } else {
+    // //     alert(" khong là số")
+    // // }
 
+    let numb = +prompt("Nhập độ dài")
+    let arr = [];
+    let flag=false;
+    for(let i=0; i<numb;i++){
+        arr[i] = +prompt("Nhập các phần tử ")
+    }
+    let numbV = +prompt("Nhập số V")
+    for(let i=0; i<arr.length;i++){
+        if(arr[i]==numbV){
+           document.write("V có");
+           flag=true;
+           break;
+        }
+    }
+    if (flag==false){document.write("đéo có")}
 
 
 </script>
