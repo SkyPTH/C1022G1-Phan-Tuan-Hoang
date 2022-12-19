@@ -74,7 +74,7 @@ public class ProductRepository implements IProductRepository{
 
     }
     public void containSearch(String charSequence){
-        for(int i=0;i<productList.size();i++){if(productList.get(i).getName().contains(charSequence)==true){
-            System.out.println("Sản phẩm bạn cần tìm là " +  productList);
+        for(Product product: productList){if(product.getName().contains(charSequence)==true){
+            System.out.println("Sản phẩm bạn cần tìm là " +  product);
     }
 }}}
