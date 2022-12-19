@@ -41,4 +41,5 @@ public class ProductService implements IProductService {
     public void sortDescending() {
         repository.sortDescending();
     }
+    public void containSearch(String charSequence){repository.containSearch(charSequence);};
 }

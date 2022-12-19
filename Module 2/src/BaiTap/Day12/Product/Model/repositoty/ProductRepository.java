@@ -7,15 +7,19 @@ import java.util.Collections;
 import java.util.List;
 
 public class ProductRepository implements IProductRepository{
-    public static List<Product> productList = new ArrayList<>();
-
-    Product product1 = new Product(1, "IphoneX", 5000000);
-    Product product3 = new Product(3, "Iphone12", 12000000);
-    Product product2 = new Product(2, "Iphone11", 8000000);
-    public ProductRepository(){
+    private static List<Product> productList = new ArrayList<>();
+    static {
+        Product product1 = new Product(1, "IphoneX", 5000000);
+        Product product3 = new Product(3, "Iphone12", 12000000);
+        Product product2 = new Product(2, "Iphone11", 8000000);
         productList.add(product1);
         productList.add(product2);
         productList.add(product3);
+    }
+
+
+    public ProductRepository(){
+
     }
 
     @Override
@@ -25,8 +29,8 @@ public class ProductRepository implements IProductRepository{
 
     @Override
     public void displayProduct() {
-        for (int i = 0; i<productList.size(); i++) {
-            System.out.println(productList.get(i));
+        for (Product product : productList) {
+            System.out.println(product);
         }
     }
 
@@ -34,7 +38,8 @@ public class ProductRepository implements IProductRepository{
     public void updateProduct(int id, Product product) {
         for (int i=0; i<productList.size();i++){
             if(productList.get(i).getId()==id){
-                productList.set(productList.indexOf(productList.get(i)), product);
+                productList.set(i, product);
+                break;
             }
         }
     }
@@ -68,4 +73,8 @@ public class ProductRepository implements IProductRepository{
         Collections.reverse(Collections.singletonList(productList));
 
     }
-}
+    public void containSearch(String charSequence){
+        for(int i=0;i<productList.size();i++){if(productList.get(i).getName().contains(charSequence)==true){
+            System.out.println("Sản phẩm bạn cần tìm là " +  productList);
+    }
+}}}

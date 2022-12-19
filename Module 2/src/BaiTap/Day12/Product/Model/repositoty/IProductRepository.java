@@ -16,4 +16,5 @@ public interface IProductRepository {
     void sortAscending();
 
     void sortDescending();
+    void containSearch(String charSequence);
 }

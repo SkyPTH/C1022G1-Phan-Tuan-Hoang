@@ -2,7 +2,8 @@ package BaiTap.Day12.Product.Model.service;
 
 import BaiTap.Day12.Product.Model.model.Product;
 
-public interface IProductService {void addProduct(Product product);
+public interface IProductService {
+    void addProduct(Product product);
 
     void displayProduct();
 
@@ -15,5 +16,6 @@ public interface IProductService {void addProduct(Product product);
     void sortAscending();
 
     void sortDescending();
+    void containSearch(String charSequence);
 
 }

@@ -8,20 +8,23 @@ import java.util.Scanner;
 
 public class ProductManager {
     private static final IProductService productService = new ProductService();
+    private static final IProductService productService2 = new ProductService();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("-----Quản Lí Sản Phẩm-----");
-        System.out.println("1. Thêm sản phẩm");
-        System.out.println("2. Sửa thông tin sản phẩm");
-        System.out.println("3. Xóa sản phẩm");
-        System.out.println("4. Hiển thị danh sách sản phẩm");
-        System.out.println("5. Tìm kiếm sản phẩm theo tên");
-        System.out.println("6. Sắp xếp sản phẩm tăng dần");
-        System.out.println("7. Sắp xếp sản phẩm giảm dần");
-        System.out.println("8. Thoát");
-        System.out.println("Chọn số để thực hiện các bước trên");
+
         do {
+            System.out.println("-----Quản Lí Sản Phẩm-----");
+            System.out.println("1. Thêm sản phẩm");
+            System.out.println("2. Sửa thông tin sản phẩm");
+            System.out.println("3. Xóa sản phẩm");
+            System.out.println("4. Hiển thị danh sách sản phẩm");
+            System.out.println("5. Tìm kiếm sản phẩm theo tên");
+            System.out.println("6. Sắp xếp sản phẩm tăng dần");
+            System.out.println("7. Sắp xếp sản phẩm giảm dần");
+            System.out.println("8. Tìm gần đúng sản phẩm theo tên");
+            System.out.println("9. Thoát");
+            System.out.println("Chọn số để thực hiện các bước trên");
             int selection = Integer.parseInt(scanner.nextLine());
             switch (selection) {
                 case 1:
@@ -51,6 +54,8 @@ public class ProductManager {
                     break;
                 case 4:
                     productService.displayProduct();
+                    System.out.println("_______________________");
+                    productService2.displayProduct();
                     break;
                 case 5:
                     System.out.println("Nhập tên sản phẩm: ");
@@ -64,8 +69,15 @@ public class ProductManager {
                     productService.sortDescending();
                     break;
                 case 8:
+                    System.out.println("Nhập chuỗi ký tự trong tên sản phẩm cần tìm");
+                    String charSequence=scanner.nextLine();
+                    productService.containSearch(charSequence);
+                    break;
+                case 9:
                     System.exit(0);
                     break;
+                default:
+                    System.err.println("Mời bạn nhập lại");
             }
         } while (true);
     }
