@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class CaiDatChen {
     public static void insertionSort(int[] list) {
-
         for (int i = 1; i < list.length; i++) {
             int x = list[i];
             while (i > 0 && list[i] < list[i - 1]) {
