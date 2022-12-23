@@ -2,11 +2,13 @@ package BaiTap.Day12.Product.Model.repositoty;
 
 import BaiTap.Day12.Product.Model.model.Product;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ProductRepository implements IProductRepository{
+public class ProductRepository implements IProductRepository, Serializable {
+
     private static List<Product> productList = new ArrayList<>();
     static {
         Product product1 = new Product(1, "IphoneX", 5000000);

@@ -8,8 +8,6 @@ import java.util.Scanner;
 
 public class ProductManager {
     private static final IProductService productService = new ProductService();
-    private static final IProductService productService2 = new ProductService();
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -55,7 +53,7 @@ public class ProductManager {
                 case 4:
                     productService.displayProduct();
                     System.out.println("_______________________");
-                    productService2.displayProduct();
+                    productService.displayProduct();
                     break;
                 case 5:
                     System.out.println("Nhập tên sản phẩm: ");
