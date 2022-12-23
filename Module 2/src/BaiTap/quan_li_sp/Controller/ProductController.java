@@ -38,10 +38,12 @@ public static Service repository=new Service();
                     break;
                 case 2:
                     repository.displayProduct();
+                    break;
                 case 3:
                     System.out.println("Nhập từ khóa có liên quan đến sản phẩm");
                     String keyword=scanner.nextLine();
                     repository.findProduct(keyword);
+                    break;
             }
 
         } while (true);
