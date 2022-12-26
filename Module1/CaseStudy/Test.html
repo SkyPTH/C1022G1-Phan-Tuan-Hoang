@@ -37,23 +37,42 @@
     // //     alert(" khong là số")
     // // }
 
-    let numb = +prompt("Nhập độ dài")
+    let input = +prompt("Nhập độ dài mảng")
     let arr = [];
-    let flag=false;
-    for(let i=0; i<numb;i++){
-        arr[i] = +prompt("Nhập các phần tử ")
+
+    let count=1;
+    for(let i=0; i<input;i++){
+        arr[i] = +prompt("Nhập các phần tử")
     }
-    let numbV = +prompt("Nhập số V")
-    for(let i=0; i<arr.length;i++){
-        if(arr[i]==numbV){
-           document.write("V có");
-           flag=true;
-           break;
+
+    for(let j=0; j<arr.length;j++){
+        let
+       const {"arr",j}=[];
+        for(k=j+1; k<arr.length;k++){
+            if(arr[k]==arr[j]){
+                arr.push(arr[k])
+                arr.splice(arr[k], 1)
+            }
         }
     }
-    if (flag==false){document.write("đéo có")}
-
-
 </script>
+    // let numb = +prompt("Nhập độ dài")
+    // let arr = [];
+    // let flag=false;
+    // for(let i=0; i<numb;i++){
+    //     arr[i] = +prompt("Nhập các phần tử ")
+    // }
+    // let numbV = +prompt("Nhập số V")
+    // for(let i=0; i<arr.length;i++){
+    //     if(arr[i]==numbV){
+    //        document.write("V có");
+    //        flag=true;
+    //        break;
+    //     }
+    // }
+    // if (flag==false){document.write("đéo có")}
+
+
+
 </body>
 </html>

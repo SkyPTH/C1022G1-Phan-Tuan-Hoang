@@ -69,19 +69,21 @@ public class Repository implements IRepository {
     }
 
     public void displayProduct() {
-        for (Product product : productList) {
+        List<Product>a = Repository.readProduct();
+        for (Product product : a) {
             System.out.println(product);
         }
     }
 
     public void findProduct(String keyword) {
-        for (int i = 0; i < productList.size(); i++) {
-            if (productList.get(i).getName().equals(keyword)
-                    || Integer.toString(productList.get(i).getPrice()).equals(keyword)
-                    || Integer.toString(productList.get(i).getId()).equals(keyword)
-                    || productList.get(i).getManufactured().equals(keyword)
-                    || productList.get(i).getDescription().equals(keyword)) {
-                System.out.println(productList.get(i).toString());
+        List<Product>a=Repository.readProduct();
+        for (int i = 0; i < a.size(); i++) {
+            if (a.get(i).getName().equals(keyword)
+                    || Integer.toString(a.get(i).getPrice()).equals(keyword)
+                    || Integer.toString(a.get(i).getId()).equals(keyword)
+                    || a.get(i).getManufactured().equals(keyword)
+                    || a.get(i).getDescription().equals(keyword)) {
+                System.out.println(a.get(i).toString());
             }
         }
     }
