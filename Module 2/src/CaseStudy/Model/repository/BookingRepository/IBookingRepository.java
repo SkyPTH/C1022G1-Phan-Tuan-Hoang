@@ -1,4 +1,6 @@
 package CaseStudy.Model.repository.BookingRepository;
 
-public interface IBookingRepository {
+import CaseStudy.Model.repository.IRepository;
+
+public interface IBookingRepository extends IRepository {
 }

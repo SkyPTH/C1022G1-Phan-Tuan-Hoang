@@ -1,7 +1,7 @@
 package CaseStudy.Service.Booking;
 
-import CaseStudy.Service.Service;
+import CaseStudy.Service.IService;
 
-public interface IBookingService extends Service {
+public interface IBookingService extends IService {
 
 }

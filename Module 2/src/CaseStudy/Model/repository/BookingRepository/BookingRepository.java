@@ -10,4 +10,14 @@ public class BookingRepository implements IBookingRepository{
     static {
 //        bookingList.add();
     }
+
+    @Override
+    public void displayList() {
+
+    }
+
+    @Override
+    public void addNew(Object obj) {
+
+    }
 }

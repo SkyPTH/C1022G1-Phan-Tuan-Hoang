@@ -1,6 +1,12 @@
 package CaseStudy.Service;
 
-public interface Service {
-    void displayList();
-    void addNew();
+public class Service implements IService{
+    @Override
+    public void displayList() {
+    }
+
+    @Override
+    public void addNew(Object obj) {
+
+    }
 }

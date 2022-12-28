@@ -1,8 +1,10 @@
 package CaseStudy.Service.Customer;
 
+import CaseStudy.Model.model.Person.Customer;
+
 public class CustomerServiceImpl implements ICustomerService {
     @Override
-    public void editCustomer() {
+    public void editCustomer(String id,Customer customer) {
 
     }
 
@@ -12,7 +14,7 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
-    public void addNew() {
+    public void addNew(Object obj) {
 
     }
 }

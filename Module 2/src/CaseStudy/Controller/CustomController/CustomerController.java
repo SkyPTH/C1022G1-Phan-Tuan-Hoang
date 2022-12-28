@@ -1,10 +1,12 @@
 package CaseStudy.Controller.CustomController;
 
 import CaseStudy.Controller.FuramaManager;
+import CaseStudy.Service.Customer.CustomerServiceImpl;
+import CaseStudy.Service.Customer.ICustomerService;
 
 import java.util.Scanner;
 
-public class CustomerController {
+public class CustomerController { public static final ICustomerService customer=new CustomerServiceImpl();
     public static void main() {
         do {
             System.out.println("------Customer Management-------");
@@ -16,6 +18,7 @@ public class CustomerController {
             int choice2 = Integer.parseInt(scanner.nextLine());
             switch (choice2) {
                 case 1:
+
                     break;
                 case 2:
                     break;

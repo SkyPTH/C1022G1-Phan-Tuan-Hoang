@@ -1,4 +1,6 @@
 package CaseStudy.Model.repository.FacilityRepository;
 
-public interface IFacilityRepository {
+import CaseStudy.Model.repository.IRepository;
+
+public interface IFacilityRepository extends IRepository {
 }

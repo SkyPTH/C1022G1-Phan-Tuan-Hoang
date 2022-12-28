@@ -7,7 +7,7 @@ public class BookingServiceImpl implements IBookingService {
     }
 
     @Override
-    public void addNew() {
+    public void addNew(Object obj) {
 
     }
 }

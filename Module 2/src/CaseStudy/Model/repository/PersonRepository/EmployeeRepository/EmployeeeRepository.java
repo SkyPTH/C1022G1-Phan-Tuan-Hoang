@@ -1,11 +1,13 @@
 package CaseStudy.Model.repository.PersonRepository.EmployeeRepository;
 
+import BaiTap.quan_li_sp.Model.model.Product;
 import CaseStudy.Model.model.Person.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeeRepository implements IEmployeeRepository {
+//    private static final Employee employee=new Employee();
     private static List<Employee> employeeList=new ArrayList<>();
     static {
         employeeList.add(new Employee("1","Hoang","12/11/1996","Nam",
@@ -18,5 +20,41 @@ public class EmployeeeRepository implements IEmployeeRepository {
                 "0123456710","0935181787","@gmail.com","Sau đại học",
                 "Secretary","5000"));
     }
+
+
+    @Override
+    public void displayList() {
+        for(Employee employee:employeeList){
+            System.out.println(employee);
+        }
+
+    }
+
+
+
+    @Override
+    public void addNew(Object obj) {
+        Employee employee = (Employee) obj;
+        employeeList.add(employee);
+
+    }
+
+    @Override
+    public void deleteEmployee(String id) {
+        for(int i=0;i<employeeList.size();i++){
+        if (employeeList.get(i).getId().equals(id)){employeeList.remove(i);}
+        }
+
+    }
+
+    @Override
+    public void editEmployee(String id, Employee employee) {
+        for(int i=0;i<employeeList.size();i++){
+            if (employeeList.get(i).getId().equals(id)){employeeList.set(i,employee);}
+        }
+
+    }
+
+
 
 }

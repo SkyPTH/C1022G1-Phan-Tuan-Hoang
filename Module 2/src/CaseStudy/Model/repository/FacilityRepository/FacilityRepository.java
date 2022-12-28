@@ -15,4 +15,14 @@ public class FacilityRepository implements IFacilityRepository{
         roomList.add(new Room());
         villaList.add(new Villa());
     }
+
+    @Override
+    public void addNew(Object obj) {
+
+    }
+
+    @Override
+    public void displayList() {
+
+    }
 }
