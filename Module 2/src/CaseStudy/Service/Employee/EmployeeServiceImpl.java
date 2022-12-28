@@ -6,26 +6,26 @@ import CaseStudy.Model.repository.PersonRepository.EmployeeRepository.EmployeeeR
 import CaseStudy.Model.repository.PersonRepository.EmployeeRepository.IEmployeeRepository;
 
 public class EmployeeServiceImpl implements IEmployeeService {
-    private IEmployeeRepository employeeService=new EmployeeeRepository();
+    private IEmployeeRepository employeeRepository=new EmployeeeRepository();
 
     @Override
-    public void deleteEmployee(String id) {employeeService.deleteEmployee(id);
+    public void deleteEmployee(String id) {employeeRepository.deleteEmployee(id);
     }
 
     @Override
-    public void editEmployee(String id,Employee employee) {employeeService.editEmployee(id,employee);
+    public void editEmployee(String id,Employee employee) {employeeRepository.editEmployee(id,employee);
 
     }
 
     @Override
-    public void displayList() {employeeService.displayList();
+    public void displayList() {employeeRepository.displayList();
 
     }
 
 
 
     @Override
-    public void addNew(Object obj){
+    public void addNew(Object obj){employeeRepository.addNew(obj);
 
 
 

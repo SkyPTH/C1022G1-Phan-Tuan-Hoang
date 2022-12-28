@@ -8,7 +8,7 @@ import java.util.List;
 public class BookingRepository implements IBookingRepository{
     private static List<Booking> bookingList=new ArrayList<>();
     static {
-//        bookingList.add();
+
     }
 
     @Override

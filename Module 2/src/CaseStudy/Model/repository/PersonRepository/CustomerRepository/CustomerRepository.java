@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerRepository implements ICustomerRepository {
-//    public static final Customer customer = new Customer();
+    //    public static final Customer customer = new Customer();
     private static final List<Customer> customerList = new ArrayList<>();
 
     static {
@@ -22,14 +22,15 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public void addNew(Object obj) {
         Customer customer1 = (Customer) obj;
-
+        boolean flag=true;
         for (int i = 0; i < customerList.size(); i++) {
-            if (customerList.get(i).getId().equals(((Customer) obj).getId())) {
+            if (customerList.get(i).getId().equals((customer1).getId())) {
                 System.out.println("Id khách hàng này đã có");
-            } else {
-                customerList.add(customer1);
+                flag=false;
+                break;
             }
         }
+        if(flag==true){customerList.add(customer1);}
     }
 
     @Override
@@ -41,10 +42,14 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public void editCustomer(String id, Customer customer) {
+        boolean flag=false;
         for (int i = 0; i < customerList.size(); i++) {
             if (customerList.get(i).getId().equals(id)) {
-                customerList.set(i, customer);
+                customerList.set(i, customer); flag=true;break;
             }
+            }
+        if(flag==false){
+            System.out.println("Không có khách hàng có id này");
         }
     }
 
