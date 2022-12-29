@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerRepository implements ICustomerRepository {
-    //    public static final Customer customer = new Customer();
+
     private static final List<Customer> customerList = new ArrayList<>();
 
     static {

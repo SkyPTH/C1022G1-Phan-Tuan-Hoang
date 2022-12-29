@@ -10,14 +10,7 @@ public class Service implements IService{
     }
 
     @Override
-    public void addRoom(Object obj) {
+    public void addNew(Object obj) {
 
     }
-
-    @Override
-    public void addVilla(Object obj) {
-
-    }
-
-
 }

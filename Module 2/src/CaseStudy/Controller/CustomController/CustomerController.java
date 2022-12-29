@@ -44,7 +44,7 @@ public class CustomerController {
                     System.out.println("Nhập địa chỉ");
                     String address=scanner.nextLine();
                     Customer customer1=new Customer(id,name,birth,sex,cmndNumber,phoneNumber,eMail,type,address);
-                    customer.addNew(customer1);
+//                    customer.addNew(customer1);
                     break;
                 case 3:
                     System.out.println("Nhập ID khách hàng cần sửa");

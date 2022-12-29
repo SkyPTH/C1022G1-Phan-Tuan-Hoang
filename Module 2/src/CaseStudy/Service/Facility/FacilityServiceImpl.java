@@ -11,9 +11,7 @@ public class FacilityServiceImpl implements IFacilityService {
     IFacilityRepository facilityRepository=new FacilityRepository();
     @Override
     public void displayList() {facilityRepository.displayList();
-
     }
-
     @Override
     public void addNew(Object obj) {facilityRepository.addNew(obj);
 
@@ -22,6 +20,16 @@ public class FacilityServiceImpl implements IFacilityService {
     @Override
     public void displayMaintenanceList() {facilityRepository.displayMaintenanceList();}
 
+    @Override
+    public void addVilla(Object obj) {facilityRepository.addVilla(obj);
 
     }
+
+    @Override
+    public void addRoom(Object obj) {facilityRepository.addRoom(obj);
+
+    }
+
+
+}
 

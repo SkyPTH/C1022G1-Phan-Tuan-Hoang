@@ -6,5 +6,7 @@ public interface IFacilityService extends IService {
     @Override
     void displayList();
     void displayMaintenanceList();
+    void addVilla(Object obj);
+    void addRoom(Object obj);
 
 }
