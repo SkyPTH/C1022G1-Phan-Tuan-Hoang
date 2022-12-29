@@ -2,6 +2,7 @@ package CaseStudy.Controller.CustomController;
 
 import CaseStudy.Controller.FuramaManager;
 import CaseStudy.Model.model.Person.Customer;
+import CaseStudy.Model.repository.PersonRepository.CustomerRepository.CustomerRepository;
 import CaseStudy.Service.Customer.CustomerServiceImpl;
 import CaseStudy.Service.Customer.ICustomerService;
 

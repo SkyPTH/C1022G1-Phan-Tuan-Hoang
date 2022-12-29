@@ -2,5 +2,6 @@ package CaseStudy.Service;
 
 public interface IService {
     void displayList();
-    void addNew(Object obj);
+    void addRoom(Object obj);
+    void addVilla(Object obj);
 }
