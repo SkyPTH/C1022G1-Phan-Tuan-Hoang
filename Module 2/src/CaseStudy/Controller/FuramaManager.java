@@ -3,9 +3,11 @@ package CaseStudy.Controller;
 import CaseStudy.Controller.CustomController.*;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class FuramaManager {
     public static void displayMainMenu() {
+
         do {
             Scanner scanner = new Scanner(System.in);
             System.out.println("-------Furama Management--------");
@@ -39,6 +41,7 @@ public class FuramaManager {
     }
 
     public static void main(String[] args) {
+
         FuramaManager.displayMainMenu();
     }
 }

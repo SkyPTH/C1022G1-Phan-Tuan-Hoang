@@ -5,11 +5,13 @@ import CaseStudy.Model.model.Facility.Room;
 import CaseStudy.Model.model.Facility.Villa;
 import CaseStudy.Service.Facility.FacilityServiceImpl;
 import CaseStudy.Service.Facility.IFacilityService;
+import CaseStudy.utils.MyRegex;
 
 import java.util.Scanner;
 
 public class FacilityController {
     public static void main() {
+
         IFacilityService facilityService = new FacilityServiceImpl();
         do {
             System.out.println("------Facility Management-------");
@@ -31,40 +33,88 @@ public class FacilityController {
                         int choice4 = Integer.parseInt(scanner.nextLine());
                         switch (choice4) {
                             case 1:
-                                System.out.println("Nhập số căn");
-                                String name = scanner.nextLine();
-                                System.out.println("Nhập diện tích sử dụng");
-                                String area = scanner.nextLine();
-                                System.out.println("Nhập chi phí thuê");
-                                String price = scanner.nextLine();
-                                System.out.println("Nhập số lượng người tối đa");
-                                String maxPeople = scanner.nextLine();
-                                System.out.println("Nhập kiểu thuê");
-                                String type = scanner.nextLine();
-                                System.out.println("Nhập tiêu chuẩn phòng");
-                                String quality = scanner.nextLine();
-                                System.out.println("Nhập diện tích hồ bơi");
-                                String poolArea = scanner.nextLine();
-                                System.out.println("Nhập số tầng");
-                                String floorNumber = scanner.nextLine();
-                                Villa villa = new Villa(name, area, maxPeople, type, quality, poolArea, floorNumber, price);
+                                String name = null;
+                                do {
+                                    System.out.println("Nhập tên căn");
+                                    name = scanner.nextLine();
+                                } while (!name.matches(MyRegex.REGEX_IDSERVICE));
+                                String area = null;
+                                do {
+                                    System.out.println("Nhập diện tích sử dụng");
+                                    area = scanner.nextLine();
+
+                                } while (!area.matches(MyRegex.REGEX_AREA));
+                                String price = null;
+                                do {
+                                    System.out.println("Nhập chi phí thuê");
+                                    price = scanner.nextLine();
+                                } while (!price.matches(MyRegex.REGEX_PRICE));
+                                String maxPeople = null;
+                                do {
+                                    System.out.println("Nhập số lượng người tối đa");
+                                    maxPeople = scanner.nextLine();
+                                } while (!maxPeople.matches(MyRegex.REGEX_NUMBERPEOPLE));
+                                String typeRent = null;
+                                do {
+                                    System.out.println("Nhập kiểu thuê");
+                                    typeRent = scanner.nextLine();
+
+                                } while (!typeRent.matches(MyRegex.REGEX_TYPERENT));
+                                String quality = null;
+                                do {
+                                    System.out.println("Nhập tiêu chuẩn phòng");
+                                    quality = scanner.nextLine();
+                                } while (!quality.matches(MyRegex.REGEX_QUALITY));
+                                String poolArea = null;
+                                do {
+                                    System.out.println("Nhập diện tích hồ bơi");
+                                    poolArea = scanner.nextLine();
+                                } while (!poolArea.matches(MyRegex.REGEX_POOLAREA));
+                                String floorNumber = null;
+                                do {
+                                    System.out.println("Nhập số tầng");
+                                    floorNumber = scanner.nextLine();
+                                } while (!floorNumber.matches(MyRegex.REGEX_NUMBERFLOOR));
+                                Villa villa = new Villa(name, area, maxPeople, typeRent, quality, poolArea, floorNumber, price);
                                 facilityService.addVilla(villa);
+                                break;
                             case 2:
 
-                                System.out.println("Nhập số căn");
-                                String name1 = scanner.nextLine();
-                                System.out.println("Nhập diện tích sử dụng");
-                                String area1 = scanner.nextLine();
-                                System.out.println("Nhập chi phí thuê");
-                                String price1 = scanner.nextLine();
-                                System.out.println("Nhập số lượng người tối đa");
-                                String maxPeople1 = scanner.nextLine();
-                                System.out.println("Nhập kiểu thuê");
-                                String type1 = scanner.nextLine();
-                                System.out.println("Nhập dịch vụ miễn phí");
-                                String freeService = scanner.nextLine();
-                                Room room = new Room(name1, area1, maxPeople1, type1, freeService, price1);
+                                String name1 = null;
+                                do {
+                                    System.out.println("Nhập tên căn");
+                                    name = scanner.nextLine();
+                                } while (!name1.matches(MyRegex.REGEX_IDSERVICE));
+                                String area1 = null;
+                                do {
+                                    System.out.println("Nhập diện tích sử dụng");
+                                    area1 = scanner.nextLine();
+
+                                } while (!area1.matches(MyRegex.REGEX_AREA));
+                                String price1 = null;
+                                do {
+                                    System.out.println("Nhập chi phí thuê");
+                                    price1 = scanner.nextLine();
+                                } while (!price1.matches(MyRegex.REGEX_PRICE));
+                                String maxPeople1 = null;
+                                do {
+                                    System.out.println("Nhập số lượng người tối đa");
+                                    maxPeople1 = scanner.nextLine();
+                                } while (!maxPeople1.matches(MyRegex.REGEX_NUMBERPEOPLE));
+                                String typeRent1 = null;
+                                do {
+                                    System.out.println("Nhập kiểu thuê");
+                                    typeRent1 = scanner.nextLine();
+
+                                } while (!typeRent1.matches(MyRegex.REGEX_TYPERENT));
+                           String freeService=null;
+                                do {
+                                    System.out.println("Nhập kiểu thuê");
+                                    typeRent1 = scanner.nextLine();
+                                } while (!typeRent1.matches(MyRegex.));
+                                Room room = new Room(name1, area1, maxPeople1, typeRent1, freeService, price1);
                                 facilityService.addRoom(room);
+                                break;
                             case 3:
                                 FuramaManager.displayMainMenu();
                         }
