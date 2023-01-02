@@ -6,11 +6,12 @@ import CaseStudy.Model.model.Person.Employee;
 import CaseStudy.Service.Employee.EmployeeServiceImpl;
 import CaseStudy.Service.Employee.IEmployeeService;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class EmployeeController {
     public static final IEmployeeService employee=new EmployeeServiceImpl();
-    public static void main() {
+    public static void main() throws IOException {
         do {
             System.out.println("------Employee Management-------");
             System.out.println("1\tDisplay list employees");
@@ -31,7 +32,7 @@ public class EmployeeController {
                     System.out.println("Nhập ngày tháng năm sinh");
                     String birth=scanner.nextLine();
                     System.out.println("Nhập giới tính");
-                    String sex=scanner.nextLine();
+                    String gender=scanner.nextLine();
                     System.out.println("Nhập số CMND");
                     String cmndNumber=scanner.nextLine();
                     System.out.println("Nhập sđt");
@@ -44,7 +45,7 @@ public class EmployeeController {
                     String position=scanner.nextLine();
                     System.out.println("Nhập lương");
                     String wage=scanner.nextLine();
-                    Employee employee1=new Employee(id,name,birth,sex,cmndNumber,phoneNumber,eMail,level,position,wage);
+                    Employee employee1=new Employee(id,name,birth,gender,cmndNumber,phoneNumber,eMail,level,position,wage);
                     employee.addNew(employee1);
                     break;
                 case 3:

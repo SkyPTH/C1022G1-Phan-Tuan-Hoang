@@ -21,14 +21,14 @@ public class EmployeeReadFile {
             String id = temp[0];
             String name = temp[1];
             String birth = temp[2];
-            String sex = temp[3];
+            String gender = temp[3];
             String cmndNumber = temp[4];
             String phoneNumber = temp[5];
             String eMail = temp[6];
             String level = temp[7];
             String position = temp[8];
             String wage = temp[9];
-            employee = new Employee(id, name, birth, sex, cmndNumber, phoneNumber, eMail, level, position, wage);
+            employee = new Employee(id, name, birth, gender, cmndNumber, phoneNumber, eMail, level, position, wage);
             employeeList.add(employee);
         }
         bufferedReader.close();

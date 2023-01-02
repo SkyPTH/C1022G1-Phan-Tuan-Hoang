@@ -4,7 +4,7 @@ public abstract class Person implements Comparable <Person>{
 private String id;
 private String name;
 private String birth;
-private String sex;
+private String gender;
 private String cmndNumber;
 private String phoneNumber;
 private String eMail;
@@ -13,7 +13,7 @@ private String eMail;
         this.id = id;
         this.name = name;
         this.birth = birth;
-        this.sex=sex;
+        this.gender=sex;
         this.cmndNumber = cmndNumber;
         this.phoneNumber = phoneNumber;
         this.eMail = eMail;
@@ -46,12 +46,12 @@ private String eMail;
         this.birth = birth;
     }
 
-    public String getSex() {
-        return sex;
+    public String getGender() {
+        return gender;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getCmndNumber() {
@@ -84,7 +84,7 @@ private String eMail;
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", birth='" + birth + '\'' +
-                ", sex=" + sex +
+                ", sex=" + gender +
                 ", cmndNumber='" + cmndNumber + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", eMail='" + eMail + '\'' +

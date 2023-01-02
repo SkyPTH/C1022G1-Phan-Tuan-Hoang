@@ -7,10 +7,11 @@ import CaseStudy.Service.Facility.FacilityServiceImpl;
 import CaseStudy.Service.Facility.IFacilityService;
 import CaseStudy.utils.MyRegex;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FacilityController {
-    public static void main() {
+    public static void main() throws IOException {
 
         IFacilityService facilityService = new FacilityServiceImpl();
         do {
@@ -37,7 +38,7 @@ public class FacilityController {
                                 do {
                                     System.out.println("Nhập tên căn");
                                     name = scanner.nextLine();
-                                } while (!name.matches(MyRegex.REGEX_IDSERVICE));
+                                } while (!name.matches(MyRegex.REGEX_IDSVILLA));
                                 String area = null;
                                 do {
                                     System.out.println("Nhập diện tích sử dụng");
@@ -84,7 +85,7 @@ public class FacilityController {
                                 do {
                                     System.out.println("Nhập tên căn");
                                     name = scanner.nextLine();
-                                } while (!name1.matches(MyRegex.REGEX_IDSERVICE));
+                                } while (!name1.matches(MyRegex.REGEX_IDROOM));
                                 String area1 = null;
                                 do {
                                     System.out.println("Nhập diện tích sử dụng");
@@ -110,8 +111,8 @@ public class FacilityController {
                            String freeService=null;
                                 do {
                                     System.out.println("Nhập kiểu thuê");
-                                    typeRent1 = scanner.nextLine();
-                                } while (!typeRent1.matches(MyRegex.));
+                                    freeService = scanner.nextLine();
+                                } while (!typeRent1.matches(MyRegex.REGEX_NAMESERVICE));
                                 Room room = new Room(name1, area1, maxPeople1, typeRent1, freeService, price1);
                                 facilityService.addRoom(room);
                                 break;

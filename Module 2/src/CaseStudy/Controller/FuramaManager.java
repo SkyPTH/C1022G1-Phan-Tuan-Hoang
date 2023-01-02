@@ -2,11 +2,12 @@ package CaseStudy.Controller;
 
 import CaseStudy.Controller.CustomController.*;
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class FuramaManager {
-    public static void displayMainMenu() {
+    public static void displayMainMenu() throws IOException {
 
         do {
             Scanner scanner = new Scanner(System.in);
@@ -40,7 +41,7 @@ public class FuramaManager {
         } while (true);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         FuramaManager.displayMainMenu();
     }

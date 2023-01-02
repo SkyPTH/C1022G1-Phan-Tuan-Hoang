@@ -2,10 +2,11 @@ package CaseStudy.Controller.CustomController;
 
 import CaseStudy.Controller.FuramaManager;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class PromotionController {
-    public static void main() {
+    public static void main() throws IOException {
         do {
             System.out.println("------Promotion Management-------");
             System.out.println("1.\tDisplay list customers use service");

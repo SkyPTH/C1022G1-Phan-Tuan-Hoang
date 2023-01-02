@@ -1,7 +1,9 @@
 package CaseStudy.Model.repository;
 
-public interface IRepository {
-    void addNew(Object obj);
+import java.io.IOException;
 
-    void displayList();
+public interface IRepository {
+    void addNew(Object obj) throws IOException;
+
+    void displayList() throws IOException;
 }

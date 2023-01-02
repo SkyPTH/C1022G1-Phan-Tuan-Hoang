@@ -4,8 +4,8 @@ public class Customer extends Person {
     private String type;
     private String address;
 
-    public Customer(String id, String name, String birth, String sex, String cmndNumber, String phoneNumber, String eMail, String type, String address) {
-        super(id, name, birth, sex, cmndNumber, phoneNumber, eMail);
+    public Customer(String id, String name, String birth, String gender, String cmndNumber, String phoneNumber, String eMail, String type, String address) {
+        super(id, name, birth, gender, cmndNumber, phoneNumber, eMail);
         this.type = type;
         this.address = address;
     }
@@ -39,7 +39,7 @@ public class Customer extends Person {
         return "Customer{" +"id=" + this.getId()+
                 ", name='" + this.getName() + '\'' +
                 ", birth='" + this.getBirth() + '\'' +
-                ", sex=" + this.getSex() +
+                ", gender=" + this.getGender() +
                 ", cmndNumber='" + this.getCmndNumber() + '\'' +
                 ", phoneNumber='" + this.getPhoneNumber() + '\'' +
                 ", eMail='" + this.geteMail() + '\'' +

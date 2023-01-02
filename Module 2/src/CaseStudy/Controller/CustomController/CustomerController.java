@@ -6,12 +6,13 @@ import CaseStudy.Model.repository.PersonRepository.CustomerRepository.CustomerRe
 import CaseStudy.Service.Customer.CustomerServiceImpl;
 import CaseStudy.Service.Customer.ICustomerService;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class CustomerController {
     public static final ICustomerService customer = new CustomerServiceImpl();
 
-    public static void main() {
+    public static void main() throws IOException {
         do {
             System.out.println("------Customer Management-------");
             System.out.println("1.\tDisplay list customers");
@@ -32,7 +33,7 @@ public class CustomerController {
                     System.out.println("Nhập ngày tháng năm sinh");
                     String birth=scanner.nextLine();
                     System.out.println("Nhập giới tính");
-                    String sex=scanner.nextLine();
+                    String gender=scanner.nextLine();
                     System.out.println("Nhập số CMND");
                     String cmndNumber=scanner.nextLine();
                     System.out.println("Nhập sđt");
@@ -43,8 +44,8 @@ public class CustomerController {
                     String type=scanner.nextLine();
                     System.out.println("Nhập địa chỉ");
                     String address=scanner.nextLine();
-                    Customer customer1=new Customer(id,name,birth,sex,cmndNumber,phoneNumber,eMail,type,address);
-//                    customer.addNew(customer1);
+                    Customer customer1=new Customer(id,name,birth,gender,cmndNumber,phoneNumber,eMail,type,address);
+                    customer.addNew(customer1);
                     break;
                 case 3:
                     System.out.println("Nhập ID khách hàng cần sửa");
@@ -54,7 +55,7 @@ public class CustomerController {
                     System.out.println("Nhập ngày tháng năm sinh");
                     String birth1=scanner.nextLine();
                     System.out.println("Nhập giới tính");
-                    String sex1=scanner.nextLine();
+                    String gender1=scanner.nextLine();
                     System.out.println("Nhập số CMND");
                     String cmndNumber1=scanner.nextLine();
                     System.out.println("Nhập sđt");
@@ -65,7 +66,7 @@ public class CustomerController {
                     String type1=scanner.nextLine();
                     System.out.println("Nhập địa chỉ");
                     String address1=scanner.nextLine();
-                    Customer customer2=new Customer(id1,name1,birth1,sex1,cmndNumber1,phoneNumber1,eMail1,type1,address1);
+                    Customer customer2=new Customer(id1,name1,birth1,gender1,cmndNumber1,phoneNumber1,eMail1,type1,address1);
                     customer.editCustomer(id1,customer2);
                     break;
                 case 4:

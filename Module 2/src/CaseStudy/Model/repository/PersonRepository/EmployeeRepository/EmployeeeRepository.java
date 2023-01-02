@@ -1,13 +1,16 @@
 package CaseStudy.Model.repository.PersonRepository.EmployeeRepository;
 
 import CaseStudy.Model.model.Person.Employee;
+import CaseStudy.utils.ReadFile.EmployeeReadFile;
+import CaseStudy.utils.WriteFile.EmployeeWriteFile;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeeRepository implements IEmployeeRepository {
 
-    private static final List<Employee> employeeList = new ArrayList<>();
+    private static List<Employee> employeeList = new ArrayList<>();
 
     static {
         employeeList.add(new Employee("1", "Hoang", "12/11/1996", "Nam",
@@ -23,7 +26,8 @@ public class EmployeeeRepository implements IEmployeeRepository {
 
 
     @Override
-    public void displayList() {
+    public void displayList() throws IOException {
+        employeeList = EmployeeReadFile.employeeReadFile();
         for (Employee employee : employeeList) {
             System.out.println(employee);
         }
@@ -32,14 +36,17 @@ public class EmployeeeRepository implements IEmployeeRepository {
 
 
     @Override
-    public void addNew(Object obj) {
+
+    public void addNew(Object obj) throws IOException {
+        employeeList = EmployeeReadFile.employeeReadFile();
         Employee employee = (Employee) obj;
         employeeList.add(employee);
-
+        EmployeeWriteFile.employeeWriteFile(employeeList);
     }
 
     @Override
-    public void deleteEmployee(String id) {
+    public void deleteEmployee(String id) throws IOException {
+        employeeList = EmployeeReadFile.employeeReadFile();
         for (int i = 0; i < employeeList.size(); i++) {
             if (employeeList.get(i).getId().equals(id)) {
                 employeeList.remove(i);
@@ -49,7 +56,8 @@ public class EmployeeeRepository implements IEmployeeRepository {
     }
 
     @Override
-    public void editEmployee(String id, Employee employee) {
+    public void editEmployee(String id, Employee employee) throws IOException {
+        employeeList = EmployeeReadFile.employeeReadFile();
         for (int i = 0; i < employeeList.size(); i++) {
             if (employeeList.get(i).getId().equals(id)) {
                 employeeList.set(i, employee);

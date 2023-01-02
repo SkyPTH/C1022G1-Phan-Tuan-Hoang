@@ -11,7 +11,7 @@ public class test {
                     s3 += s1.charAt(i);
                     if (j != s2.length() - 1) {
                         i++;
-                    }
+                    }   
                     if (i == s1.length()) {
                         break;
                     }
