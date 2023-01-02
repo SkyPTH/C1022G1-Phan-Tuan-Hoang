@@ -9,7 +9,7 @@ import java.util.List;
 
 public class CustomerWriteFile {
     public static void customerWrite(List<Customer> customerList) throws IOException {
-        FileWriter fileWriter = new FileWriter("src/CaseStudy/utils/data/customer.csv", true);
+        FileWriter fileWriter = new FileWriter("D:\\codegym\\C1022G1-Phan-Tuan-Hoang\\Module 2\\src\\CaseStudy\\utils\\data\\customer.csv", true);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         for (Customer customer : customerList) {
             bufferedWriter.write(customer.getId() + "," + customer.getName() + "," + customer.getBirth() + "," + customer.getBirth() + ","
@@ -17,5 +17,6 @@ public class CustomerWriteFile {
                     + customer.getType() + "," + customer.getAddress() + "\n");
         }
         bufferedWriter.close();
+
     }
 }

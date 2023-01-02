@@ -11,7 +11,7 @@ import java.util.List;
 public class EmployeeReadFile {
     public static List<Employee> employeeReadFile() throws IOException {
         List<Employee> employeeList = new ArrayList<>();
-        FileReader fileReader = new FileReader("src/CaseStudy/utils/data/employee.csv");
+        FileReader fileReader = new FileReader("D:\\codegym\\C1022G1-Phan-Tuan-Hoang\\Module 2\\src\\CaseStudy\\utils\\data\\employee.csv");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String line;
         String[] temp;
@@ -32,6 +32,8 @@ public class EmployeeReadFile {
             employeeList.add(employee);
         }
         bufferedReader.close();
-        return employeeReadFile();
+        return employeeList;
+
+
     }
 }

@@ -13,7 +13,7 @@ import java.util.Map;
 public class RoomReadFile {
     public static Map<Room,Integer> roomReadFile() throws IOException {
         Map<Room,Integer> roomMap = new LinkedHashMap<>();
-        FileReader fileReader = new FileReader("src/CaseStudy/utils/data/room.csv");
+        FileReader fileReader = new FileReader("D:\\codegym\\C1022G1-Phan-Tuan-Hoang\\Module 2\\src\\CaseStudy\\utils\\data\\room.csv");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String line;
         String[] temp;
@@ -30,6 +30,6 @@ public class RoomReadFile {
             roomMap.put(room,Integer.parseInt(temp[6]));
         }
         bufferedReader.close();
-        return roomReadFile();
+        return roomMap;
     }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class EmployeeWriteFile {
     public static void employeeWriteFile(List<Employee> employeeList) throws IOException {
-        FileWriter fileWriter = new FileWriter("src/CaseStudy/utils/data/employee.csv", true);
+        FileWriter fileWriter = new FileWriter("D:\\codegym\\C1022G1-Phan-Tuan-Hoang\\Module 2\\src\\CaseStudy\\utils\\data\\employee.csv", true);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         for (Employee employee : employeeList) {
             bufferedWriter.write(employee.getId() + "," + employee.getName() + "," + employee.getBirth() + ","
