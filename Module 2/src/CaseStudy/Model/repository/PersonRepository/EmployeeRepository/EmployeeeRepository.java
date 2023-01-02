@@ -52,6 +52,7 @@ public class EmployeeeRepository implements IEmployeeRepository {
                 employeeList.remove(i);
             }
         }
+        EmployeeWriteFile.employeeWriteFile(employeeList);
 
     }
 
@@ -63,7 +64,7 @@ public class EmployeeeRepository implements IEmployeeRepository {
                 employeeList.set(i, employee);
             }
         }
-
+        EmployeeWriteFile.employeeWriteFile(employeeList);
     }
 
 
