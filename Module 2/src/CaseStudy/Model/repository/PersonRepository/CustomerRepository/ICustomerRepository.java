@@ -7,4 +7,5 @@ import java.io.IOException;
 
 public interface ICustomerRepository extends IRepository {
     void editCustomer(String id, Customer customer) throws IOException;
+    Customer findbyID(String id);
 }

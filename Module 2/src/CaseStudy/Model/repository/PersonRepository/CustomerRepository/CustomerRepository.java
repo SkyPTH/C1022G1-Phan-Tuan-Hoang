@@ -65,5 +65,15 @@ public class CustomerRepository implements ICustomerRepository {
         CustomerWriteFile.customerWrite(customerList);
     }
 
+    @Override
+    public Customer findbyID(String id) {
+        for(int i=0; i<customerList.size();i++){
+            if(customerList.get(i).getId().equals(id)){
+                return customerList.get(i);
+            }
+        }
+        return null;
+    }
+
 
 }

@@ -20,6 +20,11 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     @Override
+    public Employee findbyId(String id) {
+        return employeeRepository.findbyId(id);
+    }
+
+    @Override
     public void displayList() throws IOException {employeeRepository.displayList();
 
     }

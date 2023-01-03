@@ -9,4 +9,5 @@ public interface IEmployeeRepository extends IRepository {
 
     void deleteEmployee(String id) throws IOException;
     void editEmployee(String id,Employee employee) throws IOException;
+    Employee findbyId(String id);
 }

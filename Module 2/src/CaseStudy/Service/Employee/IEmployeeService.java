@@ -8,6 +8,6 @@ import java.io.IOException;
 public interface IEmployeeService extends IService {
     void deleteEmployee(String id) throws IOException;
     void editEmployee(String id, Employee employee) throws IOException;
-
+Employee findbyId(String id);
 
 }

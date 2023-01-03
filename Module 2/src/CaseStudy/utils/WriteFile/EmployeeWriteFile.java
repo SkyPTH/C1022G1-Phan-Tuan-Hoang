@@ -17,7 +17,7 @@ public class EmployeeWriteFile {
         for (Employee employee : employeeList) {
             bufferedWriter.write(employee.getId() + "," + employee.getName() + "," + employee.getBirth() + ","
                     + employee.getGender() + "," + employee.getCmndNumber() + "," + employee.getPhoneNumber() + ","
-                    + employee.geteMail() + "," + employee.getLevel() + "," + employee.getPosition() + "," + employee.getWage());
+                    + employee.geteMail() + "," + employee.getLevel() + "," + employee.getPosition() + "," + employee.getSalary());
             bufferedWriter.newLine();
         }
         bufferedWriter.close();

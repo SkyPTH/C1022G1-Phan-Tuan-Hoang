@@ -20,8 +20,7 @@ public class BookingController {
                 case 2:
                     break;
                 case 3:
-                    FuramaManager.displayMainMenu();
-                    break;
+                   return;
             }
 
         } while (true);

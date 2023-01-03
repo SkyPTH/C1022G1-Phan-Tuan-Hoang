@@ -3,13 +3,13 @@ package CaseStudy.Model.model.Person;
 public class Employee extends Person {
     private String level;
     private String position;
-    private String wage;
+    private String salary;
 
-    public Employee(String id, String name, String birth, String gender, String cmndNumber, String phoneNumber, String eMail, String level, String position, String wage) {
+    public Employee(String id, String name, String birth, String gender, String cmndNumber, String phoneNumber, String eMail, String level, String position, String salary) {
         super(id, name, birth, gender, cmndNumber, phoneNumber, eMail);
         this.level = level;
         this.position = position;
-        this.wage = wage;
+        this.salary = salary;
     }
 
     public Employee() {
@@ -31,12 +31,12 @@ public class Employee extends Person {
         this.position = position;
     }
 
-    public String getWage() {
-        return wage;
+    public String getSalary() {
+        return salary;
     }
 
-    public void setWage(String wage) {
-        this.wage = wage;
+    public void setSalary(String salary) {
+        this.salary = salary;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class Employee extends Person {
                 ", eMail='" + this.geteMail() + '\'' +
                 "level='" + level + '\'' +
                 ", position='" + position + '\'' +
-                ", wage=" + wage +
+                ", salary=" + salary +
                 '}';
     }
 

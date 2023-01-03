@@ -14,6 +14,11 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
+    public Customer findbyID(String id) {
+        return customerRepository.findbyID(id);
+    }
+
+    @Override
     public void displayList() throws IOException {customerRepository.displayList();
 
     }

@@ -27,8 +27,8 @@ public class EmployeeReadFile {
             String eMail = temp[6];
             String level = temp[7];
             String position = temp[8];
-            String wage = temp[9];
-            employee = new Employee(id, name, birth, gender, cmndNumber, phoneNumber, eMail, level, position, wage);
+            String salary = temp[9];
+            employee = new Employee(id, name, birth, gender, cmndNumber, phoneNumber, eMail, level, position, salary);
             employeeList.add(employee);
         }
         bufferedReader.close();

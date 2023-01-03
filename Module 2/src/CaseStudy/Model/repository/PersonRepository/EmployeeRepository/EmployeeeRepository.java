@@ -67,5 +67,15 @@ public class EmployeeeRepository implements IEmployeeRepository {
         EmployeeWriteFile.employeeWriteFile(employeeList);
     }
 
+    @Override
+    public Employee findbyId(String id) {
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (id.equals(employeeList.get(i).getId())) {
+                return employeeList.get(i);
+            }
+        }
+        return null;
+    }
+
 
 }
