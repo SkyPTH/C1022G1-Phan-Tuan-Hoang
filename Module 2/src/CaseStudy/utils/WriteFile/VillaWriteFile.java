@@ -18,6 +18,6 @@ public class VillaWriteFile {
                 + ',' + entry.getKey().getFloorNumber() + ',' + entry.getKey().getPrice()+entry.getValue());
         bufferedWriter.newLine();
         };
-        fileWriter.close();
+        bufferedWriter.close();
     }
 }

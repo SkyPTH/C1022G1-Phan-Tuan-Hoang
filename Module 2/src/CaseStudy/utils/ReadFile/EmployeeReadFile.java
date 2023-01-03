@@ -33,7 +33,5 @@ public class EmployeeReadFile {
         }
         bufferedReader.close();
         return employeeList;
-
-
     }
 }

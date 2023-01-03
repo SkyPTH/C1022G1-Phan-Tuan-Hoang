@@ -14,6 +14,6 @@ public class RoomWriteFile {
         for(Map.Entry<Room,Integer> entry:roomMap.entrySet())
         bufferedWriter.write(entry.getKey().getName() + ',' + entry.getKey().getArea() + ',' + entry.getKey().getMaxPeople() + ','
                 + entry.getKey().getTypeRent() + ',' + entry.getKey().getFreeService() + ',' + entry.getKey().getPrice());
-        fileWriter.close();
+        bufferedWriter.close();
     }
 }
