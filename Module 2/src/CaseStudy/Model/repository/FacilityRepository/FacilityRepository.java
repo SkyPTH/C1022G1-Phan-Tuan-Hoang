@@ -52,11 +52,11 @@ public class FacilityRepository implements IFacilityRepository {
         roomMap= RoomReadFile.roomReadFile();
         System.out.println("-----Danh sách Villa-------");
         for (Map.Entry<Villa, Integer>entry: villaMap.entrySet()) {
-            System.out.println(entry.getKey()+"-"+entry.getValue()+" lần");
+            System.out.println(entry.getKey()+"- Số lần sử dụng: "+entry.getValue()+" lần");
         }
         System.out.println("-----Danh sách Room-------");
         for (Map.Entry<Room, Integer>entry: roomMap.entrySet()) {
-            System.out.println(entry.getKey()+"-"+entry.getValue()+" lần");
+            System.out.println(entry.getKey()+"- Số lần sử dụng: "+entry.getValue()+" lần");
         }
 
     }
@@ -68,7 +68,7 @@ public class FacilityRepository implements IFacilityRepository {
         for (Map.Entry<Villa, Integer>entry: villaMap.entrySet()) { if (entry.getValue()>=5){
 
         }
-            System.out.println(entry.getKey()+"-"+entry.getValue()+" lần");
+            System.out.println(entry.getKey()+"- Số lần sử dụng: "+entry.getValue()+" lần");
     }
         System.out.println("-----Danh sách Room cần bảo trì-----");
         for (Map.Entry<Room, Integer>entry: roomMap.entrySet()) { if (entry.getValue()>=5){
