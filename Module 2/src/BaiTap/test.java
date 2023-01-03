@@ -9,15 +9,11 @@ public class test {
             for (int j = 0; j < s2.length(); j++) {
                 if (s1.charAt(i) == s2.charAt(j)) {
                     s3 += s1.charAt(i);
-                    if (j != s2.length() - 1) {
-                        i++;
-                    }   
-                    if (i == s1.length()) {
-                        break;
+                    s2 = s2.substring(0, j) + s2.substring(j + 1);
+                  break;
                     }
                 }
-            }
+            } System.out.println(s3);
         }
-        System.out.println(s3);
     }
-}
+
