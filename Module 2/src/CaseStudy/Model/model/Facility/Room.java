@@ -29,7 +29,8 @@ public class Room extends Facility{
                 ", area=" + this.getArea() +
                 ", maxPeople=" + this.getMaxPeople() +
                 ", typeRent='" + this.getTypeRent() + '\'' +
-                "freeService='" + freeService + '\'' +
+                ", price='" + price + '\'' +
+                ",freeService='" + freeService + '\'' +
                 '}';
     }
 }

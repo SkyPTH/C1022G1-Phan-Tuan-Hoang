@@ -29,6 +29,7 @@ public class FacilityController {
                         facilityService.displayList();
                         break;
                     case 2:
+                        boolean flag=true;
                         do {
                             System.out.println("1.\tAdd New Villa");
                             System.out.println("2.\tAdd New Room");
@@ -119,10 +120,11 @@ public class FacilityController {
                                     facilityService.addRoom(room);
                                     break;
                                 case 3:
-                                    FuramaManager.displayMainMenu();
+                                    flag=false;
+                                    break;
                             }
-                        } while (true);
-
+                        } while (flag);
+                        break;
                     case 3:
                         facilityService.displayMaintenanceList();
                         break;
