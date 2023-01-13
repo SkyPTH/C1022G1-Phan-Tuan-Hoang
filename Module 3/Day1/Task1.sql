@@ -197,6 +197,34 @@ insert into hop_dong (ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, ma_nhan_vi
 -- Hợp đồng chi tiết
 insert into hop_dong_chi_tiet (so_luong, ma_hop_dong, ma_dich_vu_di_kem) values 
 (5, 2, 4),(8, 2, 5),(15, 2, 6),(1, 3, 1),(11, 3, 2),(1, 1, 3),(2, 1, 2),(2, 12, 2);
+select * from nhan_vien 
+where 
+(substring_index(ho_ten, ' ', -1) like 'H%'
+or substring_index(ho_ten, ' ', -1) like 'K%'
+or substring_index(ho_ten, ' ', -1) like 'T%')
+and length(ho_ten) <= 15;
+select * from khach_hang
+where ((year(curdate())-year(ngay_sinh)) between 18 and 50)
+and (dia_chi like '% Quảng Trị'
+or dia_chi like '% Đà Nẵng')
+;
+select ho_ten,count(khach_hang.ma_khach_hang) as 'Số lần ký hợp đồng', ten_loai_khach from khach_hang
+
+join loai_khach on loai_khach.ma_loai_khach=khach_hang.ma_loai_khach
+where ten_loai_khach='Diamond'
+group by khach_hang.ma_khach_hang
+order by count(khach_hang.ma_khach_hang);
+
+select khach_hang.ma_khach_hang,ho_ten,loai_khach.ten_loai_khach,hop_dong.ma_hop_dong,ten_dich_vu,ngay_lam_hop_dong,ngay_ket_thuc, (hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia + dich_vu.chi_phi_thue )as tong_tien  from khach_hang
+join loai_khach on loai_khach.ma_loai_khach=khach_hang.ma_loai_khach
+join hop_dong on hop_dong.ma_khach_hang=khach_hang.ma_khach_hang
+join hop_dong_chi_tiet on hop_dong_chi_tiet.ma_hop_dong=hop_dong.ma_hop_dong
+join dich_vu on dich_vu.ma_dich_vu=hop_dong.ma_dich_vu
+join dich_vu_di_kem on dich_vu_di_kem.ma_dich_vu_di_kem=hop_dong_chi_tiet.ma_dich_vu_di_kem
+group by hop_dong.ma_hop_dong
+order by khach_hang.ma_khach_hang
+
+
 
 -- drop schema case_study;
  

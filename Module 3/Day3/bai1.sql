@@ -95,3 +95,16 @@ FROM
 ORDER BY 
   mark.mark DESC, 
   student.student_name;
+  -- Hiển thị tất cả các thông tin môn học (bảng subject) có credit lớn nhất.
+select * from `subject` where credit=(select max(credit) from `subject`);
+-- Hiển thị các thông tin môn học có điểm thi lớn nhất.
+select * from `subject`
+join mark on `subject`.sub_id=mark.sub_id
+where mark=(select max(mark) from mark);
+-- Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên, xếp hạng theo thứ tự điểm giảm dần
+select student_name,avg(mark) from student 
+join mark on student.student_id=mark.student_id
+group by student.student_id
+order by avg(mark) desc
+;
+
