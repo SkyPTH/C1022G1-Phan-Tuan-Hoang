@@ -306,7 +306,17 @@ where (ngay_lam_hop_dong between '2020-10-1' and '2020-12-31') and
   (ngay_lam_hop_dong not between '2021-1-1' and '2021-6-30')
 group by hd.ma_hop_dong;
  -- 13.	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng. (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau)
-
+SELECT 
+    dvdk.ma_dich_vu_di_kem,
+    ten_dich_vu_di_kem,
+    IFNULL(SUM(so_luong), 0) so_luong_dich_vu_chi_tiet
+FROM
+    dich_vu_di_kem dvdk
+JOIN
+    hop_dong_chi_tiet hdct ON dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
+GROUP BY dvdk.ma_dich_vu_di_kem
+HAVING so_luong_dich_vu_chi_tiet = (
+SELECT MAX(so_luong) FROM hop_dong_chi_tiet);
  -- 14.	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. 
  -- Thông tin hiển thị bao gồm ma_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem, so_lan_su_dung (được tính dựa trên việc count các ma_dich_vu_di_kem)
  select hd.ma_hop_dong, dv.ten_dich_vu, dvdk.ten_dich_vu_di_kem, count(hdct.ma_dich_vu_di_kem) as so_lan_su_dung from hop_dong hd 
@@ -318,12 +328,13 @@ group by hd.ma_hop_dong;
  order by hd.ma_hop_dong;
  -- 15.	Hiển thi thông tin của tất cả nhân viên bao gồm 
  -- ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai, dia_chi mới chỉ lập được tối đa 3 hợp đồng từ năm 2020 đến 2021.
- select ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai, dia_chi 
+ select nv.ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai, dia_chi,COUNT(hd.ma_hop_dong) so_lan_su_dung
  from nhan_vien nv 
- left join trinh_do on trinh_do.ma_trinh_do=nv.ma_trinh_do
- left join bo_phan on bo_phan.ma_bo_phan=nv.ma_bo_phan
-group by nv.ma_nhan_vien
-having count(year(hop_dong.ngay_lam_hop_dong) between 2020 and 2021 )<4;
+ join hop_dong hd ON nv.ma_nhan_vien = hd.ma_nhan_vien
+ join trinh_do on trinh_do.ma_trinh_do=nv.ma_trinh_do
+ join bo_phan on bo_phan.ma_bo_phan=nv.ma_bo_phan
+GROUP BY nv.ma_nhan_vien
+HAVING so_lan_su_dung < 4;
  -- 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021.
  delete from nhan_vien nv
  where nv.ma_nhan_vien not in 
@@ -332,7 +343,30 @@ having count(year(hop_dong.ngay_lam_hop_dong) between 2020 and 2021 )<4;
  select * from nhan_vien;
  -- 17.	Cập nhật thông tin những khách hàng có ten_loai_khach từ Platinum lên Diamond, chỉ cập nhật những khách hàng đã từng đặt phòng với 
  -- Tổng Tiền thanh toán trong năm 2021 là lớn hơn 10.000.000 VNĐ.
- 
+ create view tong_tien as
+    select
+        kh.ma_khach_hang,
+        lk.ten_loai_khach,
+        SUM(IFNULL(dv.chi_phi_thue, 0) + IFNULL(hdct.so_luong, 0) * IFNULL(dvdk.gia, 0)) tong_tien
+    from khach_hang kh
+	join loai_khach lk on lk.ma_loai_khach = kh.ma_loai_khach
+	join hop_dong hd on hd.ma_khach_hang = kh.ma_khach_hang
+	join dich_vu dv on dv.ma_dich_vu = hd.ma_dich_vu
+	join hop_dong_chi_tiet hdct on hdct.ma_hop_dong = hd.ma_hop_dong
+	join dich_vu_di_kem dvdk on dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
+    where lk.ten_loai_khach = 'Platinium'and year(ngay_lam_hop_dong) = 2021
+    group by lk.ma_loai_khach , kh.ma_khach_hang;
+
+update khach_hang 
+set ma_loai_khach = 1
+where ma_khach_hang = (
+select v_tong_tien.ma_khach_hang from v_tong_tien
+where v_tong_tien.tong_tien > '1000000'and ten_loai_khach = 'Platinium');
+
+select kh.ma_khach_hang, kh.ho_ten, lk.ten_loai_khach
+from khach_hang kh
+join loai_khach lk on kh.ma_loai_khach = lk.ma_loai_khach
+where kh.ho_ten = 'Nguyễn Tâm Đắc';
  -- 18.	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
 SET foreign_key_checks = 0;
 delete from khach_hang 
