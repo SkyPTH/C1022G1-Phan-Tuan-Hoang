@@ -58,21 +58,29 @@
     width: 100%;
 }
 
-[class*="col-"]{
-    float:left;
-    padding: 5px;}
-.nen-xam{
+[class*="col-"] {
+    float: left;
+    padding: 5px;
+}
+
+.nen-xam {
     background-color: #F5F5F5;
 }
 
-a:hover{ color: white;
+a:hover {
+    color: white;
 }
+
 .normal-link {
     text-decoration: none;
-    color: black;}
-.bold{
+    color: black;
+}
+
+.bold {
     font-weight: bold;
 }
+
 .text {
-    font-weight: bold; color: darkgray;
+    font-weight: bold;
+    color: darkgray;
 }
