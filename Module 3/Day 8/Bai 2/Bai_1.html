@@ -7,6 +7,17 @@
         ul {
             list-style: none;
         }
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .row::after {
+            display: block;
+            clear: both;
+            content: "";
+        }
 
         .link a {
             text-decoration: none;
@@ -18,21 +29,21 @@
 <body>
 <div class="link">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 ">
             <nav>
-                <ul>
-                    <li class="float-start">
-                        <a href="https://rubee.com.vn/admin/webroot/upload/image/images/microsoft-logo.jpg"
-                           target="_blank"><img
-                                src="https://rubee.com.vn/admin/webroot/upload/image/images/microsoft-logo.jpg"
-                                alt="" width="100px"></a>
+                <ul class="pt-2">
+                    <li class="float-start" style="margin-top: 5px">
+                        <a  href="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31"
+                           ><img
+                                src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31"
+                                alt="" width="100px"></a> &nbsp;&nbsp; | &nbsp;&nbsp;
                     </li>
-                    <li class="float-start p-2"><a href="">Sunface</a></li>
-                    <li class="float-start p-2"><a href="">Computers</a></li>
-                    <li class="float-start p-2"><a href="">Computers for Business</a></li>
-                    <li class="float-start p-2"><a href="">Accessories</a></li>
-                    <li class="float-start p-2"><a href="">Shop now</a></li>
-                    <li class="float-start p-2"><a href="">Support</a></li>
+                    <li class="float-start p-0 ps-4" style="font-weight: bold;font-size: 23px"><a href="">Surface &nbsp;&nbsp;</a></li>
+                    <li class="float-start p-2"><a href="">Computers &nbsp;&nbsp;</a></li>
+                    <li class="float-start p-2"><a href="">Computers for Business &nbsp;&nbsp;</a></li>
+                    <li class="float-start p-2"><a href="">Accessories &nbsp;&nbsp;</a></li>
+                    <li class="float-start p-2"><a href="">Shop now &nbsp;&nbsp;</a></li>
+                    <li class="float-start p-2"><a href="">Support &nbsp;&nbsp;</a></li>
                     <li class="float-start bg-primary text-light p-2"><a href="">SHOP DEALS</a></li>
                     <li class="float-end p-2"><a href="">Sign in</a></li>
                     <li class="float-end p-2"><a href="">Cart</a></li>
@@ -42,8 +53,11 @@
             </nav>
         </div>
     </div>
-    <div class="row bg-secondary">
-        <br>
+    <div class="row" style="background: #F2F2F2;height: 40px">
+        <span class="pt-2 fw-bold float-end"> Animation &nbsp;&nbsp;| &nbsp;&nbsp; </span>
+        <span class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+  <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label></span>
     </div>
     <div class="row">
         <div class="col-5 bg-light ps-5">
