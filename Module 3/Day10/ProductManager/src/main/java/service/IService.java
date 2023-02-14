@@ -13,5 +13,5 @@ public interface IService {
 
 
 
-    Product findbyID(int id);
+    Product findByID(int id);
 }

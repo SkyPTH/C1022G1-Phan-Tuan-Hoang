@@ -43,7 +43,7 @@ public class ProductRepositoryImpl implements IRepository {
         }
     }
     @Override
-    public Product findbyID(int id) {
+    public Product findByID(int id) {
         for (Product product : productList
         ) {
             if (product.getId() == id) {

@@ -12,26 +12,20 @@
     <link rel="stylesheet" href="/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.css">
 </head>
 <body>
-<div class="container">
-    <form method="get">
-        <div class="form-group">
-            <label for="name"></label>
-            <input type="text" name="name" id="name" class="form-control" >
-        </div>
-        <div class="form-group">
-            <label for="price"></label>
-            <input type="text" name="price" id="price" class="form-control" >
-        </div>
-        <div class="form-group">
-            <label for="description"></label>
-            <input type="text" name="description" id="description" class="form-control" >
-        </div>
-        <div class="form-group">
-            <label for="producer"></label>
-            <input type="text" name="producer" id="producer" class="form-control" >
-        </div>
-    </form>
-</div>
+<form action="" method="post">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" name="name" id="name" value="${product.name}">
+
+    <label for="price">Price</label>
+    <input type="number" class="form-control" name="price" id="price" value="${product.price}">
+
+    <label for="description">Description</label>
+    <input type="text" class="form-control" name="description" id="description" value="${product.description}">
+
+    <label for="producer">Producer</label>
+    <input type="text" class="form-control" name="producer" id="producer" value="${product.producer}">
+    <input type="submit" value="Cập nhật">
+</form>
 <script src="/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>

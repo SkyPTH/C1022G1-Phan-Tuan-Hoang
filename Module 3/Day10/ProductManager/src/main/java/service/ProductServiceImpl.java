@@ -30,7 +30,7 @@ public class ProductServiceImpl implements IService {
     }
 
     @Override
-    public Product findbyID(int id) {
-        return repository.findbyID(id);
+    public Product findByID(int id) {
+        return repository.findByID(id);
     }
 }

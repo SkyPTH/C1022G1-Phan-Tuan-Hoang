@@ -55,6 +55,6 @@ private String producer;
         this.producer = producer;
     }
 
-    public Product() {
+    public Product(String name, int price, String description, String producer) {
     }
 }

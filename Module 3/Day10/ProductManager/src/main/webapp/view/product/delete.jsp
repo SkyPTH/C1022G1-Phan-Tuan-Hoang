@@ -12,25 +12,27 @@
     <link rel="stylesheet" href="/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.css">
 </head>
 <body>
-<div class="container">
-    <form method="get">
-        <div class="form-group">
-            <label for="name"></label>
-            <input type="text" name="name" id="name" class="form-control" >
-        </div>
-        <div class="form-group">
-            <label for="price"></label>
-            <input type="text" name="price" id="price" class="form-control" >
-        </div>
-        <div class="form-group">
-            <label for="description"></label>
-            <input type="text" name="description" id="description" class="form-control" >
-        </div>
-        <div class="form-group">
-            <label for="producer"></label>
-            <input type="text" name="producer" id="producer" class="form-control" >
-        </div>
-    </form>
-</div>
+<form action="" method="post">
+    <h1>Xóa sản phẩm ${product.name}</h1>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <td>${product.name}</td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>${product.price}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>${product.description}</td>
+        </tr>
+        <tr>
+            <th>Producer</th>
+            <td>${product.producer}</td>
+        </tr>
+    </table>
+    <input type="submit" value="Xóa">
+</form>
 </body>
 </html>
