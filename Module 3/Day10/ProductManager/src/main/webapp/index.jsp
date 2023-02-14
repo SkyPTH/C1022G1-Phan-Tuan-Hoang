@@ -3,29 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Product Manager</title>
-
+    <title>model.Product Manager</title>
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.css">
 </head>
 <body>
-<table class="table">
-    <thead>
-    <tr class="row">
-        <th class="col-3"> Name</th>
-        <th class="col-3"> Price</th>
-        <th class="col-3"> Description</th>
-        <th class="col-3"> Producer</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach varStatus="loop" items="${productList}" var="product">
-        <tr class="row">
-            <td class="col-3">${product.name} </td>
-            <td class="col-3">${product.price}</td>
-            <td class="col-3">${product.description}</td>
-            <td class="col-3">${product.producer}</td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
+<h2 class="mb-2"> Product Manager </h2>
+<a href="/product" class="btn btn-secondary">Xem danh sách sản phẩm</a>
 </body>
 </html>

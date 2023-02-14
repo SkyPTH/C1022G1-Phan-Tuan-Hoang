@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="container">
-    <form method="post">
+    <form method="get">
     <div class="form-group">
         <label for="name"></label>
         <input type="text" name="name" id="name" class="form-control" >

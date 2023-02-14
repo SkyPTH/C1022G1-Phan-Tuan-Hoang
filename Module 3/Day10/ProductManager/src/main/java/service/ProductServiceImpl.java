@@ -1,3 +1,9 @@
+package service;
+
+import model.Product;
+import repository.IRepository;
+import repository.ProductRepositoryImpl;
+
 import java.util.List;
 
 public class ProductServiceImpl implements IService {
