@@ -19,7 +19,7 @@ public class UserRepository1 implements IUserRepository1 {
     public UserRepository1() {
     }
 
-    protected Connection getConnection() {
+    protected static Connection getConnection() {
         Connection connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -139,6 +139,48 @@ public class UserRepository1 implements IUserRepository1 {
             }
         }
     }
+    @Override
+    public List<User> selectUserByCountry(String country) {
+        List<User> users = new ArrayList<>();
+        Connection connection = UserRepository1.getConnection();
 
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_COUNTRY);
+            preparedStatement.setString(1, country);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+                User user = new User(id, name, email, country);
+                users.add(user);
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
+
+    @Override
+    public List<User> sortByNameUser() {
+        List<User> users = new ArrayList<>();
+        Connection connection = UserRepository1.getConnection();
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SORT_BY_NAME_USER);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+                String country = resultSet.getString("country");
+                User user = new User(id, name, email, country);
+                users.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
 }
 

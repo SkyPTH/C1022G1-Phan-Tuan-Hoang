@@ -121,6 +121,12 @@ public class UserServlet extends HttpServlet {
                 case "edit":
                     updateUser(request, response);
                     break;
+                case "sort":
+                    sortByNameUser(request, response);
+                    break;
+                default:
+                    listUser(request, response);
+                    break;
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
