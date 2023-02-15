@@ -8,6 +8,6 @@
 </head>
 <body>
 <h2 class="mb-2"> Product Manager </h2>
-<a href="/product" class="btn btn-secondary">Xem danh sách sản phẩm</a>
+<c:redirect url="/product"></c:redirect>
 </body>
 </html>

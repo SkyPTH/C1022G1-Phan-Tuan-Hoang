@@ -13,25 +13,26 @@
     <link rel="stylesheet" href="/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.css">
 </head>
 <body>
-
 <table class="table">
     <thead>
-    <tr class="row">
-        <th class="col-1"> Name</th>
-        <th class="col-1"> Price</th>
-        <th class="col-1"> Description</th>
-        <th class="col-1"> Producer</th>
+    <tr class="">
+        <th class=""> Name</th>
+        <th class=""> Price</th>
+        <th class=""> Description</th>
+        <th class=""> Producer</th>
+        <th> </th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
     <c:forEach varStatus="loop" items="${productList}" var="product">
-        <tr class="row">
-            <td class="col-1">${product.name} </td>
-            <td class="col-1">${product.price}</td>
-            <td class="col-1">${product.description}</td>
-            <td class="col-1">${product.producer}</td>
-            <td><a class="btn btn-primary col-1 " href="/product?action=update&id=${products.id}">update</a></td>
-            <td><a class="btn btn-danger col-1 " href="/product?action=delete&id=${products.id}">delete</a></td>
+        <tr class="">
+            <td class="">${product.name} </td>
+            <td class="">${product.price}</td>
+            <td class="">${product.description}</td>
+            <td class="">${product.producer}</td>
+            <td><a class="btn btn-primary  " href="/product?action=update&id=${product.id}">update</a></td>
+            <td><a class="btn btn-danger  " href="/product?action=delete&id=${product.id}">delete</a></td>
         </tr>
     </c:forEach>
     </tbody>

@@ -79,12 +79,17 @@ public class ProductServlet extends HttpServlet {
     private void showUpdateForm(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = iService.findByID(id);
-        request.setAttribute("product", product);
-        try {
-            request.getRequestDispatcher("/view/update.jsp").forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace();
+        if(product==null){
+            request.getRequestDispatcher("error-404.jsp");
+        } else {request.setAttribute("product", product);
+            try {
+                request.getRequestDispatcher("/view/product/update.jsp").forward(request, response);
+            } catch (ServletException | IOException e) {
+                e.printStackTrace();
+            }
+
         }
+
     }
     private void showUpdate(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
