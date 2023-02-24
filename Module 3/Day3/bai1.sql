@@ -1,110 +1,39 @@
-CREATE DATABASE quan_ly_sinh_vien;
-USE quan_ly_sinh_vien;
-CREATE TABLE class (
-    class_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    class_name VARCHAR(60) NOT NULL,
-    start_date DATETIME NOT NULL,
-    `status` BIT
-);
-INSERT INTO class
-VALUES (1, 'A1', '2008-12-20', 1);
-INSERT INTO class
-VALUES (2, 'A2', '2008-12-22', 1);
-INSERT INTO class
-VALUES (3, 'B3', current_date, 0);
-CREATE TABLE student (
-    student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    student_name VARCHAR(30) NOT NULL,
-    address VARCHAR(50),
-    phone VARCHAR(20),
-    `Status` BIT,
-    class_id INT NOT NULL,
-    FOREIGN KEY (class_id)
-        REFERENCES class (class_id)
-);
-INSERT INTO student (student_name, address, phone, `status`, class_id)
-VALUES ('Phan Van Hung', 'Ha Noi', '0912113113', 1, 1);
-INSERT INTO student (student_name, address, `status`, class_id)
-VALUES ('Nguyen Thi Hoa', 'Hai phong', 1, 1);
-INSERT INTO student (student_name, address, phone, `status`, class_id)
-VALUES ('Nong Duc Manh', 'HCM', '0123123123', 0, 2);
-CREATE TABLE `subject` (
-    sub_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    sub_name VARCHAR(30) NOT NULL,
-    credit TINYINT NOT NULL DEFAULT 1 CHECK (Credit >= 1),
-    `status` BIT DEFAULT 1
-);
-INSERT INTO `subject`
-VALUES (5, 'CF', 2, 1),
-       (6, 'C', 3, 1),
-       (7, 'HDJ', 4, 1),
-       (8, 'RDBMS', 7, 1);
-CREATE TABLE mark (
-    mark_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    sub_id INT NOT NULL,
-    student_id INT NOT NULL,
-    mark FLOAT DEFAULT 0 CHECK (Mark BETWEEN 0 AND 100),
-    exam_times TINYINT DEFAULT 1,
-    UNIQUE (sub_id , student_id),
-    FOREIGN KEY (sub_id)
-        REFERENCES Subject (sub_id),
-    FOREIGN KEY (student_id)
-        REFERENCES Student (student_id)
-);
-INSERT INTO mark (sub_id, student_id, mark, exam_times)
-VALUES (1, 1, 8, 1),
-       (1, 2, 10, 2),
-       (2, 1, 12, 1);
-       -- Hiển thị tất cả các sinh viên có tên bắt đầu bảng ký tự ‘h’
-SELECT 
-    *
-FROM
-    student
-WHERE
-    SUBSTRING_INDEX(student_name, ' ', - 1) LIKE 'h%';
-    -- Hiển thị các thông tin lớp học có thời gian bắt đầu vào tháng 12
-SELECT 
-    *
-FROM
-    class
-WHERE
-    MONTH(start_date) = 12;
-    -- Hiển thị tất cả các thông tin môn học có credit trong khoảng từ 3-5
-SELECT 
-    *
-FROM
-    `subject`
-WHERE
-    credit >= 3 AND credit <= 5;
-    -- Thay đổi mã lớp(ClassID) của sinh viên có tên ‘Hung’ là 2
-UPDATE student 
-SET 
-    class_id = 2
-WHERE
-    student_name LIKE 'hung';
-    -- Hiển thị các thông tin: StudentName, SubName, Mark. Dữ liệu sắp xếp theo điểm thi (mark) giảm dần. nếu trùng sắp theo tên tăng dần
+use library;
+INSERT INTO category (`name` ) VALUES ('Tự nhiên ');
+INSERT INTO category (`name` ) VALUES ('Xã Hội ');
+INSERT INTO category (`name` ) VALUES ('Truyện ');
+INSERT INTO category (`name` ) VALUES ('Tiểu Thuyết ');
+INSERT INTO category (`name` ) VALUES ('Khác ');
+INSERT INTO author (`name` ) VALUES ('Nguyễn Thái Học ');
+INSERT INTO author (`name`) VALUES ('Trần Mình Hoàng ');
+INSERT INTO author (`name`) VALUES ('Dương Trung Quốc ');
+INSERT INTO author (`name`) VALUES ('Lê Văn Hiến ');
+INSERT INTO author (`name`) VALUES ('Hà Văn Minh ');
+INSERT INTO student (`name`, birthday, class_name ) VALUES ('Nguyễn Văn A', '12-12-1999', 'C0822G1 ');
+INSERT INTO student (`name`, birthday, class_name ) VALUES ('Nguyễn Văn B', '12-13-1999', 'C0822G1 ');
+INSERT INTO student (`name`, birthday, class_name ) VALUES ('Nguyễn Văn C', '12-14-1999', 'C0822G1 ');
+INSERT INTO student (`name`, birthday, class_name ) VALUES ('Nguyễn Văn D', '12-15-1999', 'C0922G1 ');
+INSERT INTO student (`name`, birthday, class_name ) VALUES ('Nguyễn Văn E', '12-16-1999', 'C1022G1 ');
+INSERT INTO book (`name`, page_size, author_id, category_id ) VALUES ('Toán', 45, 1, 1 );
+INSERT INTO book (`name`, page_size, author_id, category_id ) VALUES ('Văn', 34, 2, 2 );
+INSERT INTO book (`name`, page_size, author_id, category_id ) VALUES ('Sử', 56, 3, 2 );
+INSERT INTO book (`name`, page_size, author_id, category_id ) VALUES ('Địa', 76,4, 2 );
+INSERT INTO book (`name`, page_size, author_id, category_id ) VALUES ('Hoá', 32, 5, 1 );
+INSERT INTO borrow (student_id, book_id, borrow_day, return_day ) VALUES (1, 1, '12-12-2022', '12-13-2022' );
+INSERT INTO borrow (student_id, book_id, borrow_day, return_day ) VALUES (2, 2, '12-12-2022', '12-15-2022' );
+INSERT INTO borrow (student_id, book_id, borrow_day, return_day ) VALUES (3, 3, '12-12-2022', '12-15-2022' );
+INSERT INTO borrow (student_id, book_id, borrow_day, return_day ) VALUES (4, 4, '12-12-2022', '12-12-2022 ');
+INSERT INTO borrow (student_id, book_id, borrow_day, return_day ) VALUES (1, 5, '12-13-2022', '12-15-2022 ');
+INSERT INTO borrow (student_id, book_id, borrow_day, return_day ) VALUES (1, 5, '12-14-2022', '12-14-2022 ');
+INSERT INTO borrow (student_id, book_id, borrow_day, return_day ) VALUES (3, 4, '12-15-2022', '12-29-2022 ');
+INSERT INTO borrow (student_id, book_id, borrow_day, return_day ) VALUES (3, 3, '12-8-2022', '12-14-2022 ');
+INSERT INTO borrow (student_id, book_id, borrow_day, return_day ) VALUES (1, 2, '12-6-2022', '12-30-2022 ');
 
-SELECT 
-  student.student_name, 
-  `subject`.sub_name, 
-  mark.mark 
-FROM 
-  mark 
-  INNER JOIN student ON mark.student_id = student.student_id 
-  INNER JOIN `subject` ON mark.sub_id = `subject`.sub_id 
-ORDER BY 
-  mark.mark DESC, 
-  student.student_name;
-  -- Hiển thị tất cả các thông tin môn học (bảng subject) có credit lớn nhất.
-select * from `subject` where credit=(select max(credit) from `subject`);
--- Hiển thị các thông tin môn học có điểm thi lớn nhất.
-select * from `subject`
-join mark on `subject`.sub_id=mark.sub_id
-where mark=(select max(mark) from mark);
--- Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên, xếp hạng theo thứ tự điểm giảm dần
-select student_name,avg(mark) from student 
-join mark on student.student_id=mark.student_id
-group by student.student_id
-order by avg(mark) desc
-;
-
+-- Lấy ra toàn bộ sách có trong thư viện, cùng với tên thể loại và tác giả
+select book.`name`, page_size, c.`name`,a.`name` from book 
+left join category c on book.category_id=c.category_id
+left join author a on book.author_id=a.author_id  ;
+-- Lấy ra danh sách các học viên đã từng mượn sách và sắp xếp danh sách theo theo tên từ a->z
+select s.name from  student s join borrow b on s.student_id=b.student_id group by s.`name` order by s.`name`;
+-- Lấy ra  2 quyển sách được mượn nhiều nhất
+select book.`name`,count(b.book_id) from book join  borrow b on book.book_id=b.book_id group by b.book_id order by count(b.book_id) desc limit 2 ;
