@@ -23,11 +23,11 @@ create table student (
 student_id int primary key auto_increment,
 class_name varchar(50),
 `name` varchar(50),
-birthday varchar (50)
+birthday date 
 );
 create table borrow (
-borrow_day varchar (50),
-return_day varchar (50),
+borrow_day date ,
+return_day date,
  borrow_id int primary key auto_increment,
  student_id int,
  book_id int,
