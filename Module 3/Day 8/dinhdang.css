@@ -1,0 +1,11 @@
+a{
+
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+}
+th, td {
+    border: 1px solid black;
+    height: 50px;
+}
