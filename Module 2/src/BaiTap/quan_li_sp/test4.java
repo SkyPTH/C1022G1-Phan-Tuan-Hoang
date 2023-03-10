@@ -1,12 +1,9 @@
 package BaiTap.quan_li_sp;
 
-import java.util.Scanner;
-
 public class test4 {
     public static void main(String[] args) {
-        System.out.println("nhập n");
-        Scanner scanner = new Scanner(System.in);
-        int n = Integer.parseInt(scanner.nextLine());
+
+        int n = 10;
         int k = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {

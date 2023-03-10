@@ -1,0 +1,20 @@
+.bold{
+    font-weight: bold;
+}
+.color-link{
+    color: steelblue;
+}
+.test1{
+    font-size: 22px;
+    text-decoration: underline;
+    text-decoration-color: red;
+    margin-bottom: 77px;
+    margin-left: 222px;
+    padding-top: 100px;
+    text-transform: uppercase;
+    text-indent: 50px;
+    letter-spacing: -2px;
+    line-height: 70px;
+    word-spacing: 10px;
+    font-family: "Arial";
+}

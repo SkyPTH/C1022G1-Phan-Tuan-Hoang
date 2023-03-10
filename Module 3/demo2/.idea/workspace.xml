@@ -4,60 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1851bf5d-4478-4fbe-9726-eb839746ba7a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../demo" beforeDir="false" afterPath="$PROJECT_DIR$/../demo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module2/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/.idea/Module3.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-utilities.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-utilities.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.rtl.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.rtl.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.esm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.esm.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.esm.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.esm.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Module3/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.min.js.map" beforeDir="false" />
-    </list>
+    <list default="true" id="1851bf5d-4478-4fbe-9726-eb839746ba7a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,6 +30,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/codegym/ThiModule3",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -95,6 +43,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676003055034</updated>
       <workItem from="1676003056102" duration="87000" />
+      <workItem from="1678073273960" duration="14000" />
     </task>
     <servers />
   </component>
