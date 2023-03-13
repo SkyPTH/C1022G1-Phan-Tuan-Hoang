@@ -33,8 +33,14 @@ public class BookServlet extends HttpServlet {
                 }
                 break;
             case "update":
+                try {
+                    updateForm(request,response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
                 break;
             case "delete":
+                delete(request,response);
                 break;
             default:
                 try {
@@ -59,7 +65,19 @@ public class BookServlet extends HttpServlet {
         request.setAttribute("categoryList", iService.categoryList());
         request.getRequestDispatcher("create.jsp").forward(request, response);
     }
+    void updateForm(HttpServletRequest request,HttpServletResponse response) throws SQLException, ServletException, IOException {
+        int id= Integer.parseInt(request.getParameter("id"));
+        request.setAttribute("book",iService.findbyID(id));
+        request.setAttribute("authorList",iService.authorList());
+        request.setAttribute("categoryList",iService.categoryList());
+        request.getRequestDispatcher("/update.jsp").forward(request,response);
+    }
+void delete(HttpServletRequest request,HttpServletResponse response) throws IOException {
+       int id=Integer.parseInt(request.getParameter("id"));
+       iService.delete(id);
+       response.sendRedirect("/book");
 
+}
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -75,6 +93,11 @@ public class BookServlet extends HttpServlet {
                 }
                 break;
             case "update":
+                try {
+                    update(request,response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
                 break;
             case "delete":
                 break;
@@ -91,6 +114,18 @@ public class BookServlet extends HttpServlet {
         Category category =new Category(Integer.parseInt(categoryID));
         Book book = new Book(name, pageSize, author, category);
         iService.create(book);
+        response.sendRedirect("/book");
+    }
+    void update(HttpServletRequest request,HttpServletResponse response) throws SQLException, IOException {
+        int id= Integer.parseInt(request.getParameter("id"));
+        String name=request.getParameter("name");
+        int pageSize= Integer.parseInt(request.getParameter("pageSize"));
+        String authorID=request.getParameter("authorID");
+        String categoryID=request.getParameter("categoryID");
+        Author author=new Author(Integer.parseInt(authorID));
+        Category category=new Category(Integer.parseInt(categoryID));
+        Book book=new Book(id,name,pageSize,author,category);
+        iService.update(id,book);
         response.sendRedirect("/book");
     }
 }

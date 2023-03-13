@@ -23,7 +23,7 @@ public class Service implements IService {
     }
 
     @Override
-    public void update(int id, Book book) {
+    public void update(int id, Book book) throws SQLException {
         iRepository.update(id, book);
     }
 
@@ -40,5 +40,10 @@ public class Service implements IService {
     @Override
     public List<Category> categoryList() throws SQLException {
         return iRepository.categoryList();
+    }
+
+    @Override
+    public Book findbyID(int id) throws SQLException {
+        return iRepository.findbyID(id);
     }
 }

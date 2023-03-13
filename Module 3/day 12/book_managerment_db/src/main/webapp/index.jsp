@@ -10,5 +10,6 @@
 </h1>
 <br/>
 <c:redirect url="/book"></c:redirect>
+
 </body>
 </html>
