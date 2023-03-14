@@ -68,15 +68,15 @@
             <div class="modal-body">
                 Are you sure to delete this book?
             </div>
-
-
             <div class="modal-footer">
-                <form action="/book?action=delete">
+                <form action="/book">
                     <input type="hidden" id="id" name="id">
+                    <input type="hidden"  name="action" value="delete">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Delete</button>
+                </form>
             </div>
-            </form>
+
         </div>
     </div>
 </div>

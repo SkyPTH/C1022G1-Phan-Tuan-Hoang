@@ -72,8 +72,6 @@ public class Repository implements IRepository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
     }
 
     @Override

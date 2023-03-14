@@ -32,8 +32,13 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public void update(int id, Book book) {
-        id--;
-        bookList.set(id, book);
+        for (int i = 0; i < bookList.size(); i++) {
+            if(bookList.get(i).getId()==id){
+                bookList.set(i, book);
+                break;
+            }
+        }
+        ;
     }
 
 
