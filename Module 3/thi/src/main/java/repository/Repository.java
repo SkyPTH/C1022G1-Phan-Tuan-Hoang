@@ -49,14 +49,14 @@ public class Repository implements IRepository{
     @Override
     public void create(Book book) throws SQLException {
         Connection connection=BaseRepository.getConnection();
-        PreparedStatement preparedStatement= connection.prepareStatement("insert into book(book_name,page_Size,category_id) values (?,?,?)");
-    preparedStatement.setString(1,book.getName());
-    preparedStatement.setInt(2,book.getPageSize());
+        CallableStatement callableStatement= connection.prepareCall("call create_book(?,?,?)");
+    callableStatement.setString(1,book.getName());
+    callableStatement.setInt(2,book.getPageSize());
 //    int categoryID=book.getCategory().getCategoryID();
 //    String categoryName=book.getCategory().getCategoryName();
 //    Category category=new Category(categoryID,categoryName);
-    preparedStatement.setInt(3,book.getCategory().getCategoryID());
-    preparedStatement.executeUpdate();
+    callableStatement.setInt(3,book.getCategory().getCategoryID());
+    callableStatement.executeUpdate();
 
 
 
