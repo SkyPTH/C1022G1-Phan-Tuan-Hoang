@@ -14,10 +14,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "bookServlet", value = "/book")
+@WebServlet(name = "BookServlet", value = "/book")
 public class BookServlet extends HttpServlet {
-    IService iService = new Service();
-
+    IService iService=new Service();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -27,36 +26,32 @@ public class BookServlet extends HttpServlet {
         switch (action) {
             case "create":
                 try {
-                    createForm(request, response);
+                    createForm(request,response);
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
                 break;
-//            case "update":
-//                break;
-//            case "delete":
-//                break;
+            case "delete":
+                break;
             default:
                 try {
-                    showList(request, response);
+                    displayList(request, response);
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
         }
     }
 
-    private void createForm(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
-        List<Category> categoryList = iService.categoryList();
-        List<Book> bookList = iService.bookList();
-        request.setAttribute("bookList", bookList);
-        request.setAttribute("categoryList", categoryList);
-        request.getRequestDispatcher("/create.jsp").forward(request, response);
+    private void createForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        List<Category>categoryList=iService.categoryList();
+        request.setAttribute("categoryList",categoryList);
+        request.getRequestDispatcher("/create.jsp").forward(request,response);
     }
 
-    private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-        List<Book> bookList = iService.bookList();
-        request.setAttribute("bookList", bookList);
-        request.getRequestDispatcher("/list.jsp").forward(request, response);
+    private void displayList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        List<Book> bookList=iService.displayList();
+        request.setAttribute("bookList",bookList);
+        request.getRequestDispatcher("/displayList.jsp").forward(request,response);
     }
 
     @Override
@@ -70,17 +65,17 @@ public class BookServlet extends HttpServlet {
                 try {
                     create(request,response);
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
-            case "update":
+                break;
         }
     }
-    void create(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
-        String name = request.getParameter("bookName");
-        int pageSize = Integer.parseInt(request.getParameter("pageSize"));
-        int categoryID = Integer.parseInt(request.getParameter("categoryID"));
-        Category category = new Category(categoryID);
-        Book book = new Book( name, pageSize, category);
+    private void create(HttpServletRequest request,HttpServletResponse response) throws IOException, SQLException {
+        String bookName=request.getParameter("bookName");
+        int pageSize= Integer.parseInt(request.getParameter("pageSize"));
+        int categoryID= Integer.parseInt(request.getParameter("categoryID"));
+        Category category =new Category(categoryID);
+        Book book=new Book(bookName,pageSize,category);
         iService.create(book);
         response.sendRedirect("/book");
     }

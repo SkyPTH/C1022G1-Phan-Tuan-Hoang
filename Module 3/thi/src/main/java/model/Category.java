@@ -13,6 +13,9 @@ public class Category {
         this.categoryID = categoryID;
     }
 
+    public Category() {
+    }
+
     public int getCategoryID() {
         return categoryID;
     }

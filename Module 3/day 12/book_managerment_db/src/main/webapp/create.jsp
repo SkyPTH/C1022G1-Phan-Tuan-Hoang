@@ -18,8 +18,13 @@
         <tr>
             <td scope="row"><label for="name">Name</label><input type="text" name="name" id="name"></td>
             <td><label for="pageSize">Page Size</label><input type="text" name="pageSize" id="pageSize"></td>
-            <td><select name="authorID"><c:forEach var="author" items="${authorList}"><option  value="${author.authorID}">${author.authorName}</option> </c:forEach></select></td>
-            <td><select name="categoryID"><c:forEach var="category" items="${categoryList}"><option  value="${category.categoryID}">${category.categoryName}</option> </c:forEach></select></td>            <td>
+            <td><select name="authorID"><c:forEach var="author" items="${authorList}">
+                <option value="${author.authorID}">${author.authorName}</option>
+            </c:forEach></select></td>
+            <td><select name="categoryID"><c:forEach var="category" items="${categoryList}">
+                <option value="${category.categoryID}">${category.categoryName}</option>
+            </c:forEach></select></td>
+            <td>
                 <button type="submit">Submit</button>
             </td>
         </tr>

@@ -12,13 +12,8 @@ public class Service implements IService {
     IRepository repository = new Repository();
 
     @Override
-    public List<Book> bookList() throws SQLException {
-        return repository.bookList();
-    }
-
-    @Override
-    public List<Category> categoryList() throws SQLException {
-        return repository.categoryList();
+    public List<Book> displayList() throws SQLException {
+        return repository.displayList();
     }
 
     @Override
@@ -36,4 +31,8 @@ public class Service implements IService {
         repository.delete(id);
     }
 
+    @Override
+    public List<Category> categoryList() throws SQLException {
+        return repository.categoryList();
+    }
 }

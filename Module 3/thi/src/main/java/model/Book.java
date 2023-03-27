@@ -1,38 +1,41 @@
 package model;
 
 public class Book {
-    private int id;
-    private String name;
+    private int bookID;
+    private String bookName;
     private int pageSize;
     private Category category;
 
-    public Book(int id, String name, int pageSize, Category category) {
-        this.id = id;
-        this.name = name;
+    public Book(int bookID, String bookName, int pageSize, Category category) {
+        this.bookID = bookID;
+        this.bookName = bookName;
         this.pageSize = pageSize;
         this.category = category;
     }
 
-    public Book(String name, int pageSize, Category category) {
-        this.name = name;
+    public Book(String bookName, int pageSize, Category category) {
+        this.bookName = bookName;
         this.pageSize = pageSize;
         this.category = category;
     }
 
-    public int getId() {
-        return id;
+    public Book() {
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getBookID() {
+        return bookID;
     }
 
-    public String getName() {
-        return name;
+    public void setBookID(int bookID) {
+        this.bookID = bookID;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getBookName() {
+        return bookName;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
     }
 
     public int getPageSize() {
