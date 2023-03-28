@@ -8,6 +8,6 @@ public class MoneyService implements IMoneyService {
 
     @Override
     public Double changeMoney(Double n) {
-        return iMoneyRepository.changeMoney(n);
+        return iMoneyRepository.changeMoney(n*23000);
     }
 }
