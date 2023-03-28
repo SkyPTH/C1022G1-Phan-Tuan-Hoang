@@ -2,55 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="671c9a36-e1d8-470c-9274-e8b0f2d2d472" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Bai1/demo1/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Bai1/demo1/src/main/java/com/example/controller/moneyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Bai1/demo1/src/main/java/com/example/repository/IRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Bai1/demo1/src/main/java/com/example/repository/Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Bai1/demo1/src/main/java/com/example/service/IService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Bai1/demo1/src/main/java/com/example/service/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Bai1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/Bai1/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/src/main/java/com/example/controller/moneyController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/src/main/java/com/example/repository/IRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/src/main/java/com/example/repository/Repository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/src/main/java/com/example/service/IService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/src/main/java/com/example/service/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/src/main/webapp/WEB-INF/views/home.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo1/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Bai1/demo1/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo1/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Bai1/demo1/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo1/src/main/java/com/example/demo1/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo1/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Bai1/demo1/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bai1/demo1/src/main/webapp/WEB-INF/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Bai1/demo1/src/main/webapp/WEB-INF/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/src/main/java/com/example/controller/FoodController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/src/main/java/com/example/repository/FoodRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/src/main/java/com/example/repository/IFoodRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/src/main/java/com/example/service/FoodService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/src/main/java/com/example/service/IFoodService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/src/main/webapp/WEB-INF/views/food.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day2/Bai1/demo/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bai1/demo1/src/main/java/com/example/controller/moneyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Bai1/demo1/src/main/java/com/example/controller/MoneyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bai1/demo1/src/main/java/com/example/repository/IMoneyRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bai1/demo1/src/main/java/com/example/repository/MoneyRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bai1/demo1/src/main/java/com/example/service/MoneyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Bai1/demo1/src/main/java/com/example/service/MoneyService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,9 +48,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/codegym/C1022G1-Phan-Tuan-Hoang/C1022G1-Phan-Tuan-Hoang/Module4/Day1/Bai2",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -86,6 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1679904809683</updated>
       <workItem from="1679904810778" duration="37000" />
+      <workItem from="1679975926940" duration="138000" />
     </task>
     <servers />
   </component>

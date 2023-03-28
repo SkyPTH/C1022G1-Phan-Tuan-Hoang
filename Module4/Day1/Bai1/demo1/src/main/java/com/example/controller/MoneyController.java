@@ -1,7 +1,7 @@
 package com.example.controller;
 
 import com.example.service.IMoneyService;
-import com.example.service.MoneyService;
+import com.example.service.Impl.MoneyService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/home")
-public class moneyController {
+public class MoneyController {
     private final IMoneyService iMoneyService = new MoneyService();
 
     @GetMapping("")
-    public String changeMoney(@RequestParam(name = "usd", defaultValue ="0") Double usd, Model model) {
+    public String changeMoney(@RequestParam(name = "usd", defaultValue = "0") Double usd, Model model) {
         if (usd == null) {
             return "home";
         }

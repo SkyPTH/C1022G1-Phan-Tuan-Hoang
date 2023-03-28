@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.service.DictionaryService;
+import com.example.service.Impl.DictionaryService;
 import com.example.service.IDictionaryService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
