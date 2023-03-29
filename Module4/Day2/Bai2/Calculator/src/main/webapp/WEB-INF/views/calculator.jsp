@@ -18,10 +18,12 @@
     <label for="secondNum">Second number</label>
     <input type="number" name="secondNum"  id="secondNum">
     <br>
+    <input type="submit" name="operand" value="Addition(+)">
+    <input type="submit" name="operand" value="Subtraction(-)">
+    <input type="submit" name="operand" value="Multiplication(*)">
+    <input type="submit" name="operand" value="Division(/)">
 </form>
-<input type="submit" name="operand" value="Addition(+)">
-<input type="submit" name="operand" value="Subtraction(-)">
-<input type="submit" name="operand" value="Multiplication(*)">
-<input type="submit" name="operand" value="Division(/)">
+
+<h3>${result}</h3>
 </body>
 </html>

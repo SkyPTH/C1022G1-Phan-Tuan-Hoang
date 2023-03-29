@@ -1,6 +1,6 @@
-package service.Impl;
+package com.example.service.Impl;
 
-import service.ICalculatorService;
+import com.example.service.ICalculatorService;
 
 public class CalculatorService implements ICalculatorService {
 
