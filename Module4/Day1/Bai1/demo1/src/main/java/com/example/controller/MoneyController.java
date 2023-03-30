@@ -1,7 +1,7 @@
 package com.example.controller;
 
 import com.example.service.IMoneyService;
-import com.example.service.Impl.MoneyService;
+import com.example.service.impl.MoneyService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

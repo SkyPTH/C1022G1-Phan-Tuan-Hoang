@@ -1,6 +1,6 @@
 package com.example.service.Impl;
 
-import com.example.repository.Impl.DictionaryRepository;
+import com.example.repository.impl.DictionaryRepository;
 import com.example.repository.IDictionaryRepository;
 import com.example.service.IDictionaryService;
 
