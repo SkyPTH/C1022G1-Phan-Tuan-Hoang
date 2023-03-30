@@ -1,10 +1,10 @@
 package com.example.model;
 
 public class MailSetting {
-String language;
-Integer pageSize;
-boolean spamFilter;
-String signature;
+    private String language;
+    private Integer pageSize;
+    private boolean spamFilter;
+    private String signature;
 
     public MailSetting(String language, Integer pageSize, boolean spamFilter, String signature) {
         this.language = language;

@@ -2,13 +2,15 @@ package com.example.service.impl;
 
 import com.example.model.MailSetting;
 import com.example.repository.IMailSettingRepository;
-import com.example.repository.impl.MailSettingRepository;
 import com.example.service.IMailSettingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class MailSettingService implements IMailSettingService {
-    private final IMailSettingRepository iMailSettingRepository = new MailSettingRepository();
+    @Autowired
+    IMailSettingRepository iMailSettingRepository;
 
     @Override
     public void create(MailSetting mailSetting) {

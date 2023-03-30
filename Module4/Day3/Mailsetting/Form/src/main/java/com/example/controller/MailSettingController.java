@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.model.MailSetting;
 import com.example.service.IMailSettingService;
 import com.example.service.impl.MailSettingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,8 +16,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 @RequestMapping("/mail-setting")
 public class MailSettingController {
-    private final IMailSettingService iMailSettingService = new MailSettingService();
-
+    @Autowired
+    private IMailSettingService iMailSettingService;
     @GetMapping("")
     public String showList(Model model) {
         model.addAttribute("list", iMailSettingService.mailList());

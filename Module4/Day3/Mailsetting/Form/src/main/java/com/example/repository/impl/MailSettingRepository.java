@@ -2,10 +2,11 @@ package com.example.repository.impl;
 
 import com.example.model.MailSetting;
 import com.example.repository.IMailSettingRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Repository
 public class MailSettingRepository implements IMailSettingRepository {
     private static final List<MailSetting> mailSettingList = new ArrayList<>();
 

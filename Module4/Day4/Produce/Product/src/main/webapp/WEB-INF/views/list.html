@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Create</title>
+    <title>List</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,17 +11,34 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-
-<table>
-    <form action="/product/create" method="post" role="form" th:object="${product}">
-        <div class="form-group">
-            <input type="text" class="form-control" th:field="*{name}" name="name" placeholder="Input name">
-            <input type="text" class="form-control" th:field="*{price}" name="price" placeholder="Input price">
-            <input type="text" class="form-control" th:field="*{description}" name="description" placeholder="Input description">
-            <input type="text" class="form-control" th:field="*{producer}" name="producer" placeholder="Input producer">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+<form action="/product" >
+    <input type="text" name="search">
+    <button type="submit" class="button">Search</button>
+</form>
+<a class="btn btn-primary" href="/product/create" role="button">Create</a>
+<table class="table" style="text-align: center">
+    <thead>
+    <tr class="row">
+        <th class="col-1">ID</th>
+        <th class="col-1">Name</th>
+        <th class="col-1">Price</th>
+        <th class="col-1">Description</th>
+        <th class="col-1">Producer</th>
+        <th class="col-1">Update</th>
+        <th class="col-1">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="row" th:each="product : ${list}">
+        <td class="col-1" th:text="${product.id}"></td>
+        <td class="col-1" th:text="${product.name}"></td>
+        <th class="col-1" th:text="${product.price}"></th>
+        <th class="col-1" th:text="${product.description}"></th>
+        <th class="col-1" th:text="${product.producer}"></th>
+        <th><a class="btn btn-primary" th:href="@{/product/update/{id}(id=${product.id})}" role="button">Update</a></th>
+        <td><a class="btn btn-danger" th:href="@{/product/delete/{id}(id=${product.id})}" role="button">Delete </a></td>
+    </tr>
+    </tbody>
 </table>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
