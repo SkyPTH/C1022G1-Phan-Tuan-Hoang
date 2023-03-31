@@ -46,7 +46,12 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public void delete(int id) {
-        productList.remove(id);
+        for (int i = 0; i < productList.size(); i++) {
+            if (id == productList.get(i).getId()) {
+                productList.remove(i);
+            }
+        }
+
     }
 
     @Override
