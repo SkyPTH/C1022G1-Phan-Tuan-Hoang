@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>User Name</th>
+    <th>Tittle</th>
+    <th>Content</th>
+    <th>Image</th>
+    <th>Type Blog</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="blog , temp : ${list}">
+    <td scope="row" th:text="${blog.getId()}"></td>
+    <td th:text="${blog.getName()}"></td>
+    <td th:text="${blog.getTittle()}"></td>
+    <td th:text="${blog.getContent()}"></td>
+    <td th:text="${blog.getTypeBlog().getNameTypeBlog()}"></td>
+    <td th:text="${blog.getImg()}"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
