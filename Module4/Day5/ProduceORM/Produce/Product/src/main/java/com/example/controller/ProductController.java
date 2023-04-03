@@ -28,7 +28,7 @@ public class ProductController {
 
     @GetMapping("update/{id}")
     public String showUpdateForm(@PathVariable int id, Model model) {
-        model.addAttribute("product", iProductService.findbyID(id));
+        model.addAttribute("product", iProductService.findByID(id));
         model.addAttribute("id", id);
         return "update";
     }
@@ -46,8 +46,7 @@ public class ProductController {
     }
 
     @PostMapping("update")
-    public String update(@ModelAttribute Product product) {
-        int id = product.getId() - 1;
+    public String update(@ModelAttribute Product product,@RequestParam int id) {
         iProductService.update(id, product);
         return "redirect:/product";
     }

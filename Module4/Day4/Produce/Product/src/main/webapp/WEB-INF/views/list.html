@@ -35,11 +35,11 @@
         <th class="col-1" th:text="${product.price}"></th>
         <th class="col-1" th:text="${product.description}"></th>
         <th class="col-1" th:text="${product.producer}"></th>
+        <td><a th:href="@{/product/detail/{id}(id=${product.id})}">Detail</a></td>
         <th><a class="btn btn-primary" th:href="@{/product/update/{id}(id=${product.id})}" role="button">Update</a></th>
         <td>
             <button type="button" class="btn btn-danger" th:attr="onclick=|infoDelete(${product.id})|"
                     data-toggle="modal" data-target="#modelId">
-                <!--                <a  th:href="@{/product/delete/{id}(id=${product.id})}" role="button">Delete </a>-->
                 Delete
             </button>
         </td>

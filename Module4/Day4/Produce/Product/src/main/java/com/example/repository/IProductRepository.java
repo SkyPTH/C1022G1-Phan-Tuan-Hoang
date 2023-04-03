@@ -13,5 +13,5 @@ public interface IProductRepository {
 
     void delete(int id);
 
-    Product findbyID(int id);
+    Product findByID(int id);
 }
