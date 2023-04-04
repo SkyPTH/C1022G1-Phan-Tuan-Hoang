@@ -52,6 +52,5 @@ public class ProductRepository implements IProductRepository {
     @Override
     public Product findByID(int id) {
         return BaseRepository.entityManager.find(Product.class, id);
-
     }
 }

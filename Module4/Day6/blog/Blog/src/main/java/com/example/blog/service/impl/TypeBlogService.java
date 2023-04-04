@@ -12,6 +12,7 @@ import java.util.List;
 public class TypeBlogService implements ITypeBlogService {
     @Autowired
     ITypeBlogRepository iTypeBlogRepository;
+
     @Override
     public List<TypeBlog> findAll() {
         return (List<TypeBlog>) iTypeBlogRepository.findAll();

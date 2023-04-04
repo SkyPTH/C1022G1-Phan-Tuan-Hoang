@@ -24,34 +24,45 @@ public class BlogController {
         model.addAttribute("list", iBlogService.findAll());
         return "list";
     }
+
+    @GetMapping(value = "detail/{id}")
+    public String detail(@PathVariable int id,Model model){
+        model.addAttribute("blog", iBlogService.findByID(id));
+        return "detail";
+    }
+
     @GetMapping(value = "create")
-    public String createForm(Model model){
-        model.addAttribute("blog",new Blog());
-        model.addAttribute("typeList",iTypeBlogService.findAll());
+    public String createForm(Model model) {
+        model.addAttribute("blog", new Blog());
+        model.addAttribute("typeList", iTypeBlogService.findAll());
         return "create";
     }
-    @GetMapping(value = "update")
-    public String updateForm(@RequestParam int id, Model model){
-        model.addAttribute("blog",iBlogService.findByID(id));
-        model.addAttribute("typeList",iTypeBlogService.findAll());
+
+    @GetMapping(value = "update/{id}")
+    public String updateForm(@PathVariable int id, Model model) {
+        model.addAttribute("blog", iBlogService.findByID(id));
+        model.addAttribute("typeList", iTypeBlogService.findAll());
         return "update";
     }
+
     @GetMapping(value = "delete")
-    public String delete(@RequestParam int id,RedirectAttributes redirectAttributes){
+    public String delete(@RequestParam int id, RedirectAttributes redirectAttributes) {
         iBlogService.delete(id);
-        redirectAttributes.addFlashAttribute("msg","Xóa thành công");
+        redirectAttributes.addFlashAttribute("msg", "Xóa thành công");
         return "redirect:blog";
     }
-    @PostMapping(value ="create")
-    public String create(@ModelAttribute Blog blog, RedirectAttributes redirectAttributes){
+
+    @PostMapping(value = "create")
+    public String create(@ModelAttribute Blog blog, RedirectAttributes redirectAttributes) {
         iBlogService.save(blog);
-        redirectAttributes.addFlashAttribute("msg","Thêm mới thành công");
+        redirectAttributes.addFlashAttribute("msg", "Thêm mới thành công");
         return "redirect:blog";
     }
+
     @PostMapping(value = "update")
-    public String update(@ModelAttribute Blog blog,RedirectAttributes redirectAttributes){
+    public String update(@ModelAttribute Blog blog, RedirectAttributes redirectAttributes) {
         iBlogService.save(blog);
-        redirectAttributes.addFlashAttribute("msg","Thêm mới thành công");
+        redirectAttributes.addFlashAttribute("msg", "Cập nhật thành công");
         return "redirect:blog";
     }
 }

@@ -46,8 +46,8 @@ public class ProductController {
     }
 
     @PostMapping("update")
-    public String update(@ModelAttribute Product product,@RequestParam int id) {
-        iProductService.update(id, product);
+    public String update(@ModelAttribute Product product) {
+        iProductService.update(product.getId(), product);
         return "redirect:/product";
     }
 
