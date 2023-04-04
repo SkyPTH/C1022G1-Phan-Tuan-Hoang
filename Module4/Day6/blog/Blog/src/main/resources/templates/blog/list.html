@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<a class="btn btn-primary" href="/blog/create" role="button">Create</a>
+<a th:text="${msg}"></a>
+<form action="/blog">
+    <label for="search">Search</label><input id="search" name="search">
+    <input type="submit" value="Seach" placeholder="Search by tittle">
+</form>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>User Name</th>
+        <th>Tittle</th>
+        <th>Content</th>
+        <th>Type Blog</th>
+        <th>Image</th>
+        <th>Detail</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="blog , stt : ${list}">
+        <td scope="row" th:text="${blog.id}"></td>
+        <td th:text="${blog.userName}"></td>
+        <td th:text="${blog.tittle}"></td>
+        <td th:text="${blog.content}"></td>
+        <td th:text="${blog.typeBlog.nameTypeBlog}"></td>
+        <td th:text="${blog.img}"></td>
+        <td><a th:href="@{/blog/detail/{id}(id=${blog.id})}">Detail</a></td>
+        <th><a class="btn btn-primary" th:href="@{/blog/update/{id}(id=${blog.id})}" role="button">Update</a></th>
+        <td>
+            <button type="button" class="btn btn-danger" th:attr="onclick=|infoDelete(${blog.id})|"
+                    data-toggle="modal" data-target="#modelId">
+                Delete
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<span><a th:if="${list.hasPrevious()}" th:href="@{/blog(page=${list.number - 1})}">Previous</a></span>
+<span><a th:text="${(list.number+1) + '/' + list.getTotalPages()}"></a></span>
+<span><a th:if="${list.hasNext()}" th:href="@{/blog(page=${list.number + 1})}">Next</a></span>
+<form action="/blog">
+    <input type="number" id="pageForm2" placeholder="Nhập số trang...."
+           th:attr="onchange=|pageForm()|" th:value="${list.number+1}">
+    <input type="hidden"  id="pageForm1"  name="page" >
+    <input type="submit"
+            value="Tìm kiếm" >
+</form>
+<script>
+    function pageForm(){
+        document.getElementById("pageForm1").value=document.getElementById("pageForm2").value-1;
+    }
+</script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+            <form action="/blog/delete">
+                <div class="modal-body">
+                    Delete?
+                </div>
+                <input type="hidden" id="idDelete" name="id">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function infoDelete(id) {
+        document.getElementById("idDelete").value = id;
+    }
+</script>
+</body>
+</html>

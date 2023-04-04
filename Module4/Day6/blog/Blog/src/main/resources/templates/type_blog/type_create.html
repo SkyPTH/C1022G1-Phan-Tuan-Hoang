@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Update</title>
+    <title>Create</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,22 +11,16 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<form action="/blog/update" method="post" role="form" th:object="${blog}">
-    <div class="form-group">
-        <input type="hidden" class="form-control" th:field="*{id}" th:text="*{id}" name="id" placeholder="Input name">
-        <input type="text" class="form-control" th:field="*{userName}" th:text="*{userName}" name="userName" placeholder="Input name">
-        <input type="text" class="form-control" th:field="*{tittle}" th:text="*{tittle}" name="tittle" placeholder="Input tittle">
-        <input type="text" class="form-control" th:field="*{content}" th:text="*{content}" name="content"
-               placeholder="Input content">
-        <select th:field="*{typeBlog}">
-            <option th:each="typeBlog : ${typeList}" th:text="${typeBlog.nameTypeBlog}"
-                    th:value="${typeBlog.idTypeBlog}">
-            </option>
-        </select>
-        <input type="text" class="form-control" th:field="*{img}" th:text="*{img}" name="img" placeholder="Input img">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+
+<table>
+    <form action="/typeBlog/create" method="post" role="form" th:object="${typeBlog}">
+        <div class="form-group">
+            <input type="text" class="form-control" th:field="*{nameTypeBlog}" name="nameTypeBlog"
+                   placeholder="Input name">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</table>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
