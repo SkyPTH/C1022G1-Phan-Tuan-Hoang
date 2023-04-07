@@ -1,8 +1,14 @@
 package com.example.song.service;
 
+import com.example.song.dto.SongDTO;
 import com.example.song.model.Song;
 
-public interface ISongService {
-    void save(Song song);
+import java.util.List;
 
+public interface ISongService {
+    void save(SongDTO songDTO);
+
+    Song findByID(int id);
+
+    List<Song> list();
 }

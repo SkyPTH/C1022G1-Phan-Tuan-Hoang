@@ -1,6 +1,9 @@
 package com.example.song.repository;
 
+import com.example.song.model.Song;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ISongRepository extends PagingAndSortingRepository {
+@Repository
+public interface ISongRepository extends PagingAndSortingRepository<Song,Integer> {
 }

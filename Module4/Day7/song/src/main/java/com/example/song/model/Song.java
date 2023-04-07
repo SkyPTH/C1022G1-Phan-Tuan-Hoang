@@ -1,7 +1,6 @@
 package com.example.song.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "song")
@@ -10,13 +9,12 @@ public class Song {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name = "name")
-    @NotBlank(message = "Tên bài hát không được để trống")
     private String name;
     @Column(name = "singer")
-    @NotBlank(message = "Tên ca sĩ không được để trống")
+
     private String singer;
     @Column(name = "type")
-    @NotBlank(message = "Thể loại nhạc không được để trống")
+
     private String type;
 
     public Song(int id, String name, String singer, String type) {
