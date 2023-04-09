@@ -11,22 +11,22 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <table class="table">
-  <thead>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Amount</th>
-    <th>Borrow</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr th:each="book : ${list}" >
-    <td th:text="${book.bookID}"></td>
-    <td th:text="${book.bookName}"></td>
-    <td th:text="${book.amount}"></td>
-    <td><a th:href="@{/book/detail/{id}(id=${book.bookID})}" role="button"> Detail </a></td>
-  </tr>
-  </tbody>
+    <thead>
+    <tr>
+        <th style="font-weight: bold; color: blue">ID</th>
+        <th style="font-weight: bold; color: blue">Name</th>
+        <th style="font-weight: bold; color: blue">Amount</th>
+        <th style="font-weight: bold; color: blue">Borrow</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="color:violet;margin: auto" th:each="book : ${list}">
+        <td th:text="${book.bookID}"></td>
+        <td th:text="${book.bookName}"></td>
+        <td th:text="${book.amount}"></td>
+        <td><a th:href="@{/book/detail/{id}(id=${book.bookID})}" role="button"> Detail </a></td>
+    </tr>
+    </tbody>
 </table>
 <body>
 

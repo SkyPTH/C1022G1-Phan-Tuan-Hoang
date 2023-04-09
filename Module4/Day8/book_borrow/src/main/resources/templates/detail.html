@@ -12,9 +12,9 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<p th:text="${book.getBookID()}"></p>
-<p th:text="${book.getBookName()}"></p>
-<p th:text="${book.getAmount()}"></p>
+<p th:text="${book.getBookID()}" style="font-weight: bold; color: blue">ID sách</p>
+<p th:text="${book.getBookName()}" style="font-weight: bold; color: blue">Tên sách</p>
+<p th:text="${book.getAmount()}" style="font-weight: bold; color: blue">Số lượng sách</p>
 <form action="/book/borrow" th:object="${book}">
     <input type="hidden" name="bookID" th:field="*{bookID}">
     <input type="text" name="studentID" placeholder="ID student">

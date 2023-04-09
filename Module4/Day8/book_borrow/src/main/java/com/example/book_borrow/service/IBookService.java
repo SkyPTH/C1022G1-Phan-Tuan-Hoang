@@ -7,4 +7,6 @@ import org.springframework.data.domain.Pageable;
 public interface IBookService {
     Page<Book> list(Pageable pageable,String search);
     Book findByID(int id);
+    void borrow(Book book);
+    void returnBook(Book book);
 }

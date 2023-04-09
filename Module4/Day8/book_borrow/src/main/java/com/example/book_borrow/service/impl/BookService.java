@@ -15,11 +15,23 @@ public class BookService implements IBookService {
 
     @Override
     public Page<Book> list(Pageable pageable, String search) {
-        return iBookRepository.findBookByBookNameContaining(pageable,search);
+        return iBookRepository.findBookByBookNameContaining(pageable, search);
     }
 
     @Override
     public Book findByID(int id) {
         return iBookRepository.findById(id).get();
+    }
+
+    @Override
+    public void borrow(Book book) {
+        book.setAmount(book.getAmount() - 1);
+        iBookRepository.save(book);
+    }
+
+    @Override
+    public void returnBook(Book book) {
+        book.setAmount(book.getAmount() + 1);
+        iBookRepository.save(book);
     }
 }

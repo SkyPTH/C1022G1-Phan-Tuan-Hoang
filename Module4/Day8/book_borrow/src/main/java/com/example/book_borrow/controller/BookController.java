@@ -48,18 +48,33 @@ public class BookController {
         if (student == null) {
             redirectAttributes.addAttribute("msg", "Không tìm thấy học sinh");
             return "redirect:/list";
+        } else if (
+                iBookService.findByID(bookID).getAmount() == 0
+        ) {
+            redirectAttributes.addAttribute("msg", "Sách đã hết");
+            return "redirect:/list";
         } else {
             Borrow borrow = new Borrow();
             borrow.setStudent(student);
             borrow.setBorrowDay(Date.from(Instant.now()).toString());
             borrow.setBook(iBookService.findByID(bookID));
             iBorrowService.save(borrow);
+            iBookService.borrow(iBookService.findByID(bookID));
+            redirectAttributes.addAttribute("msg", "Mượn sách thành công");
         }
-        return "redirect:/list";
+        return "redirect:/book";
     }
 
     @GetMapping("return")
-    public String returnBook() {
-        return "redirect:/list";
+    public String returnBook(@RequestParam(name = "bookID") int bookID, @RequestParam(name = "studentID") int studentID, RedirectAttributes redirectAttributes) {
+        Borrow borrow = iBorrowService.findBorrow(studentID, bookID);
+        if (borrow == null) {
+            redirectAttributes.addAttribute("msg", "Không tìm thấy lượt mượn sách này của học sinh này");
+        } else {
+            borrow.setReturnDay(Date.from(Instant.now()).toString());
+            iBookService.returnBook(iBookService.findByID(bookID));
+            redirectAttributes.addAttribute("msg", "Trả sách thành công");
+        }
+        return "redirect:/book";
     }
 }

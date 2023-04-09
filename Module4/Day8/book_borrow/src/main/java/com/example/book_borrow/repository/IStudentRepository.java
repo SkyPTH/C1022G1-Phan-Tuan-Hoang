@@ -5,5 +5,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IStudentRepository extends PagingAndSortingRepository<Student,Integer> {
+public interface IStudentRepository extends PagingAndSortingRepository<Student, Integer> {
 }

@@ -12,6 +12,7 @@ import java.util.List;
 public class BorrowService implements IBorrowService {
     @Autowired
     IBorrowRepository iBorrowRepository;
+
     @Override
     public void save(Borrow borrow) {
         iBorrowRepository.save(borrow);
@@ -19,5 +20,10 @@ public class BorrowService implements IBorrowService {
 
     public List<Borrow> list() {
         return (List<Borrow>) iBorrowRepository.findAll();
+    }
+
+    @Override
+    public Borrow findBorrow(int studentID, int bookID) {
+        return iBorrowRepository.findBorrowByStudent_StudentIDAndBook_BookID(studentID, bookID);
     }
 }
