@@ -12,7 +12,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<p th:text="${book.getBookID()}" style="font-weight: bold; color: blue">ID sách</p>
+<p th:text="${book.getBookID()}" style="font-weight: bold; color: blue"></p>
 <p th:text="${book.getBookName()}" style="font-weight: bold; color: blue">Tên sách</p>
 <p th:text="${book.getAmount()}" style="font-weight: bold; color: blue">Số lượng sách</p>
 <form action="/book/borrow" th:object="${book}">
@@ -20,9 +20,8 @@
     <input type="text" name="studentID" placeholder="ID student">
     <button type="submit">Mượn sách</button>
 </form>
-<form action="/book/return" th:object="${book}">
-    <input type="hidden" name="bookID" th:field="*{bookID}">
-    <input type="text" name="studentID" placeholder="ID student">
+<form action="/book/return" method="get">
+    <input type="text" name="borrowCode" placeholder="Input borrow code">
     <button type="submit">Trả sách</button>
 </form>
 <!-- Optional JavaScript -->

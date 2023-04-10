@@ -23,7 +23,7 @@ public class BorrowService implements IBorrowService {
     }
 
     @Override
-    public Borrow findBorrow(int studentID, int bookID) {
-        return iBorrowRepository.findBorrowByStudent_StudentIDAndBook_BookID(studentID, bookID);
+    public Borrow findBorrow(int borrowCode) {
+        return iBorrowRepository.findBorrowByBorrowCode(borrowCode);
     }
 }

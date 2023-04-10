@@ -18,22 +18,26 @@ public class Borrow {
     private String borrowDay;
     @Column(name = "return_day")
     private String returnDay;
+    @Column(name = "borrow_code")
+    private Integer borrowCode;
 
-    public Borrow(int id, Book book, Student student, String borrowDay, String returnDay) {
+    public Borrow(int id, Book book, Student student, String borrowDay, String returnDay, Integer borrowCode) {
         this.id = id;
         this.book = book;
         this.student = student;
         this.borrowDay = borrowDay;
         this.returnDay = returnDay;
+        this.borrowCode = borrowCode;
     }
 
     public Borrow() {
     }
 
-    public Borrow(Book book, Student student, String borrowDay) {
+    public Borrow(Book book, Student student, String borrowDay,Integer borrowCode) {
         this.book = book;
         this.student = student;
         this.borrowDay = borrowDay;
+        this.borrowCode = borrowCode;
     }
 
     public int getId() {
@@ -74,5 +78,13 @@ public class Borrow {
 
     public void setReturnDay(String returnDay) {
         this.returnDay = returnDay;
+    }
+
+    public Integer getBorrowCode() {
+        return borrowCode;
+    }
+
+    public void setBorrowCode(Integer borrowCode) {
+        this.borrowCode = borrowCode;
     }
 }

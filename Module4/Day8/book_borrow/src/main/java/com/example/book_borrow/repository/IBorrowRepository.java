@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IBorrowRepository extends PagingAndSortingRepository<Borrow, Integer> {
-    Borrow findBorrowByStudent_StudentIDAndBook_BookID(int studentID, int bookID);
+    Borrow findBorrowByBorrowCode(int borrowCode);
 }
