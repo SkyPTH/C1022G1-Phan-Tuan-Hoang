@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentService implements IStudentService {
     @Autowired
-    IStudentRepository iStudentRepository;
+    private IStudentRepository iStudentRepository;
 
     @Override
     public Student findByID(int id) {

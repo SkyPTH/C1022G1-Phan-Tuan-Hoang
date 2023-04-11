@@ -6,21 +6,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Cart {
-    private Map<Product,Integer> products = new HashMap<>();
+    private Map<Product,Integer> map = new HashMap<>();
 
     public Cart() {
     }
 
-    public Cart(Map<Product,Integer> products) {
-        this.products = products;
+    public Map<Product, Integer> getMap() {
+        return map;
     }
 
-    public Map<Product,Integer> getProducts() {
-        return products;
+    public void setMap(Map<Product, Integer> map) {
+        this.map = map;
     }
-
     private boolean checkItemInCart(Product product){
-        for (Map.Entry<Product, Integer> entry : products.entrySet()) {
+        for (Map.Entry<Product,Integer> entry : map.entrySet()){
             if(entry.getKey().getId().equals(product.getId())){
                 return true;
             }
@@ -28,8 +27,8 @@ public class Cart {
         return false;
     }
 
-    private Map.Entry<Product, Integer> selectItemInCart(Product product){
-        for (Map.Entry<Product, Integer> entry : products.entrySet()) {
+    private Map.Entry<Product,Integer> selectItemInCart(Product product){
+        for (Map.Entry<Product,Integer> entry : map.entrySet()){
             if(entry.getKey().getId().equals(product.getId())){
                 return entry;
             }
@@ -39,29 +38,39 @@ public class Cart {
 
     public void addProduct(Product product){
         if (!checkItemInCart(product)){
-            products.put(product,1);
+            map.put(product,1);
         } else {
             Map.Entry<Product, Integer> itemEntry = selectItemInCart(product);
             Integer newQuantity = itemEntry.getValue() + 1;
-            products.replace(itemEntry.getKey(),newQuantity);
+            map.replace(itemEntry.getKey(),newQuantity);
         }
     }
-
+    public void decreaseProduct(Product product){
+        if (!checkItemInCart(product)){
+            map.put(product,1);
+        } else if (map.get(product)==0) {
+            map.remove(product);
+        } else {
+            Map.Entry<Product, Integer> itemEntry = selectItemInCart(product);
+            Integer newQuantity = itemEntry.getValue() - 1;
+            map.replace(itemEntry.getKey(),newQuantity);
+        }
+    }
     public Integer countProductQuantity(){
         Integer productQuantity = 0;
-        for (Map.Entry<Product, Integer> entry : products.entrySet()) {
+        for (Map.Entry<Product, Integer> entry : map.entrySet()) {
             productQuantity += entry.getValue();
         }
         return productQuantity;
     }
 
     public Integer countItemQuantity(){
-        return products.size();
+        return map.size();
     }
 
     public Float countTotalPayment(){
         float payment = 0;
-        for (Map.Entry<Product, Integer> entry : products.entrySet()) {
+        for (Map.Entry<Product, Integer> entry : map.entrySet()) {
             payment += entry.getKey().getPrice() * (float) entry.getValue();
         }
         return payment;

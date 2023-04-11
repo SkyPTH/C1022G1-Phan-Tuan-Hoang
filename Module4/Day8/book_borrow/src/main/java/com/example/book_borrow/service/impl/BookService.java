@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class BookService implements IBookService {
     @Autowired
-    IBookRepository iBookRepository;
+    private IBookRepository iBookRepository;
 
     @Override
     public Page<Book> list(Pageable pageable, String search) {

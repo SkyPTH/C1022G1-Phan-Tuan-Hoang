@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class BorrowService implements IBorrowService {
     @Autowired
-    IBorrowRepository iBorrowRepository;
+    private IBorrowRepository iBorrowRepository;
 
     @Override
     public void save(Borrow borrow) {

@@ -28,11 +28,11 @@ import java.util.Random;
 public class BookController {
     public SimpleJpaRepository<Book, Integer> bookService;
     @Autowired
-    IBookService iBookService;
+    private IBookService iBookService;
     @Autowired
-    IStudentService iStudentService;
+    private IStudentService iStudentService;
     @Autowired
-    IBorrowService iBorrowService;
+    private IBorrowService iBorrowService;
 
     @GetMapping("")
     public String list(Model model, @PageableDefault(sort = "bookID", direction = Sort.Direction.DESC, size = 3) Pageable pageable, @RequestParam(required = false, defaultValue = "") String search) {

@@ -7,19 +7,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+
 @Service
 public class ProductService implements IProductService {
-
     @Autowired
-    private IProductRepository productRepository;
+    private IProductRepository iProductRepository;
 
     @Override
     public Iterable<Product> findAll() {
-        return productRepository.findAll();
+        return iProductRepository.findAll();
     }
 
     @Override
-    public Optional<Product> findById(Long id) {
-        return productRepository.findById(id);
+    public Optional<Product> findById(int id) {
+        return Optional.ofNullable(iProductRepository.findById(id));
+    }
+
+    @Override
+    public Product findByIdProDuct(int id) {
+        return iProductRepository.findById(id);
     }
 }
