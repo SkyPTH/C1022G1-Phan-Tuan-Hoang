@@ -1,8 +1,7 @@
-package com.example.thi.service.impl;
+package com.example.thi.service;
 
 import com.example.thi.model.Book;
 import com.example.thi.repository.IBookRepository;
-import com.example.thi.service.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,8 +13,8 @@ public class BookService implements IBookService {
     private IBookRepository iBookRepository;
 
     @Override
-    public Page<Book> list(String search, Pageable pageable) {
-        return iBookRepository.findBookByBookNameContaining(pageable, search);
+    public Page<Book> list(Pageable pageable, String search) {
+        return iBookRepository.findBookByNameContaining(pageable, search);
     }
 
     @Override
@@ -24,12 +23,12 @@ public class BookService implements IBookService {
     }
 
     @Override
-    public Book findByID(int id) {
-        return iBookRepository.findById(id).get();
+    public void detete(int id) {
+        iBookRepository.deleteById(id);
     }
 
     @Override
-    public void delete(int id) {
-        iBookRepository.deleteById(id);
+    public Book findByID(int id) {
+        return iBookRepository.findById(id).get();
     }
 }

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Title</title>
+    <title>Create</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,12 +11,11 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<p th:text="${msg}"></p>
-<form action="" method="post" th:object="${book}">
-    <input th:field="${book.bookName}" name="bookName" >
-    <p style="color: red" th:if="${#fields.hasErrors('bookName')}" th:errors="*{bookName}"></p>
-    <select th:field="${book.bookType.typeID}">
-        <option th:each="type : ${typeList}" th:text="${type.typeName}" th:value="${type.typeID}"></option>
+<form action="/book/create" method="post" th:object="${book}">
+    <input type="text" th:field="${book.name}">
+    <p th:if="${#fields.hasErrors()}" th:errors="${book.name}"></p>
+    <select th:field="${book.bookType}">
+        <option th:each="type: ${typeList}" th:text="${type.name}" th:value="${type.id}"></option>
     </select>
     <button type="submit">Create</button>
 </form>

@@ -12,7 +12,11 @@
 </head>
 <body>
 <p th:text="${msg}"></p>
-<a th:href="@{book/create}" th:text="Create"></a>
+<form action="/book">
+    <input type="text" th:name="search">
+    <button type="submit">Search</button>
+</form>
+<a role="button" th:href="@{book/create}" th:text="Create"></a>
 <table class="table">
     <thead>
     <tr>
@@ -25,24 +29,21 @@
     </thead>
     <tbody>
     <tr th:each="book : ${list}">
-        <td scope="row" th:text="${book.bookID}"></td>
-        <td th:text="${book.bookName}"></td>
-        <td th:text="${book.bookType.typeName}"></td>
-        <td><a role="button" class="btn btn-primary" th:href="@{book/update/{id}(id=${book.bookID})}">Update</a></td>
-
-        <td><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId" th:onclick="|infoDelete(${book.bookID})|">
-            Detele
+        <td scope="row" th:text="${book.id}"></td>
+        <td th:text="${book.name}"></td>
+        <td th:text="${book.bookType.name}"></td>
+        <td> <a th:href="@{book/update/{id}(id=${book.id})}">Update</a></td>
+        <td><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId" th:onclick="|deleteID(${book.id})|">
+            Delete
         </button></td>
     </tr>
-
     </tbody>
 </table>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<a th:if="${list.hasPrevious()}" th:href="@{/book(page=${list.number}-1)}">Trước</a>
+<a th:text="${list.number}+1+'/'+${list.getTotalPages()} "> </a>
+<a th:if="${list.hasNext()}" th:href="@{/book(page=${list.number}+1)}">Sau</a>
 <!-- Button trigger modal -->
-<a th:if="${list.hasPrevious()}" th:text="Previous" th:href="@{book(page=${list.number}-1)}"></a>
-<a th:text="${list.getNumber()+1} +'/'+ ${list.getTotalPages()}"></a>
-<a th:if="${list.hasNext()}" th:text="Next" th:href="@{book(page=${list.number}+1)}"></a>
+
 
 <!-- Modal -->
 <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -54,24 +55,27 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/book/delete">
-            <div class="modal-body">
-               Sure?
-            </div>
-            <div class="modal-footer">
-                <input type="hidden" id="idDelete" name="id" >
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save</button>
-            </div>
+            <form action="/book/delete" method="">
+                <div class="modal-body">
+                    Sure to delete?
+                </div>
+                <input type="hidden" name="id" id="deleteID">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                </div>
             </form>
         </div>
     </div>
 </div>
+</body>
 <script>
-    function infoDelete(id) {
-        document.getElementById("idDelete").value = id;
+    function deleteID(id) {
+        document.getElementById("deleteID").value=id;
     }
 </script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

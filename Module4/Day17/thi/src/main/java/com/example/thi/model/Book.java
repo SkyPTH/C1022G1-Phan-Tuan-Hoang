@@ -1,6 +1,10 @@
 package com.example.thi.model;
 
+import org.hibernate.validator.constraints.Range;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "book")
@@ -9,8 +13,11 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookID;
     @Column(name = "book_name")
+    @NotBlank
+    @Range(max = 50)
     private String bookName;
     @ManyToOne
+    @NotNull
     @JoinColumn(name = "type_id")
     private BookType bookType;
 

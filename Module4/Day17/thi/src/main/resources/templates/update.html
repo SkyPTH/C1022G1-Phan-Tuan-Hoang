@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Update</title>
 </head>
 <body>
-
+<p th:text="${msg}"></p>
+<form action="/book/update" method="post" th:object="${book}">
+    <input type="hidden" th:value="${book.bookID}" th:field="${book.bookID}">
+    <input type="text" th:field="${book.bookName}" th:value="${book.bookName}">
+    <select th:field="${book.bookType}">
+        <option th:each="type : ${typeList}" th:text="${type.typeName}" th:value="${type.typeID}"></option>
+    </select>
+    <button type="submit">Update</button>
+</form>
 </body>
 </html>
