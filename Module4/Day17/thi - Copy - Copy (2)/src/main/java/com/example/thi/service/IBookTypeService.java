@@ -4,6 +4,6 @@ import com.example.thi.model.BookType;
 
 import java.util.List;
 
-public interface ITypeBookService {
+public interface IBookTypeService {
     List<BookType> list();
 }

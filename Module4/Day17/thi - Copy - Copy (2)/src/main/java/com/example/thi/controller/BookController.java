@@ -2,7 +2,7 @@ package com.example.thi.controller;
 
 import com.example.thi.model.Book;
 import com.example.thi.service.IBookService;
-import com.example.thi.service.ITypeBookService;
+import com.example.thi.service.IBookTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -18,56 +18,48 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("book")
 public class BookController {
-
     @Autowired
-    private IBookService iBookService;
+    IBookTypeService iBookTypeService;
     @Autowired
-    private ITypeBookService iTypeBookService;
-
+    IBookService iBookService;
     @GetMapping("")
-    public String list(@PageableDefault(size = 3, sort = "bookID", direction = Sort.Direction.DESC) Pageable pageable,
-                       Model model, @RequestParam(required = false, defaultValue = "") String search) {
-        model.addAttribute("list", iBookService.list(search, pageable));
+    public String list(Model model, @PageableDefault(size = 2,direction = Sort.Direction.DESC,sort = "id")Pageable pageable, @RequestParam(defaultValue = "") String search){
+        model.addAttribute("list",iBookService.list(pageable, search));
         return "list";
     }
-
     @GetMapping("create")
     public String createForm(Model model){
         model.addAttribute("book",new Book());
-        model.addAttribute("typeList",iTypeBookService.list());
+        model.addAttribute("typeList",iBookTypeService.list());
         return "create";
     }
     @PostMapping("create")
-    public String create(@Valid @ModelAttribute Book book, BindingResult bindingResult, RedirectAttributes redirectAttributes,Model model){
-
+    public String create(@Valid @ModelAttribute Book book,BindingResult bindingResult,RedirectAttributes redirectAttributes, Model model){
         if(bindingResult.hasErrors()){
-            model.addAttribute("msg","Tạo mới thất bại");
-            model.addAttribute("typeList",iTypeBookService.list());
+            model.addAttribute("typeList",iBookTypeService.list());
             return "create";
-        };
+        }
         iBookService.save(book);
-        redirectAttributes.addFlashAttribute("msg","Tạo mới thành công");
+        redirectAttributes.addFlashAttribute("msg","Thêm mới thành công");
         return "redirect:/book";
     }
     @GetMapping("update/{id}")
-    public String updateForm(@PathVariable int id, Model model){
-        model.addAttribute("book",iBookService.findByID(id));
-        model.addAttribute("typeList",iTypeBookService.list());
+    public String updateForm(Model model,@PathVariable int id){
+        model.addAttribute("book",iBookService.findById(id));
+        model.addAttribute("typeList",iBookTypeService.list());
         return "update";
     }
     @PostMapping("update")
-    public String update(@Valid @ModelAttribute Book book,BindingResult bindingResult,RedirectAttributes redirectAttributes,Model model){
+    public String update(@Valid @ModelAttribute Book book,BindingResult bindingResult,RedirectAttributes redirectAttributes, Model model){
         if(bindingResult.hasErrors()){
-            model.addAttribute("msg","Cập nhật thất bại");
-            model.addAttribute("book",new Book());
-            model.addAttribute("typeList",iTypeBookService.list());
+            model.addAttribute("typeList",iBookTypeService.list());
             return "update";
-        };
+        }
         iBookService.save(book);
-        redirectAttributes.addFlashAttribute("msg","Cập nhật thành công");
+        redirectAttributes.addFlashAttribute("msg","Chỉnh sửa thành công");
         return "redirect:/book";
     }
-    @GetMapping("delete")
+    @PostMapping("delete")
     public String delete(@RequestParam int id,RedirectAttributes redirectAttributes){
         iBookService.delete(id);
         redirectAttributes.addFlashAttribute("msg","xóa thành công");

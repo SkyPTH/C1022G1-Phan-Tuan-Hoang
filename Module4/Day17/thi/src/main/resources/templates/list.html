@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>List</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -11,38 +11,51 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<a th:href="@{/pct/create}" role="button" class="btn btn-primary">Thêm mới</a>
 <p th:text="${msg}"></p>
-<a th:href="@{book/create}" th:text="Create"></a>
+<form action="">
+    <input type="text">
+    <button type="submit">Search</button>
+</form>
 <table class="table">
     <thead>
     <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Update</th>
-        <th>Delete</th>
+        <th>STT</th>
+        <th>Số PCT</th>
+        <th>Chỉ huy</th>
+        <th>Nhân viên</th>
+        <th>Nội dung</th>
+        <th>Ngày bắt đầu</th>
+        <th>Ngày kết thúc</th>
+        <th>Hình thức sửa chữa</th>
+        <th>Chức năng</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="book : ${list}">
-        <td scope="row" th:text="${book.bookID}"></td>
-        <td th:text="${book.bookName}"></td>
-        <td th:text="${book.bookType.typeName}"></td>
-        <td><a role="button" class="btn btn-primary" th:href="@{book/update/{id}(id=${book.bookID})}">Update</a></td>
-
-        <td><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId" th:onclick="|infoDelete(${book.bookID})|">
-            Detele
+    <tr th:each="pct, count : ${list}">
+        <td th:text="${count.count}"></td>
+        <td th:text="'000'+${pct.id}+'-02-2023'"></td>
+        <td th:text="${pct.leader}"></td>
+        <td th:text="${pct.employee}"></td>
+        <td th:text="${pct.startDay}"></td>
+        <td th:text="${pct.endDay}"></td>
+        <td th:text="${pct.workDescription}"></td>
+        <td th:text="${pct.type.typeName}"></td>
+        <td><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId" th:onclick="|deleteInfo(${pct.id})|">
+            Delete
         </button></td>
     </tr>
-
     </tbody>
 </table>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<a th:if="${list.hasPrevious()}" th:href="@{/pct(page=${list.number -1})}">Trước</a>
+<a th:text="${list.number +1}+'/'+${list.getTotalPages()}"> </a>
+<a th:if="${list.hasNext()}" th:href="@{/pct(page=${list.number +1})}">Sau</a>
 <!-- Button trigger modal -->
-<a th:if="${list.hasPrevious()}" th:text="Previous" th:href="@{book(page=${list.number}-1)}"></a>
-<a th:text="${list.getNumber()+1} +'/'+ ${list.getTotalPages()}"></a>
-<a th:if="${list.hasNext()}" th:text="Next" th:href="@{book(page=${list.number}+1)}"></a>
+<script>
+    function deleteInfo(id) {
+        document.getElementById("deleteID").value=id;
+    }
+</script>
 
 <!-- Modal -->
 <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -54,24 +67,19 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/book/delete">
+            <form action="/pct/delete" method="post">
             <div class="modal-body">
-               Sure?
+                Chắc chắn xóa?
             </div>
             <div class="modal-footer">
-                <input type="hidden" id="idDelete" name="id" >
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save</button>
+                <input type="hidden" id="deleteID" name="id">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="submit" class="btn btn-primary">Xóa</button>
             </div>
             </form>
         </div>
     </div>
 </div>
-<script>
-    function infoDelete(id) {
-        document.getElementById("idDelete").value = id;
-    }
-</script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

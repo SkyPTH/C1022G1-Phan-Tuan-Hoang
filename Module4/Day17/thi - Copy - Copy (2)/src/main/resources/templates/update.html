@@ -11,11 +11,18 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<form action="" method="post">
-    <input type="" >
-    <input type="" >
-    <input type="" >
-    <button type="submit">Update</button>
+<form action="/book/update" method="post" th:object="${book}">
+    <input type="hidden" th:field="${book.id}" th:value="${book.id}">
+    <input type="text" th:field="${book.bookName}" th:value="${book.bookName}" placeholder="Tên" >
+    <p th:if="${#fields.hasErrors()}" th:errors="${book.bookName}"></p>
+    <input type="number" th:field="${book.pageSize}" th:value="${book.pageSize}" placeholder="Số trang">
+    <p th:if="${#fields.hasErrors()}" th:errors="${book.pageSize}"></p>
+    <input type="text" th:field="${book.description}" th:value="${book.description}" placeholder="Mô tả">
+    <p th:if="${#fields.hasErrors()}" th:errors="${book.description}"></p>
+    <select th:field="${book.bookType}">
+        <option th:each="type : ${typeList}" th:text="${type.typeName}" th:value="${type.typeId}"></option>
+    </select>
+    <button type="submit">Cập nhật</button>
 </form>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

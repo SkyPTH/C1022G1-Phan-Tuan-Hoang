@@ -3,29 +3,27 @@ package com.example.thi.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "book_type")
-public class BookType {
+public class Type {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int typeID;
+    private int typeId;
     @Column(name = "type_name")
     private String typeName;
 
-    public BookType(int typeID, String typeName) {
-        this.typeID = typeID;
+    public Type(int typeId, String typeName) {
+        this.typeId = typeId;
         this.typeName = typeName;
     }
 
-    public BookType() {
-
+    public Type() {
     }
 
-    public int getTypeID() {
-        return typeID;
+    public int getTypeId() {
+        return typeId;
     }
 
-    public void setTypeID(int typeID) {
-        this.typeID = typeID;
+    public void setTypeId(int typeId) {
+        this.typeId = typeId;
     }
 
     public String getTypeName() {
