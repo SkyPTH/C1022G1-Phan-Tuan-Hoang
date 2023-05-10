@@ -11,6 +11,7 @@ export default function Count2() {
             <div>
                 <button onClick={add1}> Add 2</button>
             </div>
+
         </>
     )
 }
