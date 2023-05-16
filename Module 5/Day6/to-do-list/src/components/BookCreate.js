@@ -16,9 +16,9 @@ export default function BookCreate() {
                         quantity: 0
                     }
                 }
-                onSubmit={(values =>{ BookService.save(values)
+                onSubmit={values =>{ BookService.save(values)
                     navigate('/books')
-                })
+                }
                 }
             >
                 <Form>

@@ -1,0 +1,30 @@
+{
+  "books": [
+    {
+      "id": 3,
+      "title": "con cac",
+      "number": 123,
+      "bookType": "1"
+    },
+    {
+      "id": 4,
+      "title": "hoang",
+      "number": 123125,
+      "bookType": "2"
+    }
+  ],
+  "bookType": [
+    {
+      "id": 1,
+      "name": "TỰ nhiên"
+    },
+    {
+      "id": 2,
+      "name": "Xã hội"
+    },
+    {
+      "id": 3,
+      "name": "Tạp chí"
+    }
+  ]
+}

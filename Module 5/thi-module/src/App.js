@@ -1,20 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-import {BrowserRouter, NavLink} from "react-router-dom";
 import React from "react";
+import {BrowserRouter, NavLink} from "react-router-dom";
 import {Route, Routes} from "react-router";
-import BookList from "./components/BookList";
-
+import ClothingList from "./components/ClothingList";
+import ClothingUpdate from "./components/ClothingUpdate";
 function App() {
     return (
         <>
+
             <BrowserRouter>
-                <NavLink to='/'>Book list</NavLink>
+                <NavLink to='/' className='btn btn-primary'>Clothing List</NavLink>
                 <Routes>
-                    <Route path='/' element={<BookList/>}/>
+                    <Route path='/' element={<ClothingList/>} />
+                    <Route path='/update/:id' element={<ClothingUpdate/>} />
                 </Routes>
             </BrowserRouter>
         </>
+
     )
 }
 

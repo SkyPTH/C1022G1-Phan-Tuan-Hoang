@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import * as BookService from '../service/BookService'
-import {NavLink,useNavigate} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 
 
 export default function Book() {
@@ -38,7 +38,9 @@ export default function Book() {
                             <td>{books.title}</td>
                             <td>{books.quantity}</td>
                             <td>
-                                <button type='button' className='btn btn-primary' onClick={()=>handleUpdate(books.id)}>Update</button>
+                                <button type='button' className='btn btn-primary'
+                                        onClick={() => handleUpdate(books.id)}>Update
+                                </button>
                             </td>
                         </tr>
                     ))

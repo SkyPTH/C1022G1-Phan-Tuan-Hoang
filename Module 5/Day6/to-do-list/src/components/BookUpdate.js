@@ -10,7 +10,7 @@ export default function BookUpdate() {
     useEffect(() => {
         const fetchApi = async () => {
             const rs = await BookService.detail(param.id)
-            return setBook(rs)
+            setBook(rs)
         }
         fetchApi()
     }, [])
@@ -27,11 +27,10 @@ export default function BookUpdate() {
                         quantity: book?.quantity
                     }
                 }
-                onSubmit={(values => {
+                onSubmit={values => {
                     BookService.update(values)
-                        navigate('/books')
+                    navigate('/books')
                 }
-                )
                 }
             >
                 <Form>
