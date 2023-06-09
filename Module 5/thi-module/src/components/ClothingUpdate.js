@@ -57,7 +57,7 @@ export default function ClothingUpdate() {
                     <ErrorMessage name='name' component='span' className='text-danger'/>
                     <p><span>Day</span><Field name='time' type='text'/></p>
                     <p><span>Quantity</span><Field name='number' type='text'/></p>
-                    <ErrorMessage name='number' component='span' className='text-danger'/>
+                    <ErrorMessage name='number' component='span' />
                     <p><span>Clothing Type</span>
                         <Field as='select' name='typeClothing'>
                             {

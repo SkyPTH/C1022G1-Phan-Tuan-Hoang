@@ -69,8 +69,8 @@ export default function BookList() {
                             <td>{book.title}</td>
                             <td>{book.number}</td>
                             <td>{bookTypeList.filter((bookType) => (bookType.id == book.bookType))[0]?.name}</td>
-                            <td><button type='button' onClick={()=>handleUpdate(book.id)} className='btn-primary btn'>Update</button></td>
-                            <td><button type={'button'} onClick={()=>handleDelete(book.id,book.title)} className='btn btn-danger' data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <td><button type='button' onClick={()=> handleUpdate(book.id)} className='btn-primary btn'>Update</button></td>
+                            <td><button type={'button'} onClick={()=> handleDelete(book.id,book.title)} className='btn btn-danger' data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Delete
                             </button></td>
                         </tr>

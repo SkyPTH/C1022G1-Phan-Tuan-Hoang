@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="114d857b-58e7-416c-a05f-a252b0757c81" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Module 6/CreatePromotion.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Module 6/PromotionCss.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Module 6/UpdatePromotion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module 5/thi-module-2/public/index/BookList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module 5/thi-module-2/public/index/BookList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module 5/thi-module-2/src/components/BookUpdate.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module 5/thi-module-2/src/components/BookUpdate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Module 5/thi-module/src/components/ClothingUpdate.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Module 5/thi-module/src/components/ClothingUpdate.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2QoxXc5nigfhHENvCzpHJP7fUrA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/codegym/C1022G1-Phan-Tuan-Hoang/C1022G1-Phan-Tuan-Hoang/Module4/Day15",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="114d857b-58e7-416c-a05f-a252b0757c81" name="Changes" comment="" />
+      <created>1686033775783</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686033775783</updated>
+      <workItem from="1686033776892" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
