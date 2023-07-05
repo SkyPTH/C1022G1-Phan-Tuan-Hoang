@@ -1,33 +1,60 @@
 package com.example.riotshop_api.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 @Entity
 public class OrderCustomer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idOrder;
-    @Column(name = "name_order")
-    private String nameOrder;
+    @Column(name = "date_order")
+    @DateTimeFormat(fallbackPatterns = "dd-mm-yyyy")
+    private String dateOrder;
+    @Column(name = "total_price")
+    private Long totalPrice;
+
+
+
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "id_account")
     private AccountUser accountUser;
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(name = "order_detail", joinColumns = @JoinColumn(name = "id_account"),
-            inverseJoinColumns = @JoinColumn(name = "id_product"))
-    Set<Product> product = new HashSet<>();
-
-    public OrderCustomer(Integer idOrder, String nameOrder, AccountUser accountUser, Set<Product> product) {
-        this.idOrder = idOrder;
-        this.nameOrder = nameOrder;
-        this.accountUser = accountUser;
-        this.product = product;
-    }
+    @OneToMany(mappedBy = "orderCustomer")
+    @JsonManagedReference
+    private Set<OrderDetail> orderDetailSet=new TreeSet<>();
 
     public OrderCustomer() {
     }
+
+    public OrderCustomer(Integer idOrder, AccountUser accountUser, Set<OrderDetail> orderDetailSet) {
+        this.idOrder = idOrder;
+
+        this.accountUser = accountUser;
+        this.orderDetailSet = orderDetailSet;
+    }
+
+    public Long getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Long totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+    public String getDateOrder() {
+        return dateOrder;
+    }
+
+    public void setDateOrder(String dateOrder) {
+        this.dateOrder = dateOrder;
+    }
+
 
     public Integer getIdOrder() {
         return idOrder;
@@ -35,14 +62,6 @@ public class OrderCustomer {
 
     public void setIdOrder(Integer idOrder) {
         this.idOrder = idOrder;
-    }
-
-    public String getNameOrder() {
-        return nameOrder;
-    }
-
-    public void setNameOrder(String nameOrder) {
-        this.nameOrder = nameOrder;
     }
 
     public AccountUser getAccountUser() {
@@ -53,11 +72,12 @@ public class OrderCustomer {
         this.accountUser = accountUser;
     }
 
-    public Set<Product> getProduct() {
-        return product;
+    public Set<OrderDetail> getOrderDetailSet() {
+        return orderDetailSet;
     }
 
-    public void setProduct(Set<Product> product) {
-        this.product = product;
+    public void setOrderDetailSet(Set<OrderDetail> orderDetailSet) {
+        this.orderDetailSet = orderDetailSet;
     }
+
 }

@@ -9,10 +9,10 @@ public class MapDemo {
         // HashMap
         Map<String, Integer> hashMap = new HashMap<>();
 
-        hashMap.put("b3", 2);
-        hashMap.put("d2", 4);
-        hashMap.put("a4", 1);
-        hashMap.put("c1", 3);
+        hashMap.put("b", 2);
+        hashMap.put("d", 4);
+        hashMap.put("a", 1);
+        hashMap.put("c", 3);
 
         System.out.println("HashMap: " + hashMap);
 
