@@ -4,6 +4,8 @@ import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router";
 import Header from "../common/header/Header";
 import Footer from "../common/footer/Footer";
+import {ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 export default function History() {
     const username = localStorage.getItem("username");
     const token = localStorage.getItem("token")
@@ -12,7 +14,7 @@ export default function History() {
 
     useEffect(() => {
         const findByName = async () => {
-            console.log(token)
+
             const rs = await PaymentService.history(username,token)
             setHistoryList(rs)
         };
@@ -21,7 +23,7 @@ export default function History() {
     const navigate = useNavigate()
     const handleDetail= async (id,token)=>{
         const rs=await OrderDetailService.findOrderDetailByOrderID(id,token)
-        console.log(rs)
+
         setDetail(rs)
     }
     useEffect(() => {
@@ -32,13 +34,12 @@ export default function History() {
     //     return (<><h2>Không tìm thấy sản phẩm</h2></>)
     // }
     const formatPrice = (n) => {
-        return n.toFixed(0).replace(/./g, function (c, i, a) {
+        return n?.toFixed(0).replace(/./g, function (c, i, a) {
             return i > 0 && c !== "." && (a.length - i) % 3 === 0 ? "," + c : c;
         });
     };
     return (
         <>
-
             <Header/>
             <div style={{marginTop:'100px'}} className='container'>
             <h2 style={{color:'white',textAlign:'center'}}> Lịch sử mua hàng</h2>
@@ -104,7 +105,9 @@ export default function History() {
                         </div>
                     </div>
                 </div>
+
             </div>
+            <ToastContainer/>
             <Footer></Footer>
         </>
     )

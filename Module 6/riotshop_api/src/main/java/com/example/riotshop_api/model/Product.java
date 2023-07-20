@@ -1,6 +1,7 @@
 package com.example.riotshop_api.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -24,14 +25,6 @@ public class Product {
     @Column(columnDefinition = "boolean default false")
     private boolean isDeleted;
 
-    public boolean isDeleted() {
-        return isDeleted;
-    }
-
-    public void setDeleted(boolean deleted) {
-        isDeleted = deleted;
-    }
-
     @ManyToOne
     @JoinColumn(name = "id_rank")
     private Ranking ranking;
@@ -48,7 +41,36 @@ public class Product {
 
     public Product() {
     }
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
 
+    public Product(Integer idProduct, String nameProduct, Long price, String imageProduct, int numberChamp, Ranking ranking) {
+        this.idProduct = idProduct;
+        this.nameProduct = nameProduct;
+        this.price = price;
+        this.imageProduct = imageProduct;
+        this.numberChamp = numberChamp;
+        this.ranking = ranking;
+    }
+
+    public Product(String nameProduct, Long price, String imageProduct, int numberChamp, Ranking ranking) {
+        this.nameProduct = nameProduct;
+        this.price = price;
+        this.imageProduct = imageProduct;
+        this.numberChamp = numberChamp;
+        this.ranking = ranking;
+    }
+
+    public Product(String nameProduct, Long price, String imageProduct, int numberChamp) {
+        this.nameProduct = nameProduct;
+        this.price = price;
+        this.imageProduct = imageProduct;
+        this.numberChamp = numberChamp;
+    }
     public Integer getIdProduct() {
         return idProduct;
     }

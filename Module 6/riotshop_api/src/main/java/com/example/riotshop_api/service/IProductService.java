@@ -9,4 +9,5 @@ public interface IProductService {
     Page<Product> searchProduct(String name, String idRanking, String nameSkin, String minPrice, String maxPrice, Pageable pageable);
     Product findProductByIdProduct(int id);
     Product save(Product product);
+    public void delete(Integer id);
 }

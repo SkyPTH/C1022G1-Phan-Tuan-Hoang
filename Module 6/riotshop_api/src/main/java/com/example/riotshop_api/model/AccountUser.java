@@ -23,6 +23,8 @@ public class AccountUser {
     private String email;
     @Column(name = "phone_number",columnDefinition = "varchar(255)")
     private String phoneNumber;
+    @Column(name = "image",columnDefinition = "varchar(255)")
+    private String image;
 
 
     public AccountUser(Integer accountUserId) {
@@ -64,6 +66,25 @@ public class AccountUser {
         this.passwordAccount = passwordAccount;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.role = role;
+        this.orderCustomerSet = orderCustomerSet;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public AccountUser(int idAccount, String nameAccount, String passwordAccount, String email, String phoneNumber, String image, Set<Role> role, Set<OrderCustomer> orderCustomerSet) {
+        this.idAccount = idAccount;
+        this.nameAccount = nameAccount;
+        this.passwordAccount = passwordAccount;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.image = image;
         this.role = role;
         this.orderCustomerSet = orderCustomerSet;
     }

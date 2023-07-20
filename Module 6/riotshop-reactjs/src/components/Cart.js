@@ -5,7 +5,8 @@ import * as CartService from "../service/CartService";
 import * as PaymentService from "../service/PaymentService";
 import Header from "../common/header/Header";
 import Footer from "../common/footer/Footer";
-import {toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
+import {toast, ToastContainer} from "react-toastify"
 
 
 export default function Cart() {
@@ -26,15 +27,18 @@ export default function Cart() {
         document.title = "Giỏ hàng";
     }, []);
     const handlePayment = async (totalPrice) => {
-        await PaymentService.payment({totalPrice}, token)
-        navigate("/history")
-        toast("Thanh toán thành công, thông tin tài khoản ở trong phần Chi tiết")
+       const result=await PaymentService.payment({totalPrice}, token);
+        window.location.href=result.url;
+        // toast("Thanh toán thành công, thông tin tài khoản ở trong phần Chi tiết của Lịch sử mua hàng")
+        // navigate("/")
     }
+
     useEffect(() => {
-        (async () => {
+        const findCart=async () => {
             const result2 = await CartService.findCartByNameAccount(username,token)
             setCartList(result2)
-        })()
+        };
+        findCart();
     }, [isDelete]);
     const [user, setUser] = useState(null);
     useEffect(() => {
@@ -60,7 +64,8 @@ export default function Cart() {
                     }}><a>
                         Giỏ hàng</a>
                     </div>
-                    {cartList.length == 0 ?
+
+                    { cartList&&cartList.length == 0 ?
                         <div>
                             <div className="w-100 " style={{
                                 height: '100%',
@@ -152,7 +157,6 @@ export default function Cart() {
                                                 fontSize: '25px', marginBottom: '15px'
                                             }}>Thanh toán bằng VNPAY
                                     </button>
-
                                 </div>
                             </div>
                         </div>}

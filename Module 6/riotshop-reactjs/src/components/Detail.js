@@ -9,15 +9,20 @@ import {toast, ToastContainer} from "react-toastify";
 import {findAccountByNameAccount} from "../service/AccountService'";
 import {Form, Formik} from "formik";
 export default function Detail() {
-    const [product, setProduct] = useState("")
-    const [user, setUser] = useState(null);
+    const [product, setProduct] = useState(null)
+    const [user, setUser] = useState('');
     const navigate = useNavigate();
     const token = localStorage.getItem("token")
     const username = localStorage.getItem("username");
+    const account = JSON.parse(localStorage.getItem("account"));
+
     useEffect(() => {
         const findAccountByUsername = async () => {
+
             const result = await findAccountByNameAccount(username,token);
+
             setUser(result);
+            console.log(result)
         };
         findAccountByUsername();
         console.log(user)
@@ -25,13 +30,14 @@ export default function Detail() {
     const findProductById = async (id) => {
         const result = await ProductService.findById(id)
         setProduct(result)
+
+
     }
     useEffect(() => {
         document.title = "Chi tiết sản phẩm";
     }, []);
     const param = useParams();
     useEffect(() => {
-
         findProductById(param.id);
 
     }, []);
@@ -56,7 +62,7 @@ export default function Detail() {
                                 textAlign: 'center',
                                 border: 'red solid 2px'
                             }}><a>
-                                Thông tin tài khoản</a>
+                                Thông tin sản phẩm</a>
                             </div>
                             <div className="row" style={{padding: "15px"}}>
                                 <div className="row">

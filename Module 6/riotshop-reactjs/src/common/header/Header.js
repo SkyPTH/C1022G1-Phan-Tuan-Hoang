@@ -13,6 +13,7 @@ export default function Header() {
     const [user, setUser] = useState(null);
     const roles = [];
     const navigate = useNavigate();
+    const token = localStorage.getItem("token")
     if (account != null) {
         for (let i = 0; i < account.roles.length; i++) {
             roles.push(account.roles[i].authority);
@@ -24,7 +25,7 @@ export default function Header() {
     };
     useEffect(() => {
         const findAccountByUsername = async () => {
-            const result = await findAccountByNameAccount(username);
+            const result = await findAccountByNameAccount(username,token);
             setUser(result);
         };
         findAccountByUsername();
@@ -48,6 +49,12 @@ export default function Header() {
                                             <Avatar>{username[0].toUpperCase()}</Avatar>
                                         </Dropdown.Toggle>
                                         <DropdownMenu>
+                                            <Dropdown.Item
+                                                onClick={event => navigate('/profile')}
+                                                className="text-decoration-none"
+                                            >
+                                                Thông tin cá nhân
+                                            </Dropdown.Item>
                                             <Dropdown.Item
                                                 onClick={handleLogout}
                                                 className="text-decoration-none"

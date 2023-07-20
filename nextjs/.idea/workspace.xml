@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="856fbe0e-5f94-4cb9-96be-d7049ab6eb87" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Module 2/src/BaiTap/Day12/presentation/OCA4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module 2/src/BaiTap/Day12/presentation/Test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module 2/src/BaiTap/quan_li_sp/test/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module 2/src/BaiTap/quan_li_sp/test/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module 2/src/BaiTap/quan_li_sp/test/Jumpable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module 2/src/BaiTap/quan_li_sp/test/Sound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/components/Delete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/components/Payment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/components/Profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/components/Update.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/nextjs.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 2/out/production/Module 2/BaiTap/Day12/presentation/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 2/out/production/Module 2/BaiTap/Day12/presentation/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 2/out/production/Module 2/BaiTap/quan_li_sp/test7.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 2/out/production/Module 2/BaiTap/quan_li_sp/test7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 2/src/BaiTap/Day12/presentation/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 2/src/BaiTap/Day12/presentation/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 2/src/BaiTap/quan_li_sp/test7.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 2/src/BaiTap/quan_li_sp/test7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/common/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/common/header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/components/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/components/Cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/components/Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/components/Detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/components/History.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/components/History.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/service/AccountService'.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/service/AccountService'.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/service/CartService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/service/CartService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/service/PaymentService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/service/PaymentService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/service/ProductService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop-reactjs/src/service/ProductService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/controller/OrderDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/controller/OrderDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/dto/ProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/model/AccountUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/model/AccountUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/model/Ranking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/model/Ranking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/service/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/service/impl/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/service/impl/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/service/impl/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 6/riotshop_api/src/main/java/com/example/riotshop_api/service/impl/ProductService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2SpMuyUkW0S1LK7G3jvvxZk1V5y" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\codegym\C1022G1-Phan-Tuan-Hoang\New folder\nextjs\public\assets\images" />
+      <recent name="D:\codegym\C1022G1-Phan-Tuan-Hoang\New folder\nextjs\app\posts\new" />
+      <recent name="D:\codegym\C1022G1-Phan-Tuan-Hoang\New folder\nextjs\app\posts\[id]" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="856fbe0e-5f94-4cb9-96be-d7049ab6eb87" name="Default Changelist" comment="" />
+      <created>1689839295082</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689839295082</updated>
+      <workItem from="1689839296191" duration="2948000" />
+      <workItem from="1689849412975" duration="17369000" />
+      <workItem from="1689878213479" duration="98000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1689861667201">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1689861667201" />
+    <state x="277" y="77" key="SettingsEditor" timestamp="1689878292117">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="277" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1689878292117" />
+  </component>
+</project>

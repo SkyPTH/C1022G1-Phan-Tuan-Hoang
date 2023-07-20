@@ -3,8 +3,18 @@ import axios from "axios";
 export const payment = async (totalPrice , auth) => {
     const headers = { Authorization: "Bearer " + auth}
     try {
+        const result = (await axios.post(`http://localhost:8080/user/payment`, {...totalPrice},{headers})).data;
+        return result;
+    } catch (e) {
+        console.log(e);
+    }
+}
+export const confirmPayment = async (totalPrice , auth) => {
+    const headers = { Authorization: "Bearer " + auth}
+    try {
         const result = (await axios.post(`http://localhost:8080/user/order-detail/payment`, {...totalPrice},{headers})).data;
         return result;
+        console.log(result)
     } catch (e) {
         console.log(e);
     }

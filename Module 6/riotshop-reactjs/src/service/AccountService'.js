@@ -9,3 +9,8 @@ export const findAccountByNameAccount = async (username,auth) => {
         console.log(e)
     }
 }
+export const checkAdmin=async (username,auth)=>{
+    const headers = {Authorization: "Bearer " + auth}
+    const rs = await axios.get(`http://localhost:8080/user/account/isAdmin?username=${username}`,{headers})
+    return rs.data;
+}

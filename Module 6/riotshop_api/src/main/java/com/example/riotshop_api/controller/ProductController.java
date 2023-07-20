@@ -1,6 +1,9 @@
 package com.example.riotshop_api.controller;
 
+import com.example.riotshop_api.dto.ProductDTO;
+import com.example.riotshop_api.model.Product;
 import com.example.riotshop_api.service.IProductService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -8,7 +11,10 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @CrossOrigin("*")
@@ -50,5 +56,22 @@ public class ProductController {
     @GetMapping("detail")
     public ResponseEntity<?> detailProduct(@RequestParam(required = false) Integer idProduct) {
         return new ResponseEntity<>(iProductService.findProductByIdProduct(idProduct), HttpStatus.OK);
+    }
+    @DeleteMapping("/delete/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public ResponseEntity<?> deleteProduct(@PathVariable Integer id) {
+        iProductService.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    @PatchMapping("/update")
+    public ResponseEntity<?> update(@Valid @RequestBody ProductDTO productDTO, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
+        }
+        Product product = iProductService.findProductByIdProduct(productDTO.getIdProduct());
+        BeanUtils.copyProperties(productDTO,product);
+        product.setDeleted(false);
+            iProductService.save(product);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

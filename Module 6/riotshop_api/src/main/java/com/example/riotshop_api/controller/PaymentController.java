@@ -19,6 +19,5 @@ public class PaymentController {
     @PostMapping("/payment")
     public ResponseEntity<?> createPayment(@RequestBody RequestPayment requestPayment) throws UnsupportedEncodingException {
         return new ResponseEntity<>(iCartService.payment(requestPayment), HttpStatus.OK);
-
     }
 }

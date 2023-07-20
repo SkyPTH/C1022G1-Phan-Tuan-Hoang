@@ -53,6 +53,5 @@ public class OrderDetailController {
             iOrderDetail.createOderDetail(orderDetail);
             iCartService.deleteById(cartList.get(i).getIdCart());
         }
-
     }
 }

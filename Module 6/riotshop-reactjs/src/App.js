@@ -9,8 +9,9 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Cart from "./components/Cart";
 import History from "./components/History";
-
-
+import Payment from "./components/Payment";
+import Profile from "./components/Profile";
+import Update from "./components/Update";
 function App() {
   return (
     <>
@@ -22,6 +23,9 @@ function App() {
               <Route element={<SignUp/>} path="/signup" />
               <Route element={<Cart/>} path="/cart" />
               <Route element={<History/>} path="/history"/>
+              <Route element={<Payment/>} path="/payment"/>
+              <Route element={<Profile/>} path="/profile"/>
+              <Route element={<Update/>} path="/update/:id"/>
           </Routes>
       </BrowserRouter>
     </>

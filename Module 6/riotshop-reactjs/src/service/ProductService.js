@@ -17,3 +17,22 @@ export const findById= async (id)=>{
         console.log(e)
     }
 }
+export const deleteProduct = async (id, auth) => {
+    const headers = { Authorization: "Bearer " + auth };
+    try {
+        await axios.delete(
+            `http://localhost:8080/public/product/delete/${id}`,
+            { headers }
+        );
+    } catch (err) {
+        console.log(err);
+    }
+};
+export const update=async (product)=>{
+    try {
+        return await axios.patch(`http://localhost:8080/public/product/update`,{ ...product })}
+    catch (e) {
+        console.log(e)
+    }
+}
+

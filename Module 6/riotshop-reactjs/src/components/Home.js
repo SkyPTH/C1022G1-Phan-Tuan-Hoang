@@ -3,13 +3,15 @@ import Header from "../common/header/Header";
 import Footer from "../common/footer/Footer";
 import * as ProductService from '../service/ProductService'
 import {useNavigate} from "react-router";
-import {findAccountByNameAccount} from "../service/AccountService'";
+import {findAccountByNameAccount,checkAdmin} from "../service/AccountService'";
 import {Field, Form, Formik} from "formik";
 import * as CartService from "../service/CartService";
 import {createCart} from "../service/CartService";
 import "react-toastify/dist/ReactToastify.css"
 import {toast, ToastContainer} from "react-toastify"
 import ReactPaginate from "react-paginate";
+import Swal from "sweetalert2";
+
 
 export default function Home() {
     const [products, setProducts] = useState([])
@@ -18,14 +20,37 @@ export default function Home() {
     const [pageCount, setPageCount] = useState(0)
     const [size, setSize] = useState(0)
     const [totalRecords, setTotalRecords] = useState(0);
+    const [isAdmin,setIsAdmin]=useState(false)
+    const [deleteId, setDeleteId] = useState(0);
+    const [deleteName, setDeleteName] = useState("");
     let stt = page * size + 1;
+    const [isDelete, setIsDelete] = useState(false)
     const handlePageClick = (data) => {
-        console.log(data.selected)
+
         setPage(data.selected);
+    };
+    const handleDelete = async (id) => {
+        try {
+            await ProductService.deleteProduct(id, token);
+            setIsDelete(true)
+            Swal.fire({
+                icon: "success",
+                title: "Xóa thành công",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+
+        } catch (error) {
+            Swal.fire({
+                icon: "error",
+                title: "Xóa thất bại",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+        }
     };
     const productList = async () => {
         const result = await ProductService.searchList('','','','','',page)
-
         setProducts(result.content)
         setPageCount(result.totalPages);
         setSize(result.size);
@@ -34,7 +59,7 @@ export default function Home() {
     useEffect(() => {
         productList();
         document.title = "Riot Shop - Shop acc top 1 VN";
-    }, [page, size, totalRecords]);
+    }, [page, size, totalRecords,isDelete]);
     const navigate = useNavigate();
     // useEffect(() => {
     //     productList();
@@ -48,10 +73,27 @@ export default function Home() {
         const findAccountByUsername = async () => {
 
             const result = await findAccountByNameAccount(username,token);
+
             setUser(result);
         };
         findAccountByUsername();
     }, []);
+    const handleUpdate = (id) => {
+        navigate(`/update/${id}`)
+    }
+    const getPropsDeleteEmployee = (id, name) => {
+        setDeleteId(id);
+        setDeleteName(name);
+    };
+    // useEffect(() => {
+    //     const isAdmin = async () => {
+    //
+    //         const result = await checkAdmin(username,token);
+    //         console.log(result)
+    //         setIsAdmin(result);
+    //     };
+    //     isAdmin();
+    // },[user])
     const formatPrice = (n) => {
         return n.toFixed(0).replace(/./g, function (c, i, a) {
             return i > 0 && c !== "." && (a.length - i) % 3 === 0 ? "," + c : c;
@@ -107,6 +149,7 @@ export default function Home() {
                                 const [minPrice, maxPrice] = values.priceRange.split('-');
                                 const result = await ProductService.searchList(values.nameProduct, values.idRank, values.nameSkin, minPrice, maxPrice);
                                 setProducts(result.content);
+                                setPageCount(result.totalPages)
                             }}
                         >
                             <Form>
@@ -151,7 +194,9 @@ export default function Home() {
                                 </div>
                             </Form>
                         </Formik>
-
+                        <div className='col-4'>
+                        <button className='btn btn-primary' style={{marginTop:'20px'}}>Thêm sản phẩm</button>
+                        </div>
                     </div>
                     <div className="row">
                         <div className="w-100 blink" style={{
@@ -195,16 +240,16 @@ export default function Home() {
                                                 className="btn btn-primary"
                                                 style={{width: '75px', marginRight: '10px',fontSize:"15px"}}>Chi tiết
                                         </button>
-                                        {!user ?
+                                        {(!user && username=="hoangadmin") ?
                                             <button className="btn btn-danger" onClick={() => navigate('/login')}>Mua
                                                 ngay</button>
                                             : <Formik initialValues={{
                                                 priceProduct: product.price,
                                                 productId: product.idProduct,
-                                                accountUserId: user.idAccount
+                                                accountUserId: user?.idAccount
                                             }}
                                                       onSubmit={async (values) => {
-                                                          let res = await CartService.checkCartExist(user.idAccount, product.idProduct,token)
+                                                          let res = await CartService.checkCartExist(user?.idAccount, product.idProduct,token)
                                                           if (res.data) {
                                                               toast("Sản phẩm đã có trong giỏ hàng!");
                                                           } else {
@@ -217,11 +262,52 @@ export default function Home() {
                                                       }
                                             >
                                                 <Form style={{display: "inline"}}>
-                                                    <button type='submit' className="btn btn-danger" style={{fontSize:"15px"}}>Thêm vào giỏ</button>
+                                                    <button type='submit' className="btn btn-primary" style={{fontSize:"15px"}}>Thêm vào giỏ</button>
                                                 </Form>
                                             </Formik>
                                         }
+                                        {
+                                            username=="hoangadmin"? <div className="text-center" style={{marginTop: '20px', marginBottom: '5px'}}>
+                                                <button className="btn btn-warning" style={{width: '105px', marginRight: '10px',}} onClick={event => handleUpdate(product.idProduct)}>Chỉnh sửa</button>
+                                                <button className="btn btn-danger" style={{width:'90px'}} onClick={() =>
+                                                    getPropsDeleteEmployee(
+                                                        product?.idProduct,
+                                                        product?.nameProduct
+                                                    )
+                                                }
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#deleteEmployee">Xóa</button>
+                                            </div>:<></>
+                                        }
+                                        <div className="modal fade" id="deleteEmployee" tabIndex="-1"
+                                             aria-labelledby="exampleModalLabel"
+                                             aria-hidden="true">
+                                            <div className="modal-dialog">
+                                                <div className="modal-content">
+                                                    <div className="modal-header text-center" style={{color: "red" , fontSize: 20 , fontWeight: "bolder"}}>
+                                                        <h5 className="modal-title" id="exampleModalLabel">Xóa sản phẩm</h5>
+                                                    </div>
+                                                    <div className="modal-body">
+                                                        Bạn có chắc chắn muốn xóa sản phẩm{" "}
+                                                        <span className="text-danger fw-bold">{deleteName}</span> không?
+                                                    </div>
+                                                    <div className="modal-footer">
+                                                        <button
+                                                            onClick={() => handleDelete(deleteId)}
+                                                            type="button"
+                                                            className="btn btn-primary"
+                                                            data-bs-dismiss="modal"
+                                                        >
+                                                            Xóa
+                                                        </button>
+                                                        <button type="button" className="btn btn-secondary btn-sm"
+                                                                data-bs-dismiss="modal">Đóng
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>

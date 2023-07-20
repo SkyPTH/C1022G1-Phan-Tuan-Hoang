@@ -1,6 +1,8 @@
 package com.example.riotshop_api.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Ranking {

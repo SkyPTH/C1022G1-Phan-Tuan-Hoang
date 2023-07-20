@@ -11,6 +11,7 @@ export const findByAccountId = async (accountId) => {
 export const findCartByNameAccount = async (nameAccount,auth) => {
     try {
         const headers = { Authorization: "Bearer " + auth}
+        console.log(auth)
         const rs = await axios.get(`http://localhost:8080/user/cart/findByNameAccount?nameAccount=${nameAccount}`,{headers})
         return rs.data
     } catch (e) {
